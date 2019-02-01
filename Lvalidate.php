@@ -5,7 +5,6 @@
 	<link rel="icon" type="image/ico" href="https://i.ibb.co/GQ6gw34/1544624867669.png" />
 </head>
 </html>
-
 <?php
   if ($_SERVER["REQUEST_METHOD"] == "POST") //check if Post is created or not!!!
    {
@@ -37,8 +36,8 @@
 
                       session_start();
                       $_SESSION['mail'] = $mail;
-                      echo "<h3>welcome</h3>" . $mail;
-
+                      header('location:Home.php');
+                      //echo "<h3>welcome</h3>" . $mail;
                   }
               }
               // logim module for a trasport company users data match and transfer futher use.....
@@ -55,8 +54,8 @@
 
 
                       $_SESSION['mail'] = $mail;
-                      echo "<h3>welcome</h3>" . $mail;
-											header("location:Home.php");
+                      //echo "<h3>welcome</h3>" . $mail;
+                      header("location:Home.php");
                   }
               }
           }
