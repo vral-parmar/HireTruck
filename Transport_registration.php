@@ -22,7 +22,7 @@ body{
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
-  <body background="Image/Ref.png" style="background-repeat:no-repeat;">
+  <body background="New/css/Ref.png" style="background-repeat:no-repeat;">
    <div class="container-fluid">
       <div class="row">
          <div class="col-md-5 col-xs-10 col-sm-9 center_div">
