@@ -51,8 +51,6 @@
                       echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong>Wrong Credential Please check Email & pasword Which you have been Used!! or contact admin if you have been Blocked!!</h4></div> </div>";
                       header("refresh:4;url=login.php");
                   } else {
-
-
                       $_SESSION['mail'] = $mail;
                       //echo "<h3>welcome</h3>" . $mail;
                       header("location:Home.php");
