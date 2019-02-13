@@ -71,7 +71,7 @@ body{
                     </div><br>
                     <div class="row">
                       <div class="col-6" style="text-align:left;">
-                          <a href="#"> <code><-</code>Back to Home</a>
+                          <a href="Home.php"> <code><-</code>Back to Home</a>
                       </div>
                       <div class="col-6" style="text-align:right;">
                           <a href="Login.php" >Already Register? Click Here</a>
