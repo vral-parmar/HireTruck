@@ -10,7 +10,7 @@
 body{
  height: 100%;
  width:100%;
- padding-bottom:5%;
+ background-image: url("Image/trk.jpg");
 }
 </style>
     <!-- Bootstrap -->
@@ -22,7 +22,7 @@ body{
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
-  <body background="New/css/Ref.png" style="background-repeat:no-repeat;">
+  <body>
    <div class="container-fluid">
       <div class="row">
          <div class="col-md-5 col-xs-10 col-sm-9 center_div">
@@ -30,38 +30,57 @@ body{
                     <h2 align="center">CARRIER REGISTRATION</h2>
                     <hr><br>
                     <div class="form-group ">
-                      <label for="cname">Comapany's Name</label>
+                      <label for="cname">Comapany's Name *</label>
                         <input type="text" name="CARRIER_company" class="form-control" placeholder="Enter Comapany's Name" autofocus required>
                     </div>
                     <div class="form-group ">
-                      <label for="oname">Owner's Name</label>
+                      <label for="oname">Owner's Name *</label>
                         <input type="text" name="CARRIER_owner" class="form-control"  placeholder="Enter Owner's name" required>
                     </div>
                     <div class="form-group ">
-                      <label for="temail">Email</label>
+                      <label for="temail">Email *</label>
                         <input type="email" name="CARRIER_mail" class="form-control" placeholder="Enter your Email ID" maxlength="50" required>
                     </div>
                     <div class="form-group">
-                      <label for="mnum">Contact Number</  label>
-                        <input type="tel" name="CARRIER_number" pattern=".{10}" class="form-control" minlength="10" placeholder="Enter your Contact Number" required>
+                      <label for="mnum">Contact Number *</label>
+                        <input type="tel" pattern=".{10}" name="CARRIER_number" pattern=".{10}" class="form-control" minlength="10" placeholder="Enter your Contact Number" required>
                     </div>
                     <div class="form-group">
-                      <label for="anum">Additional Contact Number <small>(if above number not reached)</small></label>
+                      <label for="anum">Additional Contact Number *<small>(if above number not reached)</small></label>
                         <input type="tel" pattern=".{10}" name="CARRIER_alt_num" class="form-control" minlength="10" placeholder="Enter Additional Contact Number" required>
                     </div>
                     <div class="form-group">
-                      <label for="novehicle">Number Of Vehicles</label>
+                      <label for="novehicle">Number Of Vehicles *</label>
                         <input type="number" name="no_vehicle" class="form-control" min="1" max="100" placeholder="Enter the No.of vehicles available" required>
                     </div>
                     <div class="form-group">
-                      <label for="textarea">Address</label>
+                      <label for="textarea">Company address *</label>
                         <textarea  name="CARRIER_address" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
                     </div>
                     <div class="form-group">
-                      <label for="textarea">Services</label>
+                      <label for="textarea">Services *</label>
                         <textarea  name="CARRIER_service" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
                     </div>
-                    <div align="center">
+                <div> <label for="secq">Security Question *</label></div>
+                <div class="container row">
+                    <div class="col">
+                        <select class="dropdown btn btn-block form-control" name="secq" required>
+                            <option value="#" disabled selected >Select any of one</option>
+                            <option value="What is your favourite food?">What is your favourite food?</option>
+                            <option value="What is your favourite place?">What is your favourite place?</option>
+                            <option value="What is your First toy name?">What is your First toy name?</option>
+                            <option value="What is your first Mobile modal?">What is your first Mobile modal?</option>
+                            <option value="What is your favourite techer?">What is your favourite techer?</option>
+                            <option value="What is your best friend name?">What is your best friend name?</option>
+                            <option value="Who is your favourite teacher?">Who is your favourite techer?</option>
+                            <option value="What is your gift?">what is your first gift?</option>
+                        </select></div>
+                    <div class="col">
+                        <input type="text" name="secans" class="form-control" required placeholder="Your answer">
+                    </div>
+                </div><br>
+
+                <div align="center">
                     <div class="g-recaptcha" data-sitekey="6LfX7nQUAAAAACZdSxmsMfk765RdBf65BEh9kHx9"  class="col-md-5 col-xs-10 col-sm-9"></div>
                   </div>  <br>
 

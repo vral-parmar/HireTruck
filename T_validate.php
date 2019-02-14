@@ -20,22 +20,23 @@ if ($result['success'] == 1) //check if result is sucess or not??
     if($_POST){
         $company_name=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_company']));
         $owner_name=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_owner']));
-      //  $owner_name=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_owner']));
+
         $carrier_mail=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_mail']));
         $carrier_number=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_number']));
         $carrier_alt_number=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_alt_num']));
         $no_vehicle=mysqli_real_escape_string($con, htmlspecialchars($_POST['no_vehicle']));
         $address=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_address']));
         $service=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_service']));
-
+        $sec_type =mysqli_real_escape_string($con, htmlspecialchars($_POST['secq']));
+        $sec_ans = mysqli_real_escape_string($con, htmlspecialchars($_POST['secans']));
         $carrier_mail = strtolower($carrier_mail);
 
         //password creation code....
         $num=md5(rand(1,100000));
         $finalpass=substr($num,-8);
 
-        $query="INSERT INTO `user_t`( T_id,T_org_name, T_owner_name, T_mail, T_address, T_image, T_number, T_anumber, T_no_vehicle, T_service,T_password,T_status,T_active)
-    		VALUES (null,'$company_name','$owner_name','$carrier_mail','$address','1','$carrier_number','$carrier_alt_number','$no_vehicle','$service','$finalpass','0','0')";
+        $query="INSERT INTO `user_t`( T_id,T_org_name, T_owner_name, T_mail, T_address, T_number, T_anumber, T_no_vehicle, T_service,T_password,T_security_question,T_security_answer,T_status,T_active)
+    		VALUES (null,'$company_name','$owner_name','$carrier_mail','$address','$carrier_number','$carrier_alt_number','$no_vehicle','$service','$finalpass','$sec_type','$sec_ans','0','0')";
 
         $sql=mysqli_query($con,$query) or die(mysqli_error($con));
         if($sql){
@@ -44,7 +45,7 @@ if ($result['success'] == 1) //check if result is sucess or not??
             $eemail = $carrier_mail;
             $password=$finalpass;
             otp($eemail,$eename,$password);
-            header( "refresh:50;url=login.php" );
+            header( "refresh:3;url=login.php" );
         }
         else{
             echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong>Error in Query!!</h4></div> </div>";

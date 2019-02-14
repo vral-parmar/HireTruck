@@ -11,10 +11,10 @@
     body{
      height: 100%;
      width:100%;
-     background-image: url("Image/shi.jpg");
+     background-image: url("Image/trk.jpg");
      }
     </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"/>
     <link rel="stylesheet" type="text/css" href="css/logreg.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
@@ -30,26 +30,46 @@
                     <h2 align="center">SHIPPER REGISTRATION</h2>
                       <hr><br>
                     <div class="form-group ">
-                      <label for="fname">First Name</label>
+                      <label for="fname">First Name *</label>
                         <input type="name" name="SHIPPER_fname" class="form-control" placeholder="Enter your First Name" autofocus required>
                     </div>
                     <div class="form-group ">
-                      <label for="lname">Last Name</label>
+                      <label for="lname">Last Name *</label>
                         <input type="name" name="SHIPPER_lname" class="form-control"  placeholder="Enter your Last name" required>
                     </div>
                     <div class="form-group">
-                      <label for="lemail">Email</label>
+                      <label for="lemail">Email *</label>
                         <input type="email" name="SHIPPER_mail" class="form-control" placeholder="Enter your Email ID" maxlength="50" required>
                     </div>
                     <div class="form-group">
-                      <label for="mnum">Mobile Number</label>
+                      <label for="mnum">Mobile Number *</label>
                         <input type="tel" pattern=".{10}" name="SHIPPER_number" class="form-control" minlength="10" placeholder="777*******" title="Must Be an Indian Number Minimum length 10" required>
                     </div>
                     <div class="form-group">
-                      <label for="textarea">Address</label>
+                      <label for="textarea">Address *</label>
                         <textarea name="SHIPPER_address" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
                     </div>
-                    <div align="center">
+                <div><label for="secq">Security question *</label></div>
+                <div class="row form-group">
+                    <div class="col">
+                        <select class="dropdown btn btn-block form-control" name="secq" required>
+                            <option value="#" disabled selected >Select any of one</option>
+                            <option value="What is your favourite food?">What is your favourite food?</option>
+                            <option value="What is your favourite place?">What is your favourite place?</option>
+                            <option value="What is your First toy name?">What is your First toy name?</option>
+                            <option value="What is your first Mobile modal?">What is your first Mobile modal?</option>
+                            <option value="What is your favourite techer?">What is your favourite techer?</option>
+                            <option value="What is your best friend name?">What is your best friend name?</option>
+                            <option value="Who is your favourite teacher?">Who is your favourite techer?</option>
+                            <option value="What is your gift?">what is your first gift?</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="secans" required placeholder="Your answer">
+                    </div>
+                </div>
+
+                <div align="center">
                     <div class="g-recaptcha" data-sitekey="6LfX7nQUAAAAACZdSxmsMfk765RdBf65BEh9kHx9"></div>
                   </div>  <br>
 
