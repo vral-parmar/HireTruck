@@ -34,7 +34,11 @@
     </head>
     <body>
         <?php
-require('Nav.php');
+        session_start();
+        require('Nav.php');
+        if(isset($_SESSION['mail'])){
+            //echo "Welcome: ".$_SESSION['mail'];
+        }
 ?>
         
         
