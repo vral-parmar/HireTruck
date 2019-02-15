@@ -1,3 +1,4 @@
+<?php //session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,8 +35,7 @@
     </head>
     <body>
         <?php
-        session_start();
-        require('Nav.php');
+        require_once('Nav.php');
         if(isset($_SESSION['mail'])){
             //echo "Welcome: ".$_SESSION['mail'];
         }

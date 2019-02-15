@@ -1,4 +1,4 @@
-<?php session_start(); ?><html>
+<html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"/>
@@ -34,8 +34,9 @@
                       header("refresh:4;url=login.php");
                   } else {
 
-                      //session_start();
+                      session_start();
                       $_SESSION['mail'] = $mail;
+                      $_SESSION['user_type'] = $user;
                       header('location:Home.php');
                       //echo "<h3>welcome</h3>" . $mail;
                   }
