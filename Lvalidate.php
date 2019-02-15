@@ -34,7 +34,7 @@
                       header("refresh:4;url=login.php");
                   } else {
 
-                      session_start();
+                      //session_start();
                       $_SESSION['mail'] = $mail;
                       header('location:Home.php');
                       //echo "<h3>welcome</h3>" . $mail;

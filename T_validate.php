@@ -52,7 +52,8 @@ if ($result['success'] == 1) //check if result is sucess or not??
         }
         $con->close();
     }
-  }else{
+  }
+  else{
     echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong>it seems You are forgot The reCAPTCHA!!</h4></div> </div>";
     header( "refresh:3;url=Transport_registration.php" );
   }
