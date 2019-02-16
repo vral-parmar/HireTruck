@@ -27,7 +27,7 @@
               // shipper login error pls check below lines of code...
               if ($user == "Shipper") {
                   $query = "SELECT S_mail,S_password FROM user_s WHERE S_mail='$mail' and S_password='$pswd' AND S_status=0 AND S_active=0 ";
-                  $sql = mysqli_query($con, $query) or die("Error in mail query");
+                  $sql = mysqli_query($con, $query) or die(mysqli_error($query));
                   $count = mysqli_num_rows($sql);
                   if ($count == 0) {
                       echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong> Wrong Credential Please check Email & pasword Which you have been Used!! & contact admin if you have been Blocked!!</h4></div> </div>";
@@ -37,7 +37,7 @@
                       session_start();
                       $_SESSION['mail'] = $mail;
                       $_SESSION['user_type'] = $user;
-                      header('location:Home.php');
+                      header('location:home.php');
                       //echo "<h3>welcome</h3>" . $mail;
                   }
               }
@@ -46,15 +46,15 @@
 
 			  elseif ($user == "Transport") {
                   $query1 = "SELECT T_mail,T_password FROM user_t WHERE T_mail='$mail' and T_password='$pswd' AND T_status=0 AND T_active=0";
-                  $sql1 = mysqli_query($con, $query1) or die("Error in Query111");
+                  $sql1 = mysqli_query($con, $query1) or die(mysqli_error($query));
                   $count = mysqli_num_rows($sql1);
                   if ($count == 0) {
                       echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong>Wrong Credential Please check Email & pasword Which you have been Used!! or contact admin if you have been Blocked!!</h4></div> </div>";
                       header("refresh:4;url=login.php");
                   } else {
                       $_SESSION['mail'] = $mail;
-                      //echo "<h3>welcome</h3>" . $mail;
-                      header("location:Home.php");
+                      $_SESSION['user_type'] = $user;
+                      header("location:home.php");
                   }
               }
           }
