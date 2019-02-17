@@ -478,7 +478,7 @@
                 </div>
             </div>
         </footer>
-        <!--================End Footer Area =================-->  
+        <!--================End Footer Area =================-->
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery-3.2.1.min.js"></script>

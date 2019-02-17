@@ -37,7 +37,7 @@
                       session_start();
                       $_SESSION['mail'] = $mail;
                       $_SESSION['user_type'] = $user;
-                      header('location:home.php');
+                      header('location:index.php');
                       //echo "<h3>welcome</h3>" . $mail;
                   }
               }
@@ -54,7 +54,7 @@
                   } else {
                       $_SESSION['mail'] = $mail;
                       $_SESSION['user_type'] = $user;
-                      header("location:home.php");
+                      header("location:index.php");
                   }
               }
           }
