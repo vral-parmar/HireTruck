@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link rel="icon" href="https://i.ibb.co/tDkQbmq/Logo.png" type="image/x-icon" />
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Hire Truck</title>
@@ -14,15 +14,15 @@
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        
+
         <!-- Rev slider css -->
         <link href="vendors/revolution/css/settings.css" rel="stylesheet">
         <link href="vendors/revolution/css/layers.css" rel="stylesheet">
         <link href="vendors/revolution/css/navigation.css" rel="stylesheet">
-        
+
         <!-- Extra plugin css -->
         <link href="vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
-        
+
         <link href="css/style.css" rel="stylesheet">
         <link href="css/responsive.css" rel="stylesheet">
 
@@ -40,8 +40,8 @@
             //echo "Welcome: ".$_SESSION['mail'];
         }
 ?>
-        
-        
+
+
         <!--================Slider Area =================-->
         <section class="main_slider_area">
             <div id="main_slider" class="rev_slider" data-version="5.3.1.6">
@@ -49,50 +49,50 @@
                     <li data-index="rs-1587" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0"  data-saveperformance="off"  data-title="Creative" data-param1="01" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- LAYER NR. 1 -->
                         <div class="slider_text_box">
-                            <div class="tp-caption tp-resizeme first_text" 
-                            data-x="['left','left','left','left','15','center']" 
-                            data-hoffset="['0','80','80','0']" 
-                            data-y="['top','top','top','top']" 
-                            data-voffset="['400','400','400','250','180','180']" 
+                            <div class="tp-caption tp-resizeme first_text"
+                            data-x="['left','left','left','left','15','center']"
+                            data-hoffset="['0','80','80','0']"
+                            data-y="['top','top','top','top']"
+                            data-voffset="['400','400','400','250','180','180']"
                             data-fontsize="['72','72','72','50','50','30']"
                             data-lineheight="['82','82','82','62','62','42']"
                             data-width="['none']"
                             data-height="none"
                             data-whitespace="nowrape"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                             data-textAlign="['left','left','left','left','left','center']">Convenience <br /> Just a click away!!</div>
-                            
-                            <div class="tp-caption tp-resizeme secand_text" 
-                                data-x="['left','left','left','left','15','center']" 
-                                data-hoffset="['0','80','80','0']" 
-                                data-y="['top','top','top','top']" 
-                                data-voffset="['575','575','575','400','320','300']"  
+
+                            <div class="tp-caption tp-resizeme secand_text"
+                                data-x="['left','left','left','left','15','center']"
+                                data-hoffset="['0','80','80','0']"
+                                data-y="['top','top','top','top']"
+                                data-voffset="['575','575','575','400','320','300']"
                                 data-fontsize="['24','24','24','18','16','16']"
                                 data-lineheight="['36','36','36','26','26','26']"
                                 data-width="['none','none','none','none','none']"
                                 data-height="none"
                                 data-whitespace="nowrape"
-                                data-type="text" 
+                                data-type="text"
                                 data-responsive_offset="on"
                                 data-transform_idle="o:1;"
                                 data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                                 data-textAlign="['left','left','left','left','left','center']">For Shippers And Carriers As well
                             </div>
 
-                            <div class="tp-caption tp-resizeme single_img" 
-                            data-x="['right','right','right','right','right','right']" 
-                            data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" 
-                            data-voffset="['180','180','180','180','0']" 
+                            <div class="tp-caption tp-resizeme single_img"
+                            data-x="['right','right','right','right','right','right']"
+                            data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']"
+                            data-voffset="['180','180','180','180','0']"
                             data-fontsize="['65','65','60','40','25']"
                             data-lineheight="['75','75','75','50','35']"
                             data-width="['485','485','485','485','485']"
                             data-height="none"
                             data-whitespace="normal"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                             data-textAlign="['left','left','left','left','left','center']">
                                 <img src="images/home-slider/slider1.png" alt="">
@@ -105,50 +105,50 @@
 
                         <!-- LAYER NR. 1 -->
                         <div class="slider_text_box">
-                            <div class="tp-caption tp-resizeme first_text" 
-                            data-x="['left','left','left','left','15','center']" 
-                            data-hoffset="['0','80','80','0']" 
-                            data-y="['top','top','top','top']" 
-                            data-voffset="['400','400','400','250','180','180']" 
+                            <div class="tp-caption tp-resizeme first_text"
+                            data-x="['left','left','left','left','15','center']"
+                            data-hoffset="['0','80','80','0']"
+                            data-y="['top','top','top','top']"
+                            data-voffset="['400','400','400','250','180','180']"
                             data-fontsize="['72','72','72','50','50','30']"
                             data-lineheight="['82','82','82','62','62','42']"
                             data-width="['none']"
                             data-height="none"
                             data-whitespace="nowrape"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                             data-textAlign="['left','left','left','left','left','center']">Just Advertise <br/> Your Requirements</div>
-                            
-                            <div class="tp-caption tp-resizeme secand_text" 
-                                data-x="['left','left','left','left','15','center']" 
-                                data-hoffset="['0','80','80','0']" 
-                                data-y="['top','top','top','top']" 
-                                data-voffset="['575','575','575','400','320','300']"  
+
+                            <div class="tp-caption tp-resizeme secand_text"
+                                data-x="['left','left','left','left','15','center']"
+                                data-hoffset="['0','80','80','0']"
+                                data-y="['top','top','top','top']"
+                                data-voffset="['575','575','575','400','320','300']"
                                 data-fontsize="['24','24','24','18','16','16']"
                                 data-lineheight="['36','36','36','26','26','26']"
                                 data-width="['none','none','none','none','none']"
                                 data-height="none"
                                 data-whitespace="nowrape"
-                                data-type="text" 
+                                data-type="text"
                                 data-responsive_offset="on"
                                 data-transform_idle="o:1;"
                                 data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                                 data-textAlign="['left','left','left','left','left','center']">Find Reliable Transport Companies
                             </div>
-                            
-                            <div class="tp-caption tp-resizeme single_img" 
-                            data-x="['right','right','right','right','right','right']" 
-                            data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" 
-                            data-voffset="['180','180','180','180','0']" 
+
+                            <div class="tp-caption tp-resizeme single_img"
+                            data-x="['right','right','right','right','right','right']"
+                            data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']"
+                            data-voffset="['180','180','180','180','0']"
                             data-fontsize="['65','65','60','40','25']"
                             data-lineheight="['75','75','75','50','35']"
                             data-width="['485','485','485','485','485']"
                             data-height="none"
                             data-whitespace="normal"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                             data-textAlign="['left','left','left','left','left','center']">
                                 <img src="images/home-slider/slider2.png" alt="">
@@ -161,50 +161,50 @@
 
                         <!-- LAYER NR. 1 -->
                         <div class="slider_text_box">
-                            <div class="tp-caption tp-resizeme first_text" 
-                            data-x="['left','left','left','left','15','center']" 
-                            data-hoffset="['0','80','80','0']" 
-                            data-y="['top','top','top','top']" 
-                            data-voffset="['400','400','400','250','180','180']" 
+                            <div class="tp-caption tp-resizeme first_text"
+                            data-x="['left','left','left','left','15','center']"
+                            data-hoffset="['0','80','80','0']"
+                            data-y="['top','top','top','top']"
+                            data-voffset="['400','400','400','250','180','180']"
                             data-fontsize="['72','72','72','50','50','30']"
                             data-lineheight="['82','82','82','62','62','42']"
                             data-width="['none']"
                             data-height="none"
                             data-whitespace="nowrape"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                             data-textAlign="['left','left','left','left','left','center']">Reaching Out <br/> Customers now Easy</div>
-                            
-                            <div class="tp-caption tp-resizeme secand_text" 
-                                data-x="['left','left','left','left','15','center']" 
-                                data-hoffset="['0','80','80','0']" 
-                                data-y="['top','top','top','top']" 
-                                data-voffset="['575','575','575','400','320','300']"  
+
+                            <div class="tp-caption tp-resizeme secand_text"
+                                data-x="['left','left','left','left','15','center']"
+                                data-hoffset="['0','80','80','0']"
+                                data-y="['top','top','top','top']"
+                                data-voffset="['575','575','575','400','320','300']"
                                 data-fontsize="['24','24','24','18','16','16']"
                                 data-lineheight="['36','36','36','26','26','26']"
                                 data-width="['none','none','none','none','none']"
                                 data-height="none"
                                 data-whitespace="nowrape"
-                                data-type="text" 
+                                data-type="text"
                                 data-responsive_offset="on"
                                 data-transform_idle="o:1;"
                                 data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                                 data-textAlign="['left','left','left','left','left','center']"> Register Your Tansport Company
                             </div>
-                            
-                            <div class="tp-caption tp-resizeme single_img" 
-                            data-x="['right','right','right','right','right','right']" 
-                            data-hoffset="['0','0','0','0']" 
-                            data-y="['top','top','top','top']" 
-                            data-voffset="['180','180','180','180','0']" 
+
+                            <div class="tp-caption tp-resizeme single_img"
+                            data-x="['right','right','right','right','right','right']"
+                            data-hoffset="['0','0','0','0']"
+                            data-y="['top','top','top','top']"
+                            data-voffset="['180','180','180','180','0']"
                             data-fontsize="['65','65','60','40','25']"
                             data-lineheight="['75','75','75','50','35']"
                             data-width="['485','485','485','485','485']"
                             data-height="none"
                             data-whitespace="normal"
-                            data-type="text" 
-                            data-responsive_offset="on" 
+                            data-type="text"
+                            data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                             data-textAlign="['left','left','left','left','left','center']">
                                 <img src="images/home-slider/slider3.png" alt="">
@@ -215,7 +215,7 @@
             </div>
         </section>
         <!--================End Slider Area =================-->
-        
+
         <!--================Feature Area =================-->
         <section class="feature_area">
             <div class="container">
@@ -259,7 +259,7 @@
             </div>
         </section>
         <!--================End Feature Area =================-->
-        
+
         <!--================The best slider Area =================-->
         <section class="best_3d_area">
             <div class="left_3d">
@@ -316,7 +316,7 @@
             </div>
         </section>
         <!--================End The best slider Area =================-->
-        
+
         <!--================Team People Area =================-->
         <section class="team_people_area">
             <div class="container-fluid">
@@ -368,7 +368,7 @@
             </div>
         </section>
         <!--================End Team People Area =================-->
-        
+
         <!--================Get in Touch Area =================-->
         <section class="get_in_touch_area">
             <div class="container">
@@ -408,7 +408,7 @@
             </div>
         </section>
         <!--================End Get in Touch Area =================-->
-        
+
         <!--================Map Area =================-->
         <section class="world_map_area p_100">
             <div class="container">
@@ -423,7 +423,7 @@
             </div>
         </section>
         <!--================End Map Area =================-->
-        
+
         <!--================Footer Area =================-->
         <footer class="footr_area">
             <div class="footer_widget_area">
@@ -474,15 +474,12 @@
                         <h5> This Site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by HireTruck
 </h5>
                     </div>
-                   
+
                 </div>
             </div>
         </footer>
-        <!--================End Footer Area =================-->
-        
-        
-        
-        
+        <!--================End Footer Area =================-->  
+
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="js/jquery-3.2.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -499,13 +496,13 @@
         <script src="vendors/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
         <!-- Extra plugin css -->
         <script src="vendors/counterup/jquery.waypoints.min.js"></script>
-        <script src="vendors/counterup/jquery.counterup.min.js"></script> 
+        <script src="vendors/counterup/jquery.counterup.min.js"></script>
         <script src="vendors/counterup/apear.js"></script>
         <script src="vendors/counterup/countto.js"></script>
         <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
         <script src="vendors/magnify-popup/jquery.magnific-popup.min.js"></script>
         <script src="js/smoothscroll.js"></script>
-        
+
         <script src="js/theme.js"></script>
     </body>
 </html>
