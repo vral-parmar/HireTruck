@@ -46,12 +46,13 @@
 
 			  elseif ($user == "Transport") {
                   $query1 = "SELECT T_mail,T_password FROM user_t WHERE T_mail='$mail' and T_password='$pswd' AND T_status=0 AND T_active=0";
-                  $sql1 = mysqli_query($con, $query1) or die(mysqli_error($query));
+                  $sql1 = mysqli_query($con, $query1) or die(mysqli_error($query1));
                   $count = mysqli_num_rows($sql1);
                   if ($count == 0) {
                       echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong>Wrong Credential Please check Email & pasword Which you have been Used!! or contact admin if you have been Blocked!!</h4></div> </div>";
                       header("refresh:4;url=login.php");
                   } else {
+											session_start();
                       $_SESSION['mail'] = $mail;
                       $_SESSION['user_type'] = $user;
                       header("location:index.php");
