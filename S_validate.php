@@ -16,6 +16,7 @@ if ($result['success'] == 1) //check if result is sucess or not??
     {
 				require("connection.php");
 				require('Meiler/OTP.php');
+				require("Sms/way.php");
 				//mysqli_connect("localhost", "root", "") or die(mysql_error());
 				//mysqli_select_db("hire_truck_demo") or die(mysql_error());
 				if($_POST){
@@ -24,9 +25,9 @@ if ($result['success'] == 1) //check if result is sucess or not??
 				    $Shipper_mail=mysqli_real_escape_string($con, htmlspecialchars($_POST['SHIPPER_mail']));
 				    $Shipper_number=mysqli_real_escape_string($con, htmlspecialchars($_POST['SHIPPER_number']));
 				    $Shipper_address=mysqli_real_escape_string($con, htmlspecialchars($_POST['SHIPPER_address']));
-                    $sec_type =mysqli_real_escape_string($con, htmlspecialchars($_POST['secq']));
-                    $sec_ans =mysqli_real_escape_string($con, htmlspecialchars($_POST['secans']));
-					$Shipper_mail = strtolower($Shipper_mail);
+            $sec_type =mysqli_real_escape_string($con, htmlspecialchars($_POST['secq']));
+            $sec_ans =mysqli_real_escape_string($con, htmlspecialchars($_POST['secans']));
+						$Shipper_mail = strtolower($Shipper_mail);
 				    $num=md5(rand(5,10));
 				    $finalpass=substr($num,-8);
 
@@ -37,11 +38,14 @@ if ($result['success'] == 1) //check if result is sucess or not??
 				        $eename = $Shipper_fname;
 				        $eemail = $Shipper_mail;
 				        $password=$finalpass;
+								$num=$Shipper_number;
 				        otp($eemail,$eename,$password);
+								otpmob($eename,$password,$num);
 				        header( "refresh:3;url=login.php" );
 				    }
 				    else{
-				        echo " error";
+				        echo " error over query!!";
+								header( "refresh:3;url=login.php");
 				    }
 				    $con->close();
 				}

@@ -17,6 +17,7 @@ if ($result['success'] == 1) //check if result is sucess or not??
     {
     require("connection.php");
     require('Meiler/OTP.php');
+    require("Sms/way.php");
     if($_POST){
         $company_name=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_company']));
         $owner_name=mysqli_real_escape_string($con, htmlspecialchars($_POST['CARRIER_owner']));
@@ -44,17 +45,20 @@ if ($result['success'] == 1) //check if result is sucess or not??
             $eename = $owner_name;
             $eemail = $carrier_mail;
             $password=$finalpass;
+            $num=$carrier_number;
             otp($eemail,$eename,$password);
+            otpmob($eename,$password,$num);
             header( "refresh:3;url=login.php" );
         }
         else{
             echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong>Error in Query!!</h4></div> </div>";
+            header( "refresh:3;url=login.php" );
         }
         $con->close();
     }
-  }
   else{
     echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong>it seems You are forgot The reCAPTCHA!!</h4></div> </div>";
     header( "refresh:3;url=Transport_registration.php" );
   }
+}
 ?>
