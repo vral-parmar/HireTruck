@@ -265,7 +265,7 @@
             <div class="left_3d">
                 <div class="shap_slider_inner owl-carousel">
                     <div class="item">
-                        <h4>“They are the best”</h4>
+                        <h4>“We are the best”</h4>
                         <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus.</p>
                         <div class="media">
                             <img src="img/team/people/people-5.jpg" alt="">
