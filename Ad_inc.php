@@ -12,9 +12,10 @@ require("Session.php");
   $order_date=$_POST['order_date'];
   $wheel=$_POST['wheel'];
   $sub=$_POST['sub_type'];
+  $vehicle_type=$wheel.$sub;
   $extra=$_POST['extra_req'];
   $DATE=date("Y-m-d");
-$query="INSERT INTO `ad`(`AD_id`, `S_id`, `source`, `no_destination`, `luggage`, `type_luggage`, `weight`, `price_budget`, `status`, `order_date`, `vehicle_type`, `add_requirement`,`ad_date`) VALUES (Null,(SELECT S_id FROM `user_s` WHERE S_mail='$username'),'$source','$dest','$luggage','$type','$weight','$budget','0','$order_date','$wheel','$extra','$DATE')";
+$query="INSERT INTO `ad`(`AD_id`, `S_id`, `source`, `no_destination`, `luggage`, `type_luggage`, `weight`, `price_budget`, `status`, `order_date`, `vehicle_type`, `add_requirement`,`ad_date`) VALUES (Null,(SELECT S_id FROM `user_s` WHERE S_mail='$username'),'$source','$dest','$luggage','$type','$weight','$budget','0','$order_date','$vehicle_type','$extra','$DATE')";
 $result=mysqli_query($con,$query) or die(mysqli_error($con));
 if($result){
 {
