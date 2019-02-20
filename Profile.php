@@ -222,19 +222,50 @@ require_once("Session.php");
                       <input type="Button" class="form-group btn btn-success btn-block" name="edit" value="Edit ad"/>
                     </div>
                     <div class="col">
-                      <input type="button" class="form-group btn btn-success btn-block" name="Delete_ad" value="Delete ad"/>
+                      <input type="button" class="form-group btn btn-success btn-block" data-toggle="modal" data-target="#myModaldel" name="Delete_ad" value="Delete ad"/>
                     </div>
                     <div class="col">
                       <input type="button" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
                     </div>
                   </div>
                 </div>
-
                 </div>
               </div>
             </div>
           </div>
       <br>
+      <div class="container">
+  <!-- The Modal -->
+  <div class="modal fade" id="myModaldel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Are you Sure?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you Sure you Want to Delete this Advertizement?
+        </div><div class="container">
+        <div class="row">
+        	<div class="col">
+     			<button type="button" class="btn btn-danger btn-block" data-dismiss="modal">No</button>
+            </div>
+     		<div class="col">
+          		<a href="Delete_ad.php" type="button" class="btn btn-success btn-block" data-dismiss="modal">Yes</a>
+            </div>
+        </div>
+    </div>
+   <div class="modal-footer">
+  </div>
+ </div>
+</div>
+</div>
+</div>
+
 <?php } } //end of shipper condition
 if($_SESSION['user_type']=="Transport"){ //transport condition started
 ?>        <!--================Banner Area =================-->
