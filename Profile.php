@@ -246,14 +246,17 @@ require_once("Session.php");
         <div class="modal-body">
           Are you Sure you Want to Delete this Advertizement?
         </div><div class="container">
+          <form class="form-group" action="Del_ad.php" method="post">
+            <input type="hidden" name="ad_id" value="<?php echo $re[0]; ?>">
         <div class="row">
         	<div class="col">
      			<button type="button" class="btn btn-danger btn-block" data-dismiss="modal">No</button>
             </div>
      		<div class="col">
-          		<a href="Delete_ad.php" type="button" class="btn btn-success btn-block" data-dismiss="modal">Yes</a>
+          		<input type="submit" class="btn btn-success btn-block" value="Yes"/>
             </div>
         </div>
+      </form>
     </div>
    <div class="modal-footer">
   </div>
