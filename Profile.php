@@ -60,11 +60,9 @@ require_once("Session.php");
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
-
                                   <?php
                                   $qry="SELECT * FROM `user_s` WHERE S_mail='$email'";
                                   $res=mysqli_query($con,$qry) or die(mysqli_error($con));
-
                                     if(mysqli_num_rows($res)>0)
                                     {
                                       while(  $retrive=mysqli_fetch_array($res))
@@ -77,13 +75,11 @@ require_once("Session.php");
                                     <h2><?php echo $fname." ".$lname; ?> </h2><br>
                                     <p><strong>Email:</strong> <?php echo $email; ?> </p>
                                     <p><strong>Mobile Number: </strong>  <?php echo $mno; ?> </p>
-
                                     </p>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4 text-center">
                                     <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive">
                                 </div><!--/col-->
-
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong> 20,7K </strong></h2>
                                     <p><small>Add </small></p>
@@ -91,13 +87,11 @@ require_once("Session.php");
                                         <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
-
                                                     <!-- Modal Header -->
                                                     <div class="modal-header bg-primary">
                                                         <h4 class="modal-title text-light">HireTruck Ad Post</h4>
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                     </div>
-
                                                     <!-- Modal body -->
                                                     <div class="card-body">
                                                         <h4 class="card-title">Post your AD for transfer your Luggage</h4>
@@ -132,7 +126,7 @@ require_once("Session.php");
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Date of Arrival </label>
-                                                                    <input type="date" name="order_date" class="form-control" YYYY-mm-dd checked required/>
+                                                                    <input type="date" name="order_date" class="form-control" YYYY-mm-dd required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Type of Vehicle</label>
@@ -196,7 +190,7 @@ require_once("Session.php");
   <!-- Modal -->
   <!---Edit Profile start --->
     <div class="modal fade" id="Edit_prof" role="dialog">
-  <form class="form-group">
+  <form class="form-group" action="Profile_up.php" method="post">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-info">
@@ -219,7 +213,7 @@ require_once("Session.php");
         </div><?php   }
         }?>
         <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-success">Submit</button>
         </div>
       </div>
@@ -232,7 +226,7 @@ require_once("Session.php");
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>43</strong></h2>
                                     <p><small>Snippets</small></p>
-                                    <a type="button" href="E_receipt.php" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-receipts</a>
+                                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </div><!--/panel-body-->
@@ -241,49 +235,7 @@ require_once("Session.php");
             </div>
         </div>
         <br>
-        /<?php
-        $ss=$_SESSION['mail'];
-        $query="SELECT * FROM ad  WHERE S_id=(SELECT S_id FROM user_s WHERE S_mail='$ss') AND status='0'";
-        $sql=mysqli_query($con,$query) or die(mysqli_error($con));
-        //print_r($sql);
-        //echo mysqli_num_rows($sql);
-        while($re=mysqli_fetch_array($sql)){
-        ?>
-        <div class="container card">
-          <div class="row well well-lg">
-            <div class="container"><br>
-              <h1 class="text-center">Ad Posted By you recently<h1>
-            </div>
-          </div>
-            <div class="container-fluid border">
-              <div class="row">
-                <div class="col-sm-6"><p>Source of Luggage : </p> <p> <?php  print $re[2];?></p>
-                  <p>Type of Luggage : </p> <p><?php  print $re[4];?>  </p>
-                  <p>Sub type of luggage : </p> <p> <?php  print $re[5];?>  </p>
-                  <p>Order Date of Luggage : </p> <p> <?php  print $re[9];?>  </p>
-                  <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[11];?>  </p></div>
-                <div class="col-sm-6"><p>Destination or Number of Drop Point : </p> <p><?php  print $re[3];?>  </p>
-                  <p>Waight of Luggage : </p> <p> <?php  print $re[6];?>  </p>
-                  <p>Approximate Prize for Transfer your Luggage : </p> <p> <?php  print $re[7];?>  </p>
-                  <p>Vehicle Type : </p> <p> <?php  print $re[10];?></p><br>
-                  <div class="row">
-                    <div class="col">
-                      <input type="Button" class="form-group btn btn-success btn-block" name="edit" value="Edit ad"/>
-                    </div>
-                    <div class="col">
 
-                      <input type="button" class="form-group btn btn-success btn-block" data-toggle="modal" data-target="#myModaldel" name="Delete_ad" value="Delete ad"/>
-                    </div>
-                    <div class="col">
-                      <input type="button" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      <br>
       <div class="container">
   <!-- The Modal -->
   <div class="modal fade" id="myModaldel">
@@ -320,7 +272,7 @@ require_once("Session.php");
 </div>
 
 <!---========================================    Saprate LOC   ================================================================ -->
-<?php } } //end of shipper condition
+<?php  } //end of shipper condition
 if($_SESSION['user_type']=="Transport"){ //transport condition started
 ?>        <!--================Banner Area =================-->
         <section class="banner_area">

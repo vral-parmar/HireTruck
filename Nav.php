@@ -50,7 +50,6 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="Ad_view.php">Advertisement</a></li>
               <?php if(@isset($_SESSION['mail'])){ ?>
                 <li class="nav-item"><a class="nav-link" href="Ad_view.php">Advertisement</a></li> <?php }?>
 
