@@ -50,7 +50,7 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="ad.php">Advertisement</a></li>
+                <li class="nav-item"><a class="nav-link" href="Ad_view.php">Advertisement</a></li>
                 <?php if(@!$_SESSION['mail'])  {//hide login and registration if user is login ?>
                     <li class="nav-item dropdown submenu">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
