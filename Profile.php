@@ -70,20 +70,14 @@ require_once("Session.php");
                                       while(  $retrive=mysqli_fetch_array($res))
                                       {
                                         $row=$retrive;
-                                        $fname=$row['S_fname'];
-                                         $lname=$row['S_lname'];
+                                        $fname=ucwords($row['S_fname']);
+                                         $lname=ucwords($row['S_lname']);
                                          $mno=$row['S_mnumber'];
-
                                   ?>
-                                    <h2><?php echo $fname." ".$lname; ?> </h2>
+                                    <h2><?php echo $fname." ".$lname; ?> </h2><br>
                                     <p><strong>Email:</strong> <?php echo $email; ?> </p>
-                                    <p><strong>Mobile Number: </strong> <?php echo $mno; ?> </p>
-<?php   }
-}?>
-                                        <span class="label label-info tags">html5</span>
-                                        <span class="label label-info tags">css3</span>
-                                        <span class="label label-info tags">jquery</span>
-                                        <span class="label label-info tags">bootstrap3</span>
+                                    <p><strong>Mobile Number: </strong>  <?php echo $mno; ?> </p>
+
                                     </p>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4 text-center">
@@ -197,7 +191,43 @@ require_once("Session.php");
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>245</strong></h2>
                                     <p><small>Following</small></p>
-                                    <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+                                    <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
+                                    <div class="container border">
+  <!-- Modal -->
+  <!---Edit Profile start --->
+    <div class="modal fade" id="Edit_prof" role="dialog">
+  <form class="form-group">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-info">
+          <h4 class="modal-title">Edit your Profile</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <div>
+        <label for="fname">First Name *</label>
+          <input type="name" name="SHIPPER_fname" class="form-control" placeholder="Enter your First Name" autofocus required value="<?php echo $fname ?>"><br>
+        </div>
+        <div>
+        <label for="fname">Last Name *</label>
+          <input type="name" name="SHIPPER_lname" class="form-control" placeholder="Enter your First Name" autofocus required value="<?php echo $lname; ?>"><br>
+        </div>
+        <div>
+        <label for="fname">Mobile *</label>
+          <input type="name" name="SHIPPER_number" class="form-control" placeholder="Enter your First Name" autofocus required value="<?php echo $mno; ?>"><br>
+        </div>
+        </div><?php   }
+        }?>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<!--Edit Profile end -->
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>43</strong></h2>
@@ -241,28 +271,19 @@ require_once("Session.php");
                       <input type="Button" class="form-group btn btn-success btn-block" name="edit" value="Edit ad"/>
                     </div>
                     <div class="col">
-<<<<<<< HEAD
-                      <input type="button" class="form-group btn btn-success btn-block" name="Delete_ad" value="Delete ad"/>
-=======
+
                       <input type="button" class="form-group btn btn-success btn-block" data-toggle="modal" data-target="#myModaldel" name="Delete_ad" value="Delete ad"/>
->>>>>>> d35a26380cbaa9aeaf46077bba01175e201e1528
                     </div>
                     <div class="col">
                       <input type="button" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
                     </div>
                   </div>
                 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> d35a26380cbaa9aeaf46077bba01175e201e1528
                 </div>
               </div>
             </div>
           </div>
       <br>
-<<<<<<< HEAD
-=======
       <div class="container">
   <!-- The Modal -->
   <div class="modal fade" id="myModaldel">
@@ -298,7 +319,7 @@ require_once("Session.php");
 </div>
 </div>
 
->>>>>>> d35a26380cbaa9aeaf46077bba01175e201e1528
+<!---========================================    Saprate LOC   ================================================================ -->
 <?php } } //end of shipper condition
 if($_SESSION['user_type']=="Transport"){ //transport condition started
 ?>        <!--================Banner Area =================-->

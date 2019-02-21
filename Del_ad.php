@@ -6,7 +6,7 @@ $query="UPDATE ad SET status='1' WHERE AD_id = '$ad_id' AND S_id=(SELECT S_id FR
 $sql=mysqli_query($con,$query) or die(mysqli_error($con));
 
 
-if($sql==0){
+if($sql==1){
   header("location:Profile.php?Ad_Deleted");
 }
 else {
