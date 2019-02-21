@@ -14,7 +14,12 @@ require('nav.php');
    </head>
    <body>
      <div class="container">
-       <?php echo $_SESSION['mail']." ".$_SESSION['user_type']; ?>
+        <?php
+        if($_SESSION['user_type']=="Police"){
+          include('police.php');
+        }
+
+       ?>
 
 
      </div>
