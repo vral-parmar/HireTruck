@@ -38,7 +38,7 @@
 <!--================Header Menu Area =================-->
 <header class="main_menu_area">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="https://i.ibb.co/tDkQbmq/Logo.png" height="50px" width="50px" alt="HireTruck"></a>
+        <a class="navbar-brand" href="index.php"><img src="https://i.ibb.co/tDkQbmq/Logo.png" height="50px" width="50px" alt="HireTruck"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
             <span></span>
@@ -50,7 +50,12 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+<<<<<<< HEAD
                 <li class="nav-item"><a class="nav-link" href="Ad_view.php">Advertisement</a></li>
+=======
+              <?php if(@isset($_SESSION['mail'])){ ?>
+                <li class="nav-item"><a class="nav-link" href="Ad_view.php">Advertisement</a></li> <?php }?>
+>>>>>>> 784b52baf6b4a3ac7407c6fbb9142a40cbec113b
                 <?php if(@!$_SESSION['mail'])  {//hide login and registration if user is login ?>
                     <li class="nav-item dropdown submenu">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
