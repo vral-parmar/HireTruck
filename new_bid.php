@@ -1,4 +1,4 @@
-<?php  
+<?php
 require ('session.php');
 require ('Nav.php');
 ?>
@@ -31,7 +31,7 @@ body{
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
             <form class="form-container1" action="Lvalidate.php" method="post">
               <h2 align="center">NEW BID</h2><hr><br>
-                 <div class="row container"> 
+                 <div class="row container">
                   <div class="col">
                         <label><b>Trans.'s ID</b></label>
                   </div>
@@ -47,12 +47,12 @@ body{
                     <div class="col">
                        <label for="source"><b>Confirmation</b></label>
                      </div>
-                  <?php 
+                  <?php
                     $query="select * from bid_ref WHERE(SELECT B_id FROM bid WHERE Ad_id='1')";
                     $result= mysqli_query($con,$query) or die(myqli_error($con));
                     if(mysqli_num_rows($result)>0)
-                    { 
-                      while ($row=mysqli_fetch_array($result)) 
+                    {
+                      while ($row=mysqli_fetch_array($result))
                       {
                       $b_id=$row['B_id'];
                       $t_id=$row['T_id'];
@@ -63,7 +63,7 @@ body{
                     <div class="row container">
                         <div class="col">
                            <?php echo $t_id; ?>
-                        </div>  
+                        </div>
                         <div class="col">
                            <?php echo $t_org_name; ?>
                         </div>
@@ -90,7 +90,7 @@ body{
     </div>
   </div>
     <script type="text/javascript">
-    document.getElementById("Hide").onclick = function() 
+    document.getElementById("Hide").onclick = function()
     {
     this.disabled = true;
     }
