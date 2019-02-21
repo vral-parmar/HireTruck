@@ -15,6 +15,6 @@ else{
 }
 }
 elseif ($_SESSION['user_type'] == "Transport") {
-  echo "Maru coding baki 6...";
+  echo "Your Details will be updated..";
 }
 ?>
