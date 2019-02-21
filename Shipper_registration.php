@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -50,7 +47,7 @@
                     </div>
                     <div class="form-group">
                       <label for="textarea">Address *</label>
-                        <input name="SHIPPER_address" pattern="[0-9][\s][A-Z][a-z]" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required>
+                        <input name="SHIPPER_address" pattern="[0-9][\s][A-Z][\s][a-z]" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required>
                     </div>
                 <div><label for="secq">Security question *</label></div>
                 <div class="row form-group">

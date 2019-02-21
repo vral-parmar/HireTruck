@@ -57,7 +57,7 @@ while($re=mysqli_fetch_array($sql)){
                                        <input type="textbox" name="source" class="form-control" value="<?php print_r ($re[2]);?>" placeholder="Ahmedabad" required/>
                                    </div>
                                    <div class="form-group">
-                                   <label>Enter number of destination</label>
+                                   <label>Enter destination of Luggage</label>
 
                                    <textarea class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" value="<?php print($re[3]); ?>" required>
                                    </textarea>
@@ -72,14 +72,10 @@ while($re=mysqli_fetch_array($sql)){
                                        <input type="textbox" name="type_luggage" class="form-control" placeholder="Furniture, Glass, Cargo..."  value="<?php print($re[9]); ?>"required/>
                                    </div>
                                    <div class="form-group">
-                                       <label>Weight of luggage in</label>&nbsp;<bold>Kg</bold>&nbsp; <small>(Approx)</small>
+                                       <label>Goods Capacity</label>&nbsp; <small>(Approx)</small>
                                        <input type="number" name="waight" class="form-control" placeholder="Weight" min=0 value="<?php print($re[6]); ?>"required/>
                                    </div>
-                                   <div class="form-group">
-                                       <label>Your Budget</label>
-                                       <input type="number" name="budget" class="form-control" placeholder="Price" min=0 value="<?php print ($re[7]); ?>"required/>
-                                   </div>
-                                   <div class="form-group">
+                                       <div class="form-group">
                                        <label>Date of Arrival </label>
                                        <input type="date" name="order_date" class="form-control" value="<?php print ($re[9]); ?>"YYYY-mm-dd required/>
                                    </div>
@@ -110,7 +106,7 @@ while($re=mysqli_fetch_array($sql)){
                                    </div>
                                    <div>
                                        <label>Extra Requirements</label>
-                                       <input type="textbox" name="extra_req" class="form-control" placeholder="Rope, Strip, Hooks, cable etc.." value="<?php print ($re[12]); ?>"required/>
+                                       <input type="textbox" name="extra_req" class="form-control" placeholder="Rope, Strip, Hooks, cable etc.." value="<?php print ($re[11]); ?>"required/>
                                    </div>
                                    <br>
                                    <div class="container">

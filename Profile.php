@@ -1,8 +1,5 @@
 <?php
-include("connection.php");
-require_once("Session.php");
-?>
-
+require_once('Session.php');?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,18 +29,12 @@ require_once("Session.php");
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <?php
-        //  session_start();
-          $email=$_SESSION["mail"];
-        ?>
     </head>
-
     <body>
     <?php
     include ('Nav.php');
-    if($_SESSION['user_type']=="Shipper"){
-     ?>
-
+    if($_SESSION['user_type']=="Shipper"){ //shipper condition started
+    ?>
     <!--================Banner Area =================-->
         <section class="banner_area">
             <div class="container">
@@ -60,26 +51,20 @@ require_once("Session.php");
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
-                                  <?php
-                                  $qry="SELECT * FROM `user_s` WHERE S_mail='$email'";
-                                  $res=mysqli_query($con,$qry) or die(mysqli_error($con));
-                                    if(mysqli_num_rows($res)>0)
-                                    {
-                                      while(  $retrive=mysqli_fetch_array($res))
-                                      {
-                                        $row=$retrive;
-                                        $fname=ucwords($row['S_fname']);
-                                         $lname=ucwords($row['S_lname']);
-                                         $mno=$row['S_mnumber'];
-                                  ?>
-                                    <h2><?php echo $fname." ".$lname; ?> </h2><br>
-                                    <p><strong>Email:</strong> <?php echo $email; ?> </p>
-                                    <p><strong>Mobile Number: </strong>  <?php echo $mno; ?> </p>
+                                    <h2>Mike Anamendolla</h2>
+                                    <p><strong>About: </strong> Web Designer / UI. </p>
+                                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+                                    <p><strong>Skills: </strong>
+                                        <span class="label label-info tags">html5</span>
+                                        <span class="label label-info tags">css3</span>
+                                        <span class="label label-info tags">jquery</span>
+                                        <span class="label label-info tags">bootstrap3</span>
                                     </p>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4 text-center">
                                     <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive">
                                 </div><!--/col-->
+
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong> 20,7K </strong></h2>
                                     <p><small>Add </small></p>
@@ -87,11 +72,13 @@ require_once("Session.php");
                                         <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
+
                                                     <!-- Modal Header -->
                                                     <div class="modal-header bg-primary">
                                                         <h4 class="modal-title text-light">HireTruck Ad Post</h4>
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                     </div>
+
                                                     <!-- Modal body -->
                                                     <div class="card-body">
                                                         <h4 class="card-title">Post your AD for transfer your Luggage</h4>
@@ -104,7 +91,7 @@ require_once("Session.php");
                                                                     <input type="textbox" name="source" class="form-control" placeholder="Ahmedabad" required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                <label>Enter number of destination</label>
+                                                                <label>Enter Destination of Luggage </label>
                                                                 <textarea class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" required>
                                                                 </textarea>
                                                                 </div>
@@ -117,12 +104,8 @@ require_once("Session.php");
                                                                     <input type="textbox" name="type_luggage" class="form-control" placeholder="Furniture, Glass, Cargo..." required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Weight of luggage in</label>&nbsp;<bold>Kg</bold>&nbsp; <small>(Approx)</small>
+                                                                    <label>Goods Capacity</label>&nbsp;<small>(Approx)</small>
                                                                     <input type="number" name="waight" class="form-control" placeholder="Weight" min=0 required/>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Your Budget</label>
-                                                                    <input type="number" name="budget" class="form-control" placeholder="Price" min=0 required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Date of Arrival </label>
@@ -143,7 +126,7 @@ require_once("Session.php");
                                                                         </div>
                                                                         <div class="col-4">
                                                                           <select class="form-control" name="sub_type" required>
-                                                                            <option value="">-Sub-Type-</option>
+                                                                            <option value="">Sub-Type</option>
                                                                             <option value="Open">Open</option>
                                                                             <option value="Close">Close</option>
                                                                             <option value="Carrier">Carrier</option>
@@ -185,43 +168,7 @@ require_once("Session.php");
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>245</strong></h2>
                                     <p><small>Following</small></p>
-                                    <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
-                                    <div class="container border">
-  <!-- Modal -->
-  <!---Edit Profile start --->
-    <div class="modal fade" id="Edit_prof" role="dialog">
-  <form class="form-group" action="Profile_up.php" method="post">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header bg-info">
-          <h4 class="modal-title">Edit your Profile</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-        <div>
-        <label for="fname">First Name *</label>
-          <input type="name" name="SHIPPER_fname" class="form-control" placeholder="Enter your First Name" autofocus required value="<?php echo $fname ?>"><br>
-        </div>
-        <div>
-        <label for="fname">Last Name *</label>
-          <input type="name" name="SHIPPER_lname" class="form-control" placeholder="Enter your First Name" autofocus required value="<?php echo $lname; ?>"><br>
-        </div>
-        <div>
-        <label for="fname">Mobile *</label>
-          <input type="name" name="SHIPPER_number" class="form-control" placeholder="Enter your First Name" autofocus required value="<?php echo $mno; ?>"><br>
-        </div>
-        </div><?php   }
-        }?>
-        <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-success">Submit</button>
-        </div>
-      </div>
-    </div>
-    </form>
-  </div>
-</div>
-<!--Edit Profile end -->
+                                    <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>43</strong></h2>
@@ -235,7 +182,47 @@ require_once("Session.php");
             </div>
         </div>
         <br>
-
+        <?php
+        $ss=$_SESSION['mail'];
+        $query="SELECT * FROM ad  WHERE S_id=(SELECT S_id FROM user_s WHERE S_mail='$ss') AND status='0'";
+        $sql=mysqli_query($con,$query) or die(mysqli_error($con));
+        //print_r($sql);
+        //echo mysqli_num_rows($sql);
+        while($re=mysqli_fetch_array($sql)){
+        ?>
+        <div class="container card">
+          <div class="row well well-lg">
+            <div class="container"><br>
+              <h1 class="text-center">Ad Posted By you recently<h1>
+            </div>
+          </div>
+            <div class="container-fluid border">
+              <div class="row">
+                <div class="col-sm-6"><p>Source of Luggage : </p> <p> <?php  print $re[2];?></p>
+                  <p>Type of Luggage : </p> <p><?php  print $re[4];?>  </p>
+                  <p>Sub type of luggage : </p> <p> <?php  print $re[5];?>  </p>
+                  <p>Order Date of Luggage : </p> <p> <?php  print $re[9];?>  </p>
+                  <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[12];?>  </p></div>
+                <div class="col-sm-6"><p>Destination or Number of Drop Point : </p> <p><?php  print $re[3];?>  </p>
+                  <p>Waight of Luggage : </p> <p> <?php  print $re[6];?>  </p>
+                  <p>Vehicle Type : </p> <p> <?php  print $re[11];?></p><br>
+                  <div class="row">
+                    <div class="col">
+                      <input type="Button" class="form-group btn btn-success btn-block" name="edit" value="Edit ad"/>
+                    </div>
+                    <div class="col">
+                      <input type="button" class="form-group btn btn-success btn-block" data-toggle="modal" data-target="#myModaldel" name="Delete_ad" value="Delete ad"/>
+                    </div>
+                    <div class="col">
+                      <input type="button" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <br>
       <div class="container">
   <!-- The Modal -->
   <div class="modal fade" id="myModaldel">
@@ -271,8 +258,7 @@ require_once("Session.php");
 </div>
 </div>
 
-<!---========================================    Saprate LOC   ================================================================ -->
-<?php  } //end of shipper condition
+<?php } } //end of shipper condition
 if($_SESSION['user_type']=="Transport"){ //transport condition started
 ?>        <!--================Banner Area =================-->
         <section class="banner_area">
@@ -291,26 +277,10 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
-
-                                  <?php
-                                  $qry="SELECT * FROM `user_t` WHERE T_mail='$email'";
-                                  $res=mysqli_query($con,$qry) or die(mysqli_error($con));
-
-                                    if(mysqli_num_rows($res)>0)
-                                    {
-                                      while(  $retrive=mysqli_fetch_array($res))
-                                      {
-                                        $row=$retrive;
-                                        $Tname=$row['T_org_name'];
-                                         $towner=$row['T_owner_name'];
-                                         $mno=$row['T_number'];
-
-                                  ?>
-                                    <h2><?php echo $Tname." owned by ".$towner; ?> </h2>
-                                    <p><strong>Email:</strong> <?php echo $email; ?> </p>
-                                    <p><strong>Mobile Number: </strong> <?php echo $mno; ?> </p>
-<?php   }
-}?>
+                                    <h2>Mike Anamendolla</h2>
+                                    <p><strong>About: </strong> Web Designer / UI. </p>
+                                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+                                    <p><strong>Skills: </strong>
                                         <span class="label label-info tags">html5</span>
                                         <span class="label label-info tags">css3</span>
                                         <span class="label label-info tags">jquery</span>
@@ -324,110 +294,7 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong> 20,7K </strong></h2>
                                     <p><small>Followers</small></p>
-                                     <!-- modal code start -->
-                                        <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-
-                                                    <!-- Modal Header -->
-                                                    <div class="modal-header bg-primary">
-                                                        <h4 class="modal-title text-light">HireTruck Ad Post</h4>
-                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    </div>
-
-                                                    <!-- Modal body -->
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Post your AD for transfer your Luggage</h4>
-                                                        <p class="card-text">Fill up your requirement's for vehicle and Luggage and tap submit for open your ad
-                                                            in the HireTruck </p>
-                                                        <div class="container">
-                                                            <form action="" method="" class="form-group">
-                                                                <div class="form-group">
-                                                                    <label> Enter Source of Luggage</label>
-                                                                    <input type="textbox" name="source" class="form-control" placeholder="Ahemedabad" required/>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                <label>Enter number of destination</label>
-                                                                <textarea class="form-control" placeholder="meghaninagar & maninagar" required>
-                                                                </textarea>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>What kind of luggage you want to transfer</label>
-                                                                    <input type="textbox" name="luggage" class="form-control" placeholder="Furniture, Wood etc.." required/>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Type of luggage</label>
-                                                                    <input type="textbox" name="type_luggage" class="form-control" placeholder="Liquid, hard, soft, gas etc.." required/>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Waight of luggage in</label>&nbsp;<bold>Kg</bold>
-                                                                    <input type="number" name="waight" class="form-control" placeholder="1000Kg" required/>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Your Budget</label>
-                                                                    <input type="number" name="budget" class="form-control" placeholder="50000" required/>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Order date</label>
-                                                                    <input type="date" name="order_date" class="form-control" required/>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Vehicle type</label>
-                                                                    <div class="container">
-                                                                      <div class="row">
-                                                                        <div class="col-4">
-                                                                            <select class="form-conrol" name="wheel" required>
-                                                                              <option value="1">1</option>
-                                                                              <option value="1">1</option>
-                                                                              <option value="1">1</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="col-4">
-                                                                          <select class="form-conrol" name="Waight" required>
-                                                                            <option value="2">2</option>
-                                                                            <option value="2">2</option>
-                                                                            <option value="2">2</option>
-                                                                          </select>
-                                                                        </div>
-                                                                        <div class="col-4">
-                                                                          <select class="form-conrol" name="Trk_type" required>
-                                                                            <option value="3">3</option>
-                                                                            <option value="3">3</option>
-                                                                            <option value="3">3</option>
-                                                                          </select>
-                                                                        </div>
-                                                                      </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div>
-                                                                    <label>Extra Requirements</label>
-                                                                    <input type="textbox" name="extra_req" class="form-control" placeholder="Rope, Strip, Hooks, cable etc.." required/>
-                                                                </div>
-                                                                <br>
-
-
-                                                                <div class="container">
-                                                                    <div class="row">
-                                                                        <div class="col">
-                                                                            <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">
-                                                                                Close
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <input type="reset" value="reset" class="form-control btn btn-danger"/>
-                                                                        </div>
-                                                                        <div class="col">
-                                                                            <input type="Submit" value="submit" class="form-control btn btn-primary"/>
-                                                                            <div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                      </div></div></div></div>
-                                    <!-- ad modal end -->
-                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> Post Ad  </button>
+                                    <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>245</strong></h2>

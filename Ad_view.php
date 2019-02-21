@@ -31,11 +31,13 @@ while($re=mysqli_fetch_array($sql)){
           <p>Type of Luggage : </p> <p><?php  print $re[4];?>  </p>
           <p>Sub type of luggage : </p> <p> <?php  print $re[5];?>  </p>
           <p>Order Date of Luggage : </p> <p> <?php  print $re[9];?>  </p>
-          <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[12];?>  </p></div>
-        <div class="col-sm-6"><p>Destination or Number of Drop Point : </p> <p><?php  print $re[3];?>  </p>
+          <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[11];?>  </p></div>
+        <div class="col-sm-6"><p>Destination : </p> <p><?php  print $re[3];?>  </p>
           <p>Weight of Luggage : </p> <p> <?php  print $re[6];?>  </p>
           <p>Approximate Prize for Transfer your Luggage : </p> <p> <?php  print $re[7];?>  </p>
-          <p>Vehicle Type : </p> <p> <?php  print $re[11];?></p><br><?php echo $re[0]; ?>
+          <p>Vehicle Type : </p> <p> <?php  print $re[10];?></p><br>
+          <p>date : <?php  print $re[12];?></p><br>
+
           <!--deelte  ad query-->
           <div class="row">
             <div class="col">
