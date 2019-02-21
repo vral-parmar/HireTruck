@@ -222,7 +222,7 @@
                 <div class="c_title">
                     <img src="img/icon/title-icon.png" alt="">
                     <h6>Discover the features</h6>
-                    <h2>We are young but bold</h2>
+                    <h2>Online Goods Transportation</h2>
                 </div>
                 <div class="row feature_inner">
                     <div class="col-lg-4 col-sm-6">
@@ -230,9 +230,9 @@
                             <div class="f_icon">
                                 <img src="img/icon/f-icon-1.png" alt="">
                             </div>
-                            <h4>Brand Identity</h4>
-                            <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. </p>
-                            <a class="more_btn" href="#">Read More</a>
+                            <h4>Transfer Your Luggage at Your Prize</h4>
+                            <p>We are always looking Forward for Your Requirements and Budget.</p>
+                            <!--<a class="more_btn" href="#">Read More</a>-->
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
@@ -240,9 +240,9 @@
                             <div class="f_icon">
                                 <img src="img/icon/f-icon-2.png" alt="">
                             </div>
-                            <h4>Online Marketing</h4>
-                            <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. </p>
-                            <a class="more_btn" href="#">Read More</a>
+                            <h4>Online Confirmation</h4>
+                            <p>Confirm Your Vehicle Onlile for Getting service desired Services on the date</p>
+                            <!-- <a class="more_btn" href="#">Read More</a>-->
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
@@ -250,9 +250,9 @@
                             <div class="f_icon">
                                 <img src="img/icon/f-icon-3.png" alt="">
                             </div>
-                            <h4>Social Media</h4>
-                            <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. </p>
-                            <a class="more_btn" href="#">Read More</a>
+                            <h4>We are also Hear Your Contact us for any help</h4>
+                            <p>We are always here to Hear fro you, and we try to providing our best Services</p>
+                            <!-- <a class="more_btn" href="#">Read More</a>-->
                         </div>
                     </div>
                 </div>
@@ -266,34 +266,34 @@
                 <div class="shap_slider_inner owl-carousel">
                     <div class="item">
                         <h4>“We are the best”</h4>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus.</p>
+                        <p>We help people to Resolve the gap between Shipper and Carrier, We always Belive in Win-Win.</p>
                         <div class="media">
                             <img src="img/team/people/people-5.jpg" alt="">
                             <div class="media-body">
-                                <h5>Chriss Turner</h5>
-                                <h6>CEO Enterprise</h6>
+                                <h5>Archana Gondalia</h5>
+                                <h6>Mentor of HireTruck</h6>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <h4>“They are the best”</h4>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus.</p>
+                        <p>Puctuality is a key now a day and HireTruck Try to provide Best Services on air.</p>
                         <div class="media">
                             <img src="img/team/people/people-5.jpg" alt="">
                             <div class="media-body">
-                                <h5>Chriss Turner</h5>
-                                <h6>CEO Enterprise</h6>
+                                <h5>Viral Paramr</h5>
+                                <h6>Team Leader</h6>
                             </div>
                         </div>
                     </div>
                     <div class="item">
-                        <h4>“They are the best”</h4>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus.</p>
+                        <h4>“Easy, Cheezy and Simple”</h4>
+                        <p>That quit easy to Post on HireTruck and You also Get Quick Responce on Air.</p>
                         <div class="media">
                             <img src="img/team/people/people-5.jpg" alt="">
                             <div class="media-body">
-                                <h5>Chriss Turner</h5>
-                                <h6>CEO Enterprise</h6>
+                                <h5>Prince Shah</h5>
+                                <h6>Database Administrator</h6>
                             </div>
                         </div>
                     </div>
@@ -304,10 +304,10 @@
                     <div class="text_3d">
                         <div class="l_title">
                             <img src="img/icon/title-icon.png" alt="">
-                            <h6>Discover the features</h6>
-                            <h2>We don’t hide, we stand tall in front of chalenge</h2>
+                            <h6> We are here to Help you to Get Desired Vehicle and Budget. </h6>
+                            <h3>Looking for vehicle to transport your Luggage?</h3>
                         </div>
-                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vestibul.Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra a eget nisi. Aenean pellentesque elit vitae eros dignissim ultrices. </p>
+                        <p>Welcome to HireTruck We are in front of you With sollution of transportation Project. Which Help user to get Services on time, date, and your budget. is it quit easy to Post ad Over HireTruck and you also get a bid on little.</p>
                     </div>
                     <div class="shap_mobile">
                         <img src="img/iphone4.png" alt="">
@@ -328,13 +328,13 @@
                                 <h6>Discover the features</h6>
                                 <h2>We build a strong team of great people</h2>
                             </div>
-                            <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum. Nam convallis vel erat id dictum. Sed ut risus in orci convallis viverra.</p>
+                            <p>We are</p>
                             <ul>
-                                <li><a href="#">Nunc nec maximus dui, </a></li>
-                                <li><a href="#">Aenean pellentesque elit vitae</a></li>
-                                <li><a href="#">Aenean pellentesque elit vitae</a></li>
-                                <li><a href="#">Ex mauris, ornare eget pretium </a></li>
-                                <li><a href="#">Cras ex mauris, ornare eget preti</a></li>
+                                <li><a href="#">Viral Parmar </a></li>
+                                <li><a href="#">Prince Shah</a></li>
+                                <li><a href="#">Ridham Joshi</a></li>
+                                <li><a href="#">K K Gayatri </a></li>
+                                <li><a href="#">Kesha Kaneriya</a></li>
                             </ul>
                         </div>
                     </div>
@@ -399,7 +399,7 @@
                                 <h6>Say hello</h6>
                                 <h2>Get in touch, send us an e-mail or call us</h2>
                             </div>
-                            <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum.</p>
+                            <p>Having Trouble to get transportation Why don't you try to contact us? we are always ready to Hear from you.</p>
                             <a href="#"><h5>Call us now</h5></a>
                             <a href="#"><h4>+91-709-694-2284</h4></a>
                         </div>
@@ -429,30 +429,13 @@
             <div class="footer_widget_area">
                 <div class="container">
                     <div class="row footer_widget_inner">
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-6 col-sm-6">
                             <aside class="f_widget f_about_widget">
                                 <img src="https://i.ibb.co/vwmyN0n/1549187869210.png" width="120px" height="110px" alt="HireTruck">
-                                <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et t urpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum.</p>
+                                <!-- <p>Locjhsfkjbfkjfb</p>-->
                             </aside>
                         </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <aside class="f_widget f_insta_widget">
-                                <div class="f_title">
-                                    <h3>Instagram</h3>
-                                </div>
-                                <ul>
-                                    <li><a href="#"><img src="img/instagram/ins-1.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="img/instagram/ins-2.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="img/instagram/ins-3.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="img/instagram/ins-4.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="img/instagram/ins-5.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="img/instagram/ins-6.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="img/instagram/ins-7.jpg" alt=""></a></li>
-                                    <li><a href="#"><img src="img/instagram/ins-8.jpg" alt=""></a></li>
-                                </ul>
-                            </aside>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-6 col-sm-6">
                             <aside class="f_widget f_subs_widget">
                                 <div class="f_title">
                                     <h3>Subscribe to newsletter</h3>
