@@ -1,7 +1,7 @@
 <?php
 require('Session.php');
 $mail=$_SESSION['mail'];
-$ad_id= $_POST['ad_id'];
+$ad_id= mysqli_real_escape_string($con, htmlspecialchars($_POST['ad_id']));
 $query="UPDATE ad SET status='1' WHERE AD_id = '$ad_id' AND S_id=(SELECT S_id FROM user_s WHERE S_mail='$mail')";
 $sql=mysqli_query($con,$query) or die(mysqli_error($con));
 

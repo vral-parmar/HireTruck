@@ -196,7 +196,7 @@ require_once("Session.php");
   <!-- Modal -->
   <!---Edit Profile start --->
     <div class="modal fade" id="Edit_prof" role="dialog">
-  <form class="form-group">
+  <form class="form-group" action="Profile_up.php" method="post">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header bg-info">
@@ -219,7 +219,7 @@ require_once("Session.php");
         </div><?php   }
         }?>
         <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-success">Submit</button>
         </div>
       </div>
@@ -241,49 +241,7 @@ require_once("Session.php");
             </div>
         </div>
         <br>
-        <?php
-        $ss=$_SESSION['mail'];
-        $query="SELECT * FROM ad  WHERE S_id=(SELECT S_id FROM user_s WHERE S_mail='$ss') AND status='0'";
-        $sql=mysqli_query($con,$query) or die(mysqli_error($con));
-        //print_r($sql);
-        //echo mysqli_num_rows($sql);
-        while($re=mysqli_fetch_array($sql)){
-        ?>
-        <div class="container card">
-          <div class="row well well-lg">
-            <div class="container"><br>
-              <h1 class="text-center">Ad Posted By you recently<h1>
-            </div>
-          </div>
-            <div class="container-fluid border">
-              <div class="row">
-                <div class="col-sm-6"><p>Source of Luggage : </p> <p> <?php  print $re[2];?></p>
-                  <p>Type of Luggage : </p> <p><?php  print $re[4];?>  </p>
-                  <p>Sub type of luggage : </p> <p> <?php  print $re[5];?>  </p>
-                  <p>Order Date of Luggage : </p> <p> <?php  print $re[9];?>  </p>
-                  <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[12];?>  </p></div>
-                <div class="col-sm-6"><p>Destination or Number of Drop Point : </p> <p><?php  print $re[3];?>  </p>
-                  <p>Waight of Luggage : </p> <p> <?php  print $re[6];?>  </p>
-                  <p>Approximate Prize for Transfer your Luggage : </p> <p> <?php  print $re[7];?>  </p>
-                  <p>Vehicle Type : </p> <p> <?php  print $re[11];?></p><br>
-                  <div class="row">
-                    <div class="col">
-                      <input type="Button" class="form-group btn btn-success btn-block" name="edit" value="Edit ad"/>
-                    </div>
-                    <div class="col">
 
-                      <input type="button" class="form-group btn btn-success btn-block" data-toggle="modal" data-target="#myModaldel" name="Delete_ad" value="Delete ad"/>
-                    </div>
-                    <div class="col">
-                      <input type="button" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-            </div>
-          </div>
-      <br>
       <div class="container">
   <!-- The Modal -->
   <div class="modal fade" id="myModaldel">
@@ -320,7 +278,7 @@ require_once("Session.php");
 </div>
 
 <!---========================================    Saprate LOC   ================================================================ -->
-<?php } } //end of shipper condition
+<?php  } //end of shipper condition
 if($_SESSION['user_type']=="Transport"){ //transport condition started
 ?>        <!--================Banner Area =================-->
         <section class="banner_area">
