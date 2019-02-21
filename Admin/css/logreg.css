@@ -1,0 +1,24 @@
+.center_div{
+  margin: 0 auto;
+  width:80%;
+}
+ .form-container1{
+  border: 1px solid #fff;
+  padding:30px 60px; margin-top:5vh;
+  color:black;
+  background-color:White;
+  webkit-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);
+  box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);
+ }
+ .form-container2{
+  border: 1px solid black;
+  padding:50px 60px; margin-top:10vh;
+  color:black;
+  text-align:center;
+  background-color:White;
+  -webkit-box-shadow: -1px 2px 19px 0px rgba(255,255,255,1);
+  -moz-box-shadow: -1px 2px 19px 0px rgba(255,255,255,1);
+  box-shadow: -1px 2px 19px 0px rgba(255,255,255,1);
+ }
+
