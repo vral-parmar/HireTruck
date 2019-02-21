@@ -78,7 +78,7 @@ require_once("Session.php");
                                     </p>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4 text-center">
-                                    <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive">
+                                    <!-- <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive"> -->
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong> 20,7K </strong></h2>
@@ -304,6 +304,10 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                         $Tname=$row['T_org_name'];
                                          $towner=$row['T_owner_name'];
                                          $mno=$row['T_number'];
+                                         $tadd=$row['T_address'];
+                                         $nov=$row['T_no_vehicle'];
+                                         $tano=$row['T_anumber'];
+
 
                                   ?>
                                     <h2><?php echo $Tname." owned by ".$towner; ?> </h2>
@@ -311,14 +315,11 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                     <p><strong>Mobile Number: </strong> <?php echo $mno; ?> </p>
 <?php   }
 }?>
-                                        <span class="label label-info tags">html5</span>
-                                        <span class="label label-info tags">css3</span>
-                                        <span class="label label-info tags">jquery</span>
-                                        <span class="label label-info tags">bootstrap3</span>
+
                                     </p>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4 text-center">
-                                    <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive">
+                                    <!-- <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive"> -->
                                 </div><!--/col-->
 
                                 <div class="col-xs-12 col-sm-4">
@@ -360,7 +361,7 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                                                     <input type="textbox" name="type_luggage" class="form-control" placeholder="Liquid, hard, soft, gas etc.." required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Waight of luggage in</label>&nbsp;<bold>Kg</bold>
+                                                                    <label>Weight of luggage in</label>&nbsp;<bold>Kg</bold>
                                                                     <input type="number" name="waight" class="form-control" placeholder="1000Kg" required/>
                                                                 </div>
                                                                 <div class="form-group">
@@ -427,17 +428,69 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                         </div>
                                       </div></div></div></div>
                                     <!-- ad modal end -->
-                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> Post Ad  </button>
+                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> View Ad  </button>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>245</strong></h2>
                                     <p><small>Following</small></p>
-                                    <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+                                    <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
                                 </div><!--/col-->
+
+                                <!-- Modal -->
+                                <!---Edit Profile start --->
+                              <div>
+                              <div class="modal fade" id="Edit_prof" role="dialog">
+                                <form class="form-group" action="Profile_up.php" method="post">
+                                  <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                      <div class="modal-header bg-info">
+                                        <h4 class="modal-title">Edit your Profile</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      </div>
+                                      <div class="modal-body">
+                                      <div>
+                                      <label for="fname">Transport Company's Name *</label>
+                                        <input type="name" name="t_name" class="form-control" placeholder="Enter the Company's Name" autofocus required value="<?php echo $Tname ?>"><br>
+                                      </div>
+                                      <div>
+                                      <label for="fname">Owner's Name *</label>
+                                        <input type="name" name="o_name" class="form-control" placeholder="Enter the Owner's Name" autofocus required value="<?php echo $towner; ?>"><br>
+                                      </div>
+                                      <div>
+                                      <label for="fname">Mobile *</label>
+                                        <input type="number" name="m_number" class="form-control" placeholder="Enter the mobile number" autofocus required value="<?php echo $mno; ?>"><br>
+                                      </div>
+                                      <div>
+                                      <label for="fname">Additional No.*</label>
+                                        <input type="name" name="a_number" class="form-control" placeholder="Enter additional number" autofocus required value="<?php echo $tano; ?>"><br>
+                                      </div>
+                                      <div>
+                                      <label for="fname">No.of Vehicles *</label>
+                                        <input type="number" name="nov" class="form-control" placeholder="Enter the No.of vehicles" autofocus required value="<?php echo $nov; ?>"><br>
+                                      </div>
+                                      <div>
+                                      <label for="fname">Company's Address *</label>
+                                        <input type="text" name="t_add" class="form-control" placeholder="Enter the new address" autofocus required value="<?php echo $tadd; ?>"><br>
+                                      </div>
+
+                                      </div>
+
+                                      <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                      <button type="submit" class="btn btn-success">Submit</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </form>
+                                </div>
+                                </div>
+                                <!--Edit Profile end -->
+
+
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>43</strong></h2>
                                     <p><small>Snippets</small></p>
-                                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
+                                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> Bills </button>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </div><!--/panel-body-->
