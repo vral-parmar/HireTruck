@@ -1,6 +1,5 @@
 <?php
 require ('Session.php');
-<<<<<<< HEAD
 $ss=$_SESSION['mail'];
 $query="SELECT * FROM ad  WHERE S_id=(SELECT S_id FROM user_s WHERE S_mail='$ss') AND status='0'";
 $sql=mysqli_query($con,$query) or die(mysqli_error($con));
@@ -8,11 +7,10 @@ $sql=mysqli_query($con,$query) or die(mysqli_error($con));
 //echo mysqli_num_rows($sql);
 while($re=mysqli_fetch_array($sql)){
 ?>
-<!DOCTYPE html>
-=======
+<?php
 require ('Nav.php');
-?><!DOCTYPE html>
->>>>>>> 784b52baf6b4a3ac7407c6fbb9142a40cbec113b
+?>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
