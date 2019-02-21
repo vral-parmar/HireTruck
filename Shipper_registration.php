@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                       <label for="textarea">Address *</label>
-                        <textarea name="SHIPPER_address" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
+                        <input type="text" name="SHIPPER_address" max-charset=100 class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
                     </div>
                 <div><label for="secq">Security question *</label></div>
                 <div class="row form-group">

@@ -6,13 +6,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LOGIN Foinr Shipper & Carrier</title>
+    <title>LOGIN For Admin & Police</title>
     <link rel="icon" type="image/ico" href="https://i.ibb.co/GQ6gw34/1544624867669.png" />
 <style media="screen">
 body{
  height: 100%;
  width:100%;
- background-image: url("Image/Login.jpg");
+
  }
 </style>
     <!-- Bootstrap -->
@@ -34,10 +34,10 @@ body{
                    <div class="radio" class="col-md-6">
                      <div class="" style="text-align:center;">
                         <label>
-                       <input type="radio" name="radioF" value="Shipper"><strong>&nbsp;I am a Shipper</strong>
+                       <input type="radio" name="radioF" value="Admin"><strong>&nbsp;Admin</strong>
                      </label>&nbsp;&nbsp;&nbsp;
                      <label>
-                        <input type="radio" name="radioF" value="Transport"><strong>&nbsp;I am a Carrier</strong>
+                        <input type="radio" name="radioF" value="Police"><strong>&nbsp;Police</strong>
                       </label>
                     </div><br>
                     </div>
