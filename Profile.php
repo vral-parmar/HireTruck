@@ -1,6 +1,8 @@
 <?php
+include("connection.php");
 require_once("Session.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,13 +32,18 @@ require_once("Session.php");
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <?php
+        //  session_start();
+          $email=$_SESSION["mail"];
+        ?>
     </head>
 
     <body>
     <?php
     include ('Nav.php');
-    if($_SESSION['user_type']=="Shipper"){ //shipper condition started
-    ?>
+    if($_SESSION['user_type']=="Shipper"){
+     ?>
+
     <!--================Banner Area =================-->
         <section class="banner_area">
             <div class="container">
@@ -53,10 +60,26 @@ require_once("Session.php");
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
-                                    <h2>Mike Anamendolla</h2>
-                                    <p><strong>About: </strong> Web Designer / UI. </p>
-                                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-                                    <p><strong>Skills: </strong>
+
+                                  <?php
+                                  $qry="SELECT * FROM `user_s` WHERE S_mail='$email'";
+                                  $res=mysqli_query($con,$qry) or die(mysqli_error($con));
+
+                                    if(mysqli_num_rows($res)>0)
+                                    {
+                                      while(  $retrive=mysqli_fetch_array($res))
+                                      {
+                                        $row=$retrive;
+                                        $fname=$row['S_fname'];
+                                         $lname=$row['S_lname'];
+                                         $mno=$row['S_mnumber'];
+
+                                  ?>
+                                    <h2><?php echo $fname." ".$lname; ?> </h2>
+                                    <p><strong>Email:</strong> <?php echo $email; ?> </p>
+                                    <p><strong>Mobile Number: </strong> <?php echo $mno; ?> </p>
+<?php   }
+}?>
                                         <span class="label label-info tags">html5</span>
                                         <span class="label label-info tags">css3</span>
                                         <span class="label label-info tags">jquery</span>
@@ -218,18 +241,28 @@ require_once("Session.php");
                       <input type="Button" class="form-group btn btn-success btn-block" name="edit" value="Edit ad"/>
                     </div>
                     <div class="col">
+<<<<<<< HEAD
+                      <input type="button" class="form-group btn btn-success btn-block" name="Delete_ad" value="Delete ad"/>
+=======
                       <input type="button" class="form-group btn btn-success btn-block" data-toggle="modal" data-target="#myModaldel" name="Delete_ad" value="Delete ad"/>
+>>>>>>> d35a26380cbaa9aeaf46077bba01175e201e1528
                     </div>
                     <div class="col">
                       <input type="button" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
                     </div>
                   </div>
                 </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> d35a26380cbaa9aeaf46077bba01175e201e1528
                 </div>
               </div>
             </div>
           </div>
       <br>
+<<<<<<< HEAD
+=======
       <div class="container">
   <!-- The Modal -->
   <div class="modal fade" id="myModaldel">
@@ -265,6 +298,7 @@ require_once("Session.php");
 </div>
 </div>
 
+>>>>>>> d35a26380cbaa9aeaf46077bba01175e201e1528
 <?php } } //end of shipper condition
 if($_SESSION['user_type']=="Transport"){ //transport condition started
 ?>        <!--================Banner Area =================-->
@@ -284,10 +318,26 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
-                                    <h2>Mike Anamendolla</h2>
-                                    <p><strong>About: </strong> Web Designer / UI. </p>
-                                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-                                    <p><strong>Skills: </strong>
+
+                                  <?php
+                                  $qry="SELECT * FROM `user_t` WHERE T_mail='$email'";
+                                  $res=mysqli_query($con,$qry) or die(mysqli_error($con));
+
+                                    if(mysqli_num_rows($res)>0)
+                                    {
+                                      while(  $retrive=mysqli_fetch_array($res))
+                                      {
+                                        $row=$retrive;
+                                        $Tname=$row['T_org_name'];
+                                         $towner=$row['T_owner_name'];
+                                         $mno=$row['T_number'];
+
+                                  ?>
+                                    <h2><?php echo $Tname." owned by ".$towner; ?> </h2>
+                                    <p><strong>Email:</strong> <?php echo $email; ?> </p>
+                                    <p><strong>Mobile Number: </strong> <?php echo $mno; ?> </p>
+<?php   }
+}?>
                                         <span class="label label-info tags">html5</span>
                                         <span class="label label-info tags">css3</span>
                                         <span class="label label-info tags">jquery</span>
@@ -301,7 +351,110 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong> 20,7K </strong></h2>
                                     <p><small>Followers</small></p>
-                                    <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+                                     <!-- modal code start -->
+                                        <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header bg-primary">
+                                                        <h4 class="modal-title text-light">HireTruck Ad Post</h4>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+
+                                                    <!-- Modal body -->
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Post your AD for transfer your Luggage</h4>
+                                                        <p class="card-text">Fill up your requirement's for vehicle and Luggage and tap submit for open your ad
+                                                            in the HireTruck </p>
+                                                        <div class="container">
+                                                            <form action="" method="" class="form-group">
+                                                                <div class="form-group">
+                                                                    <label> Enter Source of Luggage</label>
+                                                                    <input type="textbox" name="source" class="form-control" placeholder="Ahemedabad" required/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                <label>Enter number of destination</label>
+                                                                <textarea class="form-control" placeholder="meghaninagar & maninagar" required>
+                                                                </textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>What kind of luggage you want to transfer</label>
+                                                                    <input type="textbox" name="luggage" class="form-control" placeholder="Furniture, Wood etc.." required/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Type of luggage</label>
+                                                                    <input type="textbox" name="type_luggage" class="form-control" placeholder="Liquid, hard, soft, gas etc.." required/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Waight of luggage in</label>&nbsp;<bold>Kg</bold>
+                                                                    <input type="number" name="waight" class="form-control" placeholder="1000Kg" required/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Your Budget</label>
+                                                                    <input type="number" name="budget" class="form-control" placeholder="50000" required/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Order date</label>
+                                                                    <input type="date" name="order_date" class="form-control" required/>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Vehicle type</label>
+                                                                    <div class="container">
+                                                                      <div class="row">
+                                                                        <div class="col-4">
+                                                                            <select class="form-conrol" name="wheel" required>
+                                                                              <option value="1">1</option>
+                                                                              <option value="1">1</option>
+                                                                              <option value="1">1</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                          <select class="form-conrol" name="Waight" required>
+                                                                            <option value="2">2</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="2">2</option>
+                                                                          </select>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                          <select class="form-conrol" name="Trk_type" required>
+                                                                            <option value="3">3</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="3">3</option>
+                                                                          </select>
+                                                                        </div>
+                                                                      </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <label>Extra Requirements</label>
+                                                                    <input type="textbox" name="extra_req" class="form-control" placeholder="Rope, Strip, Hooks, cable etc.." required/>
+                                                                </div>
+                                                                <br>
+
+
+                                                                <div class="container">
+                                                                    <div class="row">
+                                                                        <div class="col">
+                                                                            <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">
+                                                                                Close
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="reset" value="reset" class="form-control btn btn-danger"/>
+                                                                        </div>
+                                                                        <div class="col">
+                                                                            <input type="Submit" value="submit" class="form-control btn btn-primary"/>
+                                                                            <div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div></div></div></div>
+                                    <!-- ad modal end -->
+                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> Post Ad  </button>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>245</strong></h2>
