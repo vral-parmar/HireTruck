@@ -60,11 +60,9 @@ require_once("Session.php");
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8">
-
                                   <?php
                                   $qry="SELECT * FROM `user_s` WHERE S_mail='$email'";
                                   $res=mysqli_query($con,$qry) or die(mysqli_error($con));
-
                                     if(mysqli_num_rows($res)>0)
                                     {
                                       while(  $retrive=mysqli_fetch_array($res))
@@ -77,13 +75,11 @@ require_once("Session.php");
                                     <h2><?php echo $fname." ".$lname; ?> </h2><br>
                                     <p><strong>Email:</strong> <?php echo $email; ?> </p>
                                     <p><strong>Mobile Number: </strong>  <?php echo $mno; ?> </p>
-
                                     </p>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4 text-center">
                                     <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive">
                                 </div><!--/col-->
-
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong> 20,7K </strong></h2>
                                     <p><small>Add </small></p>
@@ -91,13 +87,11 @@ require_once("Session.php");
                                         <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
-
                                                     <!-- Modal Header -->
                                                     <div class="modal-header bg-primary">
                                                         <h4 class="modal-title text-light">HireTruck Ad Post</h4>
                                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                     </div>
-
                                                     <!-- Modal body -->
                                                     <div class="card-body">
                                                         <h4 class="card-title">Post your AD for transfer your Luggage</h4>

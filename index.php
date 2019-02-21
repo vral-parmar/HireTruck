@@ -222,7 +222,7 @@
                 <div class="c_title">
                     <img src="img/icon/title-icon.png" alt="">
                     <h6>Discover the features</h6>
-                    <h2>Online Goods Transportation</h2>
+                    <h2>Online Goods transportation</h2>
                 </div>
                 <div class="row feature_inner">
                     <div class="col-lg-4 col-sm-6">
@@ -230,7 +230,7 @@
                             <div class="f_icon">
                                 <img src="img/icon/f-icon-1.png" alt="">
                             </div>
-                            <h4>Transfer Your Luggage at Your Prize</h4>
+                            <h4>Transfer Your Luggage at Your Price</h4>
                             <p>We are always looking Forward for Your Requirements and Budget.</p>
                             <!--<a class="more_btn" href="#">Read More</a>-->
                         </div>
@@ -374,7 +374,7 @@
             <div class="container">
                 <div class="row get_touch_inner">
                     <div class="col-lg-6">
-                        <form class="contact_us_form row" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <form class="contact_us_form row" action="Common_feedback.php" method="post" id="contactForm" novalidate="novalidate">
                             <div class="form-group col-lg-6">
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                             </div>
