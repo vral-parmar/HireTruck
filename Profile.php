@@ -132,7 +132,7 @@ require_once("Session.php");
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Date of Arrival </label>
-                                                                    <input type="date" name="order_date" class="form-control" YYYY-mm-dd required/>
+                                                                    <input type="date" name="order_date" class="form-control" YYYY-mm-dd checked required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Type of Vehicle</label>
@@ -232,7 +232,7 @@ require_once("Session.php");
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>43</strong></h2>
                                     <p><small>Snippets</small></p>
-                                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
+                                    <a type="button" href="E_receipt.php" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-receipts</a>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </div><!--/panel-body-->
@@ -241,7 +241,7 @@ require_once("Session.php");
             </div>
         </div>
         <br>
-        <?php
+        /<?php
         $ss=$_SESSION['mail'];
         $query="SELECT * FROM ad  WHERE S_id=(SELECT S_id FROM user_s WHERE S_mail='$ss') AND status='0'";
         $sql=mysqli_query($con,$query) or die(mysqli_error($con));
@@ -261,11 +261,11 @@ require_once("Session.php");
                   <p>Type of Luggage : </p> <p><?php  print $re[4];?>  </p>
                   <p>Sub type of luggage : </p> <p> <?php  print $re[5];?>  </p>
                   <p>Order Date of Luggage : </p> <p> <?php  print $re[9];?>  </p>
-                  <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[12];?>  </p></div>
+                  <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[11];?>  </p></div>
                 <div class="col-sm-6"><p>Destination or Number of Drop Point : </p> <p><?php  print $re[3];?>  </p>
                   <p>Waight of Luggage : </p> <p> <?php  print $re[6];?>  </p>
                   <p>Approximate Prize for Transfer your Luggage : </p> <p> <?php  print $re[7];?>  </p>
-                  <p>Vehicle Type : </p> <p> <?php  print $re[11];?></p><br>
+                  <p>Vehicle Type : </p> <p> <?php  print $re[10];?></p><br>
                   <div class="row">
                     <div class="col">
                       <input type="Button" class="form-group btn btn-success btn-block" name="edit" value="Edit ad"/>
