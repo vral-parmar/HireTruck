@@ -79,7 +79,7 @@
                     </div><br>
                     <div class="row">
                       <div class="col-6" style="text-align:left;">
-                          <a href="Home.php"> <code><-</code>Back to Home</a>
+                          <a href="index.php"> <code><-</code>Back to Home</a>
                       </div>
                         <div class="col-6" style="text-align:right;">
                           <a href="Login.php" >Already Register? Click Here</a>
@@ -93,7 +93,7 @@
     document.getElementById("Hide").onclick = function() {
     this.disabled = true;
    }
-   
+
     </script>
   </body>
 </html>

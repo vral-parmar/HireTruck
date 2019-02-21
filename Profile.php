@@ -49,7 +49,6 @@ require_once("Session.php");
         <div class="container ">
             <div class="row card">
                 <div class="col-md-12 card-body">
-
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="row">
@@ -70,7 +69,7 @@ require_once("Session.php");
 
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong> 20,7K </strong></h2>
-                                    <p><small>Followers</small></p>
+                                    <p><small>Add </small></p>
                                      <!-- modal code start -->
                                         <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
                                             <div class="modal-dialog modal-dialog-centered">
@@ -88,59 +87,55 @@ require_once("Session.php");
                                                         <p class="card-text">Fill up your requirement's for vehicle and Luggage and tap submit for open your ad
                                                             in the HireTruck </p>
                                                         <div class="container">
-                                                            <form action="" method="" class="form-group">
+                                                            <form action="Ad_inc.php" method="post" class="form-group">
                                                                 <div class="form-group">
                                                                     <label> Enter Source of Luggage</label>
-                                                                    <input type="textbox" name="source" class="form-control" placeholder="Ahemedabad" required/>
+                                                                    <input type="textbox" name="source" class="form-control" placeholder="Ahmedabad" required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                 <label>Enter number of destination</label>
-                                                                <textarea class="form-control" placeholder="meghaninagar & maninagar" required>
+                                                                <textarea class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" required>
                                                                 </textarea>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>What kind of luggage you want to transfer</label>
-                                                                    <input type="textbox" name="luggage" class="form-control" placeholder="Furniture, Wood etc.." required/>
+                                                                    <label>Type of Luggage</label>
+                                                                    <input type="textbox" name="luggage" class="form-control" placeholder="Liquid, hard, soft, gas..." required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Type of luggage</label>
-                                                                    <input type="textbox" name="type_luggage" class="form-control" placeholder="Liquid, hard, soft, gas etc.." required/>
+                                                                    <label>Kind of luggage</label>
+                                                                    <input type="textbox" name="type_luggage" class="form-control" placeholder="Furniture, Glass, Cargo..." required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Waight of luggage in</label>&nbsp;<bold>Kg</bold>
-                                                                    <input type="number" name="waight" class="form-control" placeholder="1000Kg" required/>
+                                                                    <label>Weight of luggage in</label>&nbsp;<bold>Kg</bold>&nbsp; <small>(Approx)</small>
+                                                                    <input type="number" name="waight" class="form-control" placeholder="Weight" min=0 required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Your Budget</label>
-                                                                    <input type="number" name="budget" class="form-control" placeholder="50000" required/>
+                                                                    <input type="number" name="budget" class="form-control" placeholder="Price" min=0 required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Order date</label>
-                                                                    <input type="date" name="order_date" class="form-control" required/>
+                                                                    <label>Date of Arrival </label>
+                                                                    <input type="date" name="order_date" class="form-control" YYYY-mm-dd required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Vehicle type</label>
+                                                                    <label>Type of Vehicle</label>
                                                                     <div class="container">
                                                                       <div class="row">
                                                                         <div class="col-4">
-                                                                            <select class="form-conrol" name="wheel" required>
-                                                                              <option value="1">1</option>
-                                                                              <option value="1">1</option>
-                                                                              <option value="1">1</option>
+                                                                            <select class="form-control" name="wheel" required>
+                                                                              <option value="">--Select--</option>
+                                                                              <option value="4-Wheel">4-Wheel</option>
+                                                                              <option value="6-Wheel">6-Wheel</option>
+                                                                              <option value="8-Wheel">8-Wheel</option>
+                                                                              <option value="10-Wheel">10-Wheel</option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="col-4">
-                                                                          <select class="form-conrol" name="Waight" required>
-                                                                            <option value="2">2</option>
-                                                                            <option value="2">2</option>
-                                                                            <option value="2">2</option>
-                                                                          </select>
-                                                                        </div>
-                                                                        <div class="col-4">
-                                                                          <select class="form-conrol" name="Trk_type" required>
-                                                                            <option value="3">3</option>
-                                                                            <option value="3">3</option>
-                                                                            <option value="3">3</option>
+                                                                          <select class="form-control" name="sub_type" required>
+                                                                            <option value="">-Sub-Type-</option>
+                                                                            <option value="Open">Open</option>
+                                                                            <option value="Close">Close</option>
+                                                                            <option value="Carrier">Carrier</option>
                                                                           </select>
                                                                         </div>
                                                                       </div>
@@ -164,7 +159,7 @@ require_once("Session.php");
                                                                             <input type="reset" value="reset" class="form-control btn btn-danger"/>
                                                                         </div>
                                                                         <div class="col">
-                                                                            <input type="Submit" value="submit" class="form-control btn btn-primary"/>
+                                                                            <input type="Submit" value="submit" class="form-control btn btn-success"/>
                                                                             <div>
                                                             </form>
                                                         </div>
@@ -193,7 +188,84 @@ require_once("Session.php");
             </div>
         </div>
         <br>
-<?php }  //end of shipper condition
+        <?php
+        $ss=$_SESSION['mail'];
+        $query="SELECT * FROM ad  WHERE S_id=(SELECT S_id FROM user_s WHERE S_mail='$ss') AND status='0'";
+        $sql=mysqli_query($con,$query) or die(mysqli_error($con));
+        //print_r($sql);
+        //echo mysqli_num_rows($sql);
+        while($re=mysqli_fetch_array($sql)){
+        ?>
+        <div class="container card">
+          <div class="row well well-lg">
+            <div class="container"><br>
+              <h1 class="text-center">Ad Posted By you recently<h1>
+            </div>
+          </div>
+            <div class="container-fluid border">
+              <div class="row">
+                <div class="col-sm-6"><p>Source of Luggage : </p> <p> <?php  print $re[2];?></p>
+                  <p>Type of Luggage : </p> <p><?php  print $re[4];?>  </p>
+                  <p>Sub type of luggage : </p> <p> <?php  print $re[5];?>  </p>
+                  <p>Order Date of Luggage : </p> <p> <?php  print $re[9];?>  </p>
+                  <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[12];?>  </p></div>
+                <div class="col-sm-6"><p>Destination or Number of Drop Point : </p> <p><?php  print $re[3];?>  </p>
+                  <p>Waight of Luggage : </p> <p> <?php  print $re[6];?>  </p>
+                  <p>Approximate Prize for Transfer your Luggage : </p> <p> <?php  print $re[7];?>  </p>
+                  <p>Vehicle Type : </p> <p> <?php  print $re[11];?></p><br>
+                  <div class="row">
+                    <div class="col">
+                      <input type="Button" class="form-group btn btn-success btn-block" name="edit" value="Edit ad"/>
+                    </div>
+                    <div class="col">
+                      <input type="button" class="form-group btn btn-success btn-block" data-toggle="modal" data-target="#myModaldel" name="Delete_ad" value="Delete ad"/>
+                    </div>
+                    <div class="col">
+                      <input type="button" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <br>
+      <div class="container">
+  <!-- The Modal -->
+  <div class="modal fade" id="myModaldel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Are you Sure?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you Sure you Want to Delete this Advertizement?
+        </div><div class="container">
+          <form class="form-group" action="Del_ad.php" method="post">
+            <input type="hidden" name="ad_id" value="<?php echo $re[0]; ?>">
+        <div class="row">
+        	<div class="col">
+     			<button type="button" class="btn btn-danger btn-block" data-dismiss="modal">No</button>
+            </div>
+     		<div class="col">
+          		<input type="submit" class="btn btn-success btn-block" value="Yes"/>
+            </div>
+        </div>
+      </form>
+    </div>
+   <div class="modal-footer">
+  </div>
+ </div>
+</div>
+</div>
+</div>
+
+<?php } } //end of shipper condition
 if($_SESSION['user_type']=="Transport"){ //transport condition started
 ?>        <!--================Banner Area =================-->
         <section class="banner_area">
