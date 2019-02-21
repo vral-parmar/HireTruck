@@ -51,7 +51,7 @@ body{
                     <div class="g-recaptcha" data-sitekey="6LfX7nQUAAAAACZdSxmsMfk765RdBf65BEh9kHx9"></div>
                   </div>  <br>
                     <div>
-                      <button type="submit" class="btn btn-success btn-block" id="Hide">Get In</button><br>
+                      <input type="submit" class="btn btn-success btn-block" id="Hide" value="Get In"><br>
                       <div class="row">
                         <div class="col-6" style="text-align:left;">
                             <a href="Home.php"> <code><-</code>Back to Home</a>
