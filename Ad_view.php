@@ -31,24 +31,29 @@ while($re=mysqli_fetch_array($sql)){
           <p>Type of Luggage : </p> <p><?php  print $re[4];?>  </p>
           <p>Sub type of luggage : </p> <p> <?php  print $re[5];?>  </p>
           <p>Order Date of Luggage : </p> <p> <?php  print $re[9];?>  </p>
-          <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[11];?>  </p></div>
+          <p>Extra Requirements for your Luggage : </p> <p> <?php  print $re[12];?>  </p></div>
         <div class="col-sm-6"><p>Destination : </p> <p><?php  print $re[3];?>  </p>
           <p>Weight of Luggage : </p> <p> <?php  print $re[6];?>  </p>
-          <p>Approximate Prize for Transfer your Luggage : </p> <p> <?php  print $re[7];?>  </p>
-          <p>Vehicle Type : </p> <p> <?php  print $re[10];?></p><br>
-          <p>date : <?php  print $re[12];?></p><br>
+
+          <p>Vehicle Type : </p> <p> <?php  print $re[11];?></p><br>
+          <p>date : <?php  print $re[9];?></p><br>
 
           <!--deelte  ad query-->
           <div class="row">
             <div class="col">
               <input type="hidden" name="id_ad" value="<?php echo $re[0]; ?>">
+              </form>
               <button class="btn btn-success btn-block" data-toggle="modal" type="submit" data-target="#myModal" href="Edit_ad.php"><span class="fa fa-plus-circle"></span> Edit Ad </button>            </div>
             <div class="col">
               <input type="button" class="form-group btn btn-success btn-block" data-toggle="modal" data-target="#myModaldel" name="Delete_ad" value="Delete ad"/>
             </div>
             <div class="col">
-              <input type="button" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
-            </div></div>
+              <form class="form-group" action="new_bid.php" method="post">
+                <input type="hidden" name="id_ad" value="<?php echo $re[0]; ?>">
+              <input type="submit" class="form-group btn btn-success btn-block" name="view_bid" value="Show Bid"/>
+              </form>
+            </div>
+          </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 <?php
 require ('session.php');
+require ('Nav.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,13 +8,13 @@ require ('session.php');
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NEW BID</title>
+    <title>Credit Details</title>
     <link rel="icon" type="image/ico" href="https://i.ibb.co/GQ6gw34/1544624867669.png" />
     <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="https://i.ibb.co/tDkQbmq/Logo.png" type="image/x-icon" />
-        <title>Hire Truck</title>
+        <title>Credit Details</title>
         <!-- Icon css link -->
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <!-- Bootstrap -->
@@ -51,81 +52,45 @@ body{
       <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
             <form class="form-container1" action="Lvalidate.php" method="post">
-              <h2 align="center">Police Verification</h2><hr><br>
+              <h2 align="center">Account Details </h2><hr><br>
                  <div class="row container">
-                  <div class="col">
-                        <label><b>Shipper name</b></label>
+                  <div class="col-md-6">
+                        <label><b>Card Holder Name</b></label>
+                        <input type="card_name" name="cardholder" pattern="[A-Za-z]{100}" class="form-control" placeholder="Enter Card Holder Name" autofocus required>
                   </div>
-                    <div class="col">
-                       <label for="source"><b>Transpost company</b></label>
+                 </div>
+                 <div class="row container">
+                    <div class="col-md-6">
+                       <label for="source"><b>Card Number</b></label>
+                       <input type="card_number" pattern=".{16}" name="card_number" class="form-control"  maxlength="16" placeholder="Enter Card Number" autofocus required>
                     </div>
-                    <div class="col">
-                       <label for="source"><b>Price</b></label>
+                  </div>
+                  <div class="row container">
+                    <div class="col-md-6">
+                       <label for="source"><b>Expiry Date</b></label>
+                       <input type="date"  pattern="dd-mm-YYYY" name="SHIPPER_truck_num" class="form-control" placeholder="Enter the Expiry date" autofocus required>
                     </div>
-                    <div class="col">
-                       <label for="source"><b>Date</b></label>
+                    <div class="col-md-4">
+                       <label for="source"><b>CVV</b></label>
+                       <input type="password" pattern="/^[0-9] {3}$/" pattern"[0-9]{10}"  ng-model="dataItem.password" name="SHIPPER_number" class="form-control" maxlength="3" placeholder="***" required><br><br>
                     </div>
-                    <div class="col">
-                      <label for="source"><b>Luggage</b></label>
-                    </div>
-                    <div class="col">
-                     <label for="source"><b>Type of luggage</b></label>
-                    </div>
-                    <div class="col">
-                       <label><b>Source</b></label>
-                    </div>
-                    <div class="col">
-                          <label><b>Destination</b></label>
-                    </div>
-                  <?php
-                    $query="SELECT * from user_s where S_id = ( SELECT s_id from ad where Ad_id=(SELECT Ad_id from deal where D_id='1'))";
-                    $query1="SELECT * from ad where Ad_id=(SELECT Ad_id from deal where D_id='1')";
-                    $query2="SELECT * from user_t where T_id=(SELECT T_id from deal where D_id='1')";
-                    $query3="SELECT price,conform_date from deal where D_id='1'";
-                    //echo $e=array_combine($query, $result);
-
+                  </div>
+                   <?php
+                    $query="select * from bid_ref WHERE(SELECT B_id FROM bid WHERE Ad_id='1')";
                     $result= mysqli_query($con,$query) or die(myqli_error($con));
-                    $result1= mysqli_query($con,$query1) or die(myqli_error($con));
-                    $result2= mysqli_query($con,$query2) or die(myqli_error($con));
-                    $result3= mysqli_query($con,$query3) or die(myqli_error($con));
                     if(mysqli_num_rows($result)>0)
+                    {
+                      while ($row=mysqli_fetch_array($result))
                       {
-
-                      while($row1=mysqli_fetch_array($result1))
-                      {
-                    //print_r($row1);
-
-                      $lugagge=$row1[4];
-                      $type=$row1[5];
-                      $source=$row1[2];
-                      $Destination=$row1[3];
-                    }
-                    while($row3=mysqli_fetch_array($result3))
-                      {
-                    //print_r($row3);
-
-                      $price=$row3[0];
-                      $date=$row3[1];
-                      }
-                    while($row2=mysqli_fetch_array($result2))
-                      {
-                    //print_r($row3);
-                    $t_org_name=$row2[2];
-                      //$price=$row5[39];
-                      //$date=$row7[40];
-                      }
-                    while($row=mysqli_fetch_array($result))
-                      {
-                    //print_r($row);
-                      $S_id=$row['S_fname'];
-                      //$t_org_name=$row2[26];
-                      //$price=$row5[39];
-                      //$date=$row7[40];
-                      }
+                      $b_id=$row['B_id'];
+                      $t_id=$row['T_id'];
+                      $t_org_name=$row['T-org_name'];
+                      $price=$row['price'];
+                      $date=$row['date'];
                     ?>
                     <div class="row container">
                         <div class="col">
-                           <?php echo $S_id; ?>
+                           <?php echo $t_id; ?>
                         </div>
                         <div class="col">
                            <?php echo $t_org_name; ?>
@@ -136,30 +101,22 @@ body{
                         <div class="col">
                            <?php echo $date; ?>
                         </div>
-                          <div class="col">
-                           <?php echo $lugagge; ?>
-                        </div>
-                          <div class="col">
-                           <?php echo $type; ?>
-                        </div>
-
-                        <div class="col">
-                           <?php echo $source; ?>
-                        </div>
-                        <div class="col">
-                           <?php echo $Destination; ?>
-                        </div>
+                     <button type="button" class="btn btn-info" onclick="alert('Bid Confirmed !!')">Confirm</button>
                      </div>
                      <?php
-                        //}
+                        }
                         }
                         ?>
-                      <div class="row container">
-                             <div class="col-6" style="text-align:left;">
-                                 <a href="Home.php"> <code><-</code>Back to Home</a>
-                             </div>
+                      <div>
+                        <input type="submit" class="btn btn-success" id="Hide" value="Submit">&nbsp; &nbsp; &nbsp;
+                        <button type="reset" class="btn btn-danger">Reset</button><br><br><br>
                       </div>
-               </div>
+
+                      <div class="row container">
+                        <div class="col-6" style="text-align:left;">
+                            <a href="index.php"> <code><-</code>Back to Home</a>
+                        </div>
+                      </div>
             </form>
       </div>
     </div>

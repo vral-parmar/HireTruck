@@ -104,7 +104,7 @@ require_once("Session.php");
                                                                     <input type="textbox" name="source" class="form-control" placeholder="Ahmedabad" required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                <label>Enter number of destination</label>
+                                                                <label>Enter destination of Luggage</label>
                                                                 <textarea class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" required>
                                                                 </textarea>
                                                                 </div>
@@ -117,12 +117,8 @@ require_once("Session.php");
                                                                     <input type="textbox" name="type_luggage" class="form-control" placeholder="Furniture, Glass, Cargo..." required/>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label>Weight of luggage in</label>&nbsp;<bold>Kg</bold>&nbsp; <small>(Approx)</small>
+                                                                    <label>Goods Capicity </label>&nbsp;<bold>ton</bold>&nbsp; <small>(Approx)</small>
                                                                     <input type="number" name="waight" class="form-control" placeholder="Weight" min=0 required/>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label>Your Budget</label>
-                                                                    <input type="number" name="budget" class="form-control" placeholder="Price" min=0 required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Date of Arrival </label>
@@ -226,7 +222,7 @@ require_once("Session.php");
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>43</strong></h2>
                                     <p><small>Snippets</small></p>
-                                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
+                                    <a href="E_receipt.php" type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-Reciept </a>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </div><!--/panel-body-->
@@ -307,8 +303,6 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                          $tadd=$row['T_address'];
                                          $nov=$row['T_no_vehicle'];
                                          $tano=$row['T_anumber'];
-
-
                                   ?>
                                     <h2><?php echo $Tname." owned by ".$towner; ?> </h2>
                                     <p><strong>Email:</strong> <?php echo $email; ?> </p>
@@ -325,8 +319,8 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong> 20,7K </strong></h2>
                                     <p><small>Followers</small></p>
-                                                              
-                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> View Ad  </button>
+
+                                    <a href="ad.php" class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> View Ad  </a>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
                                     <h2><strong>245</strong></h2>

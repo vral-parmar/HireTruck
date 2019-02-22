@@ -1,6 +1,8 @@
 <?php
 require ("Session.php");
 require ('Nav.php');
+$loc=$_POST['source'];
+$tno=$_POST['tn'];
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +21,11 @@ require ('Nav.php');
                         </div>
                     </div>
                 </section>
+<?php
 
+$qry="update track set in_locatioon='$loc', update_count='1' where Truck_number='$tno'";
 
+ ?>
 
                 <div class="container" style=" webkit-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);-moz-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);	box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);">
 
@@ -33,15 +38,15 @@ require ('Nav.php');
                             <div class="container-fluid">
                               <div class="row">
                                     <div class="col-md-6">
-                                          <p><b>T_id : </b></p> <p> <?php  print $re[2];?> </p>
-                                          <p><b>Truck No. :</b> </p> <p><?php  print $re[4];?>  </p>
-                                              <p><b>Current Location:</b> </p> <p> <?php  print $re[5];?>  </p>
+                                          <p><b> </b></p> <p> </p>
+                                          <p><b></b> </p> <p>  </p>
+                                              <p><b></b> </p> <p> </p>
 
 
                                     </div>
                                     <div class="col-md-6">
-                                           <p><b>Source Of Lugguage : </b></p> <p> <?php  print $re[5];?>  </p>
-                                            <p><b>Destination Of Lugguage :</b> </p> <p> <?php  print $re[5];?>  </p>
+                                           <p><b> </b></p> <p> </p>
+                                            <p><b></b> </p> <p></p>
 
 
 

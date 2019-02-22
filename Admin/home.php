@@ -17,6 +17,7 @@ require('nav.php');
         <?php
         if($_SESSION['user_type']=="Police"){
           include('police.php');
+          echo $_SESSION['user_type'];
         }
 
        ?>

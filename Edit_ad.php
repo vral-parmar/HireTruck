@@ -69,7 +69,7 @@ while($re=mysqli_fetch_array($sql)){
                                    </div>
                                    <div class="form-group">
                                        <label>Kind of luggage</label>
-                                       <input type="textbox" name="type_luggage" class="form-control" placeholder="Furniture, Glass, Cargo..."  value="<?php print($re[9]); ?>"required/>
+                                       <input type="textbox" name="type_luggage" class="form-control" placeholder="Furniture, Glass, Cargo..."  value="<?php print($re[5]); ?>"required/>
                                    </div>
                                    <div class="form-group">
                                        <label>Goods Capacity</label>&nbsp; <small>(Approx)</small>
@@ -106,7 +106,7 @@ while($re=mysqli_fetch_array($sql)){
                                    </div>
                                    <div>
                                        <label>Extra Requirements</label>
-                                       <input type="textbox" name="extra_req" class="form-control" placeholder="Rope, Strip, Hooks, cable etc.." value="<?php print ($re[11]); ?>"required/>
+                                       <input type="textbox" name="extra_req" class="form-control" placeholder="Rope, Strip, Hooks, cable etc.." value="<?php print ($re[12]); ?>"required/>
                                    </div>
                                    <br>
                                    <div class="container">
@@ -146,29 +146,29 @@ while($re=mysqli_fetch_array($sql)){
 
 $ad= $_POST['id_ad'];
 
-/*$username=mysqli_real_escape_string($con, htmlspecialchars($_SESSION['mail']));
+$username=mysqli_real_escape_string($con, htmlspecialchars($_SESSION['mail']));
  $source=mysqli_real_escape_string($con, htmlspecialchars($_POST['source']));
  $dest=mysqli_real_escape_string($con, htmlspecialchars($_POST['no_dest']));
  $luggage=mysqli_real_escape_string($con, htmlspecialchars($_POST['luggage']));
  $type=mysqli_real_escape_string($con, htmlspecialchars($_POST['type_luggage']));
  $weight=mysqli_real_escape_string($con, htmlspecialchars($_POST['waight']));
- $budget=mysqli_real_escape_string($con, htmlspecialchars($_POST['budget']));
+ //$budget=mysqli_real_escape_string($con, htmlspecialchars($_POST['budget']));
  $order_date=mysqli_real_escape_string($con, htmlspecialchars($_POST['order_date']));
  $wheel=mysqli_real_escape_string($con, htmlspecialchars($_POST['wheel']));
  $sub=mysqli_real_escape_string($con, htmlspecialchars($_POST['sub_type']));
  $vehicle=$wheel.','.$sub;
  $extra=mysqli_real_escape_string($con, htmlspecialchars($_POST['extra_req']));
 
- $query="UPDATE ad SET source='$source',no_destination='$dest',luggage='$luggage',type_luggage='$type',weight='$weight',price_budget='$budget',
+ $query="UPDATE ad SET source_s='$source',no_destination='$dest',luggage='$luggage',type_luggage='$type',weight='$weight',price_budget='0',
  order_date='$order_date',vehicle_type='$vehicle',add_requirement='$extra' WHERE Ad_id='$ad' AND S_id=(select S_id from user_s where S_mail='$username')";
  $result=mysqli_query($con,$query) or die(mysqli_error($con));
- if($result){
+ if(!$result){
 
 
  echo "Database inserted";
- Header('location:Profile.php?Ad_Posted');
+ header('location:index.php');
  //header(home.php);
-}*/
+}
 }
 
 

@@ -1,5 +1,5 @@
 <?php
-require ('session.php');
+require ('Session.php');
 require ('Nav.php');
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ body{
   <div class="container-fluid">
       <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
-            <form class="form-container1" action="Lvalidate.php" method="post">
+            <form class="form-container1" action="deal_confirm.php" method="post">
               <h2 align="center">NEW BID</h2><hr><br>
                  <div class="row container">
                   <div class="col">
@@ -48,13 +48,16 @@ body{
                        <label for="source"><b>Confirmation</b></label>
                      </div>
                   <?php
-                    $query="select * from bid_ref WHERE(SELECT B_id FROM bid WHERE Ad_id='1')";
-                    $result= mysqli_query($con,$query) or die(myqli_error($con));
+                    $adi=$_POST['id_ad'];
+                    //echo $adi;exit;
+
+                    $query="SELECT * from bid_ref where Ad_id=(SELECT Ad_id from ad where AD_id='$adi')";
+                    $result= mysqli_query($con,$query) or die(mysqli_error($con));
                     if(mysqli_num_rows($result)>0)
                     {
                       while ($row=mysqli_fetch_array($result))
                       {
-                      $b_id=$row['B_id'];
+                      $b_id=$row['Bid_id'];
                       $t_id=$row['T_id'];
                       $t_org_name=$row['T-org_name'];
                       $price=$row['price'];
@@ -73,17 +76,14 @@ body{
                         <div class="col">
                            <?php echo $date; ?>
                         </div>
-                     <button type="button" onclick="alert('Bid Confirmed !!')">Confirm</button>
+                        <input type="hidden" name="AD" value="<?php echo $adi; ?>"/>
+                     <input type="submit" class="btn btn-success" value="Confirm Bid">
                      </div>
                      <?php
                         }
                         }
                         ?>
-                      <div class="row container">
-                             <div class="col-6" style="text-align:left;">
-                                 <a href="Home.php"> <code><-</code>Back to Home</a>
-                             </div>
-                      </div>
+
                </div>
             </form>
       </div>

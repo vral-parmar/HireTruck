@@ -15,10 +15,10 @@ require("Session.php");
   $sub=mysqli_real_escape_string($con, htmlspecialchars($_POST['sub_type']));
   $extra=mysqli_real_escape_string($con, htmlspecialchars($_POST['extra_req']));
   $DATE=mysqli_real_escape_string($con, htmlspecialchars(date("Y-m-d")));
-$query="INSERT INTO `ad`(`AD_id`, `S_id`, `source`, `no_destination`, `luggage`, `type_luggage`, `weight`, `price_budget`, `status`, `order_date`, `vehicle_type`, `add_requirement`,`ad_date`) VALUES (Null,(SELECT S_id FROM `user_s` WHERE S_mail='$username'),'$source','$dest','$luggage','$type','$weight','$budget','0','$order_date','$wheel','$extra','$DATE')";
+$query="INSERT INTO `ad`(`AD_id`, `S_id`, `source_s`, `no_destination`, `luggage`, `type_luggage`, `weight`, `status`, `date`,`order_date`, `vehicle_type`, `add_requirement`) VALUES (Null,(SELECT S_id FROM `user_s` WHERE S_mail='$username'),'$source','$dest','$luggage','$type','$weight','0','$DATE','$order_date','$wheel','$extra')";
 
 
- $username= $_SESSION['mail'];
+ /*$username= $_SESSION['mail'];
   $source=$_POST['source'];
   $dest=$_POST['no_dest'];
   $luggage=$_POST['luggage'];
@@ -31,8 +31,8 @@ $query="INSERT INTO `ad`(`AD_id`, `S_id`, `source`, `no_destination`, `luggage`,
   $vehicle_type=$wheel.$sub;
   $extra=$_POST['extra_req'];
   $DATE=date("Y-m-d");
-$query="INSERT INTO `ad`(`AD_id`, `S_id`, `source`, `no_destination`, `luggage`, `type_luggage`, `weight`, `status`, `order_date`, `vehicle_type`, `add_requirement`,`ad_date`) VALUES (Null,(SELECT S_id FROM `user_s` WHERE S_mail='$username'),'$source','$dest','$luggage','$type','$weight','0','$order_date','$vehicle_type','$extra','$DATE')";
-
+$query="INSERT INTO `ad`(`AD_id`, `S_id`, `source_s`, `no_destination`, `luggage`, `type_luggage`, `weight`, `status`, ,`date``order_date`, `vehicle_type`, `add_requirement`) VALUES (Null,(SELECT S_id FROM `user_s` WHERE S_mail='$username'),'$source','$dest','$luggage','$type','$weight','0','$DATE','$order_date','$vehicle_type','$extra')";
+*/
 $result=mysqli_query($con,$query) or die(mysqli_error($con));
 if($result){
 echo "Database inserted";

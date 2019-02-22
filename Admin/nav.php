@@ -25,7 +25,6 @@
       <?php if (isset($_SESSION['mail'])){ ?>
       <a class="nav-link" href="logout.php">Log Out</a>
       <?php } ?>
-
     </li>
   </ul>
 </nav>
