@@ -6,7 +6,7 @@ if (isset($_POST['search'])) {
 //Search box value assigning to $Name variable.
     $Name = $_POST['search'];
 //Search query.
-    $Query = "SELECT Name FROM search WHERE Name LIKE '%$Name%' LIMIT 5";
+    $Query = "SELECT source_s FROM ad WHERE source_s LIKE '%$Name%' LIMIT 5";
 //Query execution
     $ExecQuery = MySQLi_query($con, $Query);
 //Creating unordered list to display result.

@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(isset($_SESSION['mail'])){
+  header("location:index.php");
+}
+else
+{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,3 +80,7 @@ body{
     </script>
   </body>
 </html>
+<?php
+
+}
+?>

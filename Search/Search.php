@@ -13,9 +13,6 @@
 <!-- Search box. -->
 <input type="text" id="search" placeholder="Search">
 <div id="display"></div>
-<br>
-<b>Ex: </b><i>Viral, Prince, Kesha, Gayatri, Ridham, HireTruck</i>
-<br/>
 <!-- Suggestions will be displayed in below div. -->
 </body>
 </html>

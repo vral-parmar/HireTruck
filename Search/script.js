@@ -21,9 +21,9 @@ $(document).ready(function () {
             //AJAX is called.
             $.ajax({
                 //AJAX type is "Post".
-                type: "POST",
+                type: "POST",]
                 //Data will be sent to "ajax.php".
-                url: "ajax.php",
+                url: "Ajax.php",
                 //Data, that will be sent to "ajax.php".
                 data: {
                     //Assigning value of "name" into "search" variable.

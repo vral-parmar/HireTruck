@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['mail'])) {
+	header("location:index.php");
+}
+?>
+
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
@@ -73,6 +80,7 @@
     else
     {
       echo "Session not created try again!!"."Error page here if user direct redirect to this link"; //check if session created or not
+			header("refresh:2;url=login.php");
     }
 
 

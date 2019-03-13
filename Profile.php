@@ -80,10 +80,7 @@ require_once("Session.php");
                                 <div class="col-xs-12 col-sm-4 text-center">
                                     <!-- <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive"> -->
                                 </div><!--/col-->
-                                <div class="col-xs-12 col-sm-4">
-                                    <h2><strong> 20,7K </strong></h2>
-                                    <p><small>Add </small></p>
-                                     <!-- modal code start -->
+                                <div class="col-xs-12 col-sm-4">                                   <!-- modal code start -->
                                         <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
@@ -179,8 +176,6 @@ require_once("Session.php");
                                     <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> Post Ad  </button>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>245</strong></h2>
-                                    <p><small>Following</small></p>
                                     <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
                                     <div class="container border">
   <!-- Modal -->
@@ -220,8 +215,6 @@ require_once("Session.php");
 <!--Edit Profile end -->
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>43</strong></h2>
-                                    <p><small>Snippets</small></p>
                                     <a href="E_receipt.php" type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-Reciept </a>
                                 </div><!--/col-->
                             </div><!--/row-->
@@ -311,20 +304,15 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
 }?>
 
                                     </p>
-                                </div><!--/col-->
+                                </div><!--/col--><br><br>
                                 <div class="col-xs-12 col-sm-4 text-center">
                                     <!-- <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive"> -->
                                 </div><!--/col-->
 
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong> 20,7K </strong></h2>
-                                    <p><small>Followers</small></p>
-
-                                    <a href="ad.php" class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> View Ad  </a>
+                              <a href="ad.php" class="btn btn-success btn-block"><span class="fa fa-eye"></span> View Ad  </a>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>245</strong></h2>
-                                    <p><small>Following</small></p>
                                     <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
                                 </div><!--/col-->
 
@@ -380,8 +368,6 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
 
 
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>43</strong></h2>
-                                    <p><small>Snippets</small></p>
                                     <button type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> Bills </button>
                                 </div><!--/col-->
                             </div><!--/row-->
