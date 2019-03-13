@@ -53,7 +53,7 @@ require_once("Session.php");
         </section>
     <!--================End Blog Main Area =================-->
         <br>
-        <div class="container ">
+        <div class="container " style="background-color:#efefef ;margin-bottom: 75px;webkit-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);-moz-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75); box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);>
             <div class="row card">
                 <div class="col-md-12 card-body">
                     <div class="panel panel-default">
@@ -72,18 +72,25 @@ require_once("Session.php");
                                          $lname=ucwords($row['S_lname']);
                                          $mno=$row['S_mnumber'];
                                   ?>
-                                    <h2><?php echo $fname." ".$lname; ?> </h2><br>
-                                    <p><strong>Email:</strong> <?php echo $email; ?> </p>
-                                    <p><strong>Mobile Number: </strong>  <?php echo $mno; ?> </p>
-                                    </p>
+                                    <h1>Hey <?php echo $fname." ".$lname; ?> !! </h1><br>
+                                      <div class="row">
+                                              <div class="col-md-3">
+                                                  <p><b>Your Email Address: </b> </p>
+                                                  <p><b>Your Mobile Number: </b></p>
+                                            </div>
+                                              <div class="col-md-3">
+                                                <p>  <?php echo $email; ?></p>
+                                              <p>    <?php echo $mno; ?></p>
+                                            </div>
+
+                                      </div>
+
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4 text-center">
                                     <!-- <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive"> -->
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong> 20,7K </strong></h2>
-                                    <p><small>Add </small></p>
-                                     <!-- modal code start -->
+
                                         <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
@@ -180,11 +187,16 @@ require_once("Session.php");
                                         </div>
                                       </div></div></div></div>
                                     <!-- ad modal end -->
+                                    <br/>
+                                    <br/>
+
                                     <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> Post Ad  </button>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>245</strong></h2>
-                                    <p><small>Following</small></p>
+
+                                    <br/>
+                                    <br/>
+
                                     <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
                                     <div class="container border">
   <!-- Modal -->
@@ -224,9 +236,9 @@ require_once("Session.php");
 <!--Edit Profile end -->
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>43</strong></h2>
-                                    <p><small>Snippets</small></p>
-                                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> Options </button>
+                                    <br/>
+                                    <br/>
+                                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-gear"></span> e-Receipt </button>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </div><!--/panel-body-->
@@ -283,7 +295,7 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
         </section>
         <!--================End Blog Main Area =================-->
         <br>
-        <div class="container ">
+        <div class="container"style="background-color:#efefef ;margin-bottom: 75px;webkit-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);-moz-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75); box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);">
             <div class="row card">
                 <div class="col-md-12 card-body">
 
@@ -323,8 +335,7 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                 </div><!--/col-->
 
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong> 20,7K </strong></h2>
-                                    <p><small>Followers</small></p>
+
                                      <!-- modal code start -->
                                         <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
                                             <div class="modal-dialog modal-dialog-centered">
@@ -428,11 +439,15 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                         </div>
                                       </div></div></div></div>
                                     <!-- ad modal end -->
-                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> View Ad  </button>
+                                  </br>
+                                </br>
+                                <form method="post" action="Search/srch.php">
+                                    <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> View Ad  </button>
+                                  </form>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>245</strong></h2>
-                                    <p><small>Following</small></p>
+                                </br>
+                              </br>
                                     <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
                                 </div><!--/col-->
 
@@ -488,8 +503,8 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
 
 
                                 <div class="col-xs-12 col-sm-4">
-                                    <h2><strong>43</strong></h2>
-                                    <p><small>Snippets</small></p>
+                                <br/>
+                                <br/>
                                     <button type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> Bills </button>
                                 </div><!--/col-->
                             </div><!--/row-->

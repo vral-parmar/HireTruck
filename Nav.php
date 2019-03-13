@@ -50,8 +50,15 @@
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
-              <?php if(@isset($_SESSION['mail'])){ ?>
-                <li class="nav-item"><a class="nav-link" href="Ad_view.php">Advertisement</a></li> <?php }?>
+              <?php if(@isset($_SESSION['mail'])){
+                if($_SESSION['user_type']=="Shipper"){
+                  ?>
+                <li class="nav-item"><a class="nav-link" href="Ad_view.php">Advertisement</a></li> <?php }
+
+                if($_SESSION['user_type']=="Transport"){
+                ?>
+                <li class="nav-item"><a class="nav-link" href="ad.php">Advertisement</a></li> <?php }}?>
+
 
                 <?php if(@!$_SESSION['mail'])  {//hide login and registration if user is login ?>
                     <li class="nav-item dropdown submenu">
