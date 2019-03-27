@@ -29,7 +29,7 @@ body{
   <div class="container-fluid">
       <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
-            <form class="form-container1" action="deal_confirm.php" method="post">
+            <form class="form-container1" action="credit_detail.php" method="post">
               <h2 align="center">NEW BID</h2><hr><br>
                  <div class="row container">
                   <div class="col">

@@ -1,6 +1,7 @@
 <?php
 require ('session.php');
-require ('Nav.php');
+//require ('Nav.php');
+$hid=$_POST['AD'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,12 +52,12 @@ body{
   <div class="container-fluid">
       <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
-            <form class="form-container1" action="Lvalidate.php" method="post">
-              <h2 align="center">Account Details </h2><hr><br>
+            <form class="form-container1" action="deal_confirm.php" method="post">
+              <h2 align="center"><img src="https://i.ibb.co/GQ6gw34/1544624867669.png" alt="Img" width="8%"> &nbsp;&nbsp;Account Details </h2><hr><br>
                  <div class="row container">
                   <div class="col-md-6">
                         <label><b>Card Holder Name</b></label>
-                        <input type="card_name" name="cardholder" pattern="[A-Za-z]{100}" class="form-control" placeholder="Enter Card Holder Name" autofocus required>
+                        <input type="card_name" name="cardholder" class="form-control" placeholder="Enter Card Holder Name" autofocus required>
                   </div>
                  </div>
                  <div class="row container">
@@ -68,64 +69,30 @@ body{
                   <div class="row container">
                     <div class="col-md-6">
                        <label for="source"><b>Expiry Date</b></label>
-                       <input type="date"  pattern="dd-mm-YYYY" name="SHIPPER_truck_num" class="form-control" placeholder="Enter the Expiry date" autofocus required>
+                       <input type="date"  pattern="dd-mm-YYYY" name="expiry" class="form-control" placeholder="Enter the Expiry date" autofocus required>
                     </div>
                     <div class="col-md-4">
                        <label for="source"><b>CVV</b></label>
-                       <input type="password" pattern="/^[0-9] {3}$/" pattern"[0-9]{10}"  ng-model="dataItem.password" name="SHIPPER_number" class="form-control" maxlength="3" placeholder="***" required><br><br>
+                       <input type="password"   ng-model="dataItem.password" name="cvv" class="form-control" maxlength="3" placeholder="***" required><br><br>
+                    </div>
+                    <input type="hidden" name="AD_ID" value="<?php echo $hid; ?>">
+                  </div>
+                  <div class="row">
+                    <div class="text-left col">
+                      <input type="submit" class="btn btn-success" id="Hide" value="Submit">&nbsp; &nbsp; &nbsp;
+                      <button type="reset" class="btn btn-danger">Reset</button><br><br><br>
+                    </div>
+                    <div class="col text-right">
+                      <div class="col-6">
+                          <a href="index.php" class="btn btn-primary">Back to Home</a>
+                      </div>
                     </div>
                   </div>
-                   <?php
-                    $query="select * from bid_ref WHERE(SELECT B_id FROM bid WHERE Ad_id='1')";
-                    $result= mysqli_query($con,$query) or die(myqli_error($con));
-                    if(mysqli_num_rows($result)>0)
-                    {
-                      while ($row=mysqli_fetch_array($result))
-                      {
-                      $b_id=$row['B_id'];
-                      $t_id=$row['T_id'];
-                      $t_org_name=$row['T-org_name'];
-                      $price=$row['price'];
-                      $date=$row['date'];
-                    ?>
-                    <div class="row container">
-                        <div class="col">
-                           <?php echo $t_id; ?>
-                        </div>
-                        <div class="col">
-                           <?php echo $t_org_name; ?>
-                        </div>
-                        <div class="col">
-                           <?php echo $price; ?>
-                        </div>
-                        <div class="col">
-                           <?php echo $date; ?>
-                        </div>
-                     <button type="button" class="btn btn-info" onclick="alert('Bid Confirmed !!')">Confirm</button>
-                     </div>
-                     <?php
-                        }
-                        }
-                        ?>
-                      <div>
-                        <input type="submit" class="btn btn-success" id="Hide" value="Submit">&nbsp; &nbsp; &nbsp;
-                        <button type="reset" class="btn btn-danger">Reset</button><br><br><br>
-                      </div>
-
-                      <div class="row container">
-                        <div class="col-6" style="text-align:left;">
-                            <a href="index.php"> <code><-</code>Back to Home</a>
-                        </div>
-                      </div>
-            </form>
+              </form>
+        </div>
       </div>
     </div>
-  </div>
-    <script type="text/javascript">
-    document.getElementById("Hide").onclick = function()
-    {
-    this.disabled = true;
-    }
+    
     </script>
   </body>
 </html>
