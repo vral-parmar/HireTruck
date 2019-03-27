@@ -25,6 +25,7 @@ $query="SELECT * FROM `ad` WHERE status='0'AND Ad_id='$ad' AND S_id=(SELECT S_id
 $sql=mysqli_query($con,$query) or die(mysqli_error($con));
 //print_r($sql);
 //echo mysqli_num_rows($sql);
+//print_r( $re=mysqli_fetch_array($sql));
 while($re=mysqli_fetch_array($sql)){
 ?>
 <!DOCTYPE html>
@@ -106,7 +107,7 @@ while($re=mysqli_fetch_array($sql)){
                                    </div>
                                    <div>
                                        <label>Extra Requirements</label>
-                                       <input type="textbox" name="extra_req" class="form-control" placeholder="Rope, Strip, Hooks, cable etc.." value="<?php print ($re[12]); ?>"required/>
+                                       <input type="textbox" name="extra_req" class="form-control" placeholder="Rope, Strip, Hooks, cable etc.." value="<?php print ($re[11]); ?>"required/>
                                    </div>
                                    <br>
                                    <div class="container">
@@ -159,7 +160,7 @@ $username=mysqli_real_escape_string($con, htmlspecialchars($_SESSION['mail']));
  $vehicle=$wheel.','.$sub;
  $extra=mysqli_real_escape_string($con, htmlspecialchars($_POST['extra_req']));
 
- $query="UPDATE ad SET source_s='$source',no_destination='$dest',luggage='$luggage',type_luggage='$type',weight='$weight',price_budget='0',
+ $query="UPDATE ad SET source='$source',no_destination='$dest',luggage='$luggage',type_luggage='$type',weight='$weight',price_budget='0',
  order_date='$order_date',vehicle_type='$vehicle',add_requirement='$extra' WHERE Ad_id='$ad' AND S_id=(select S_id from user_s where S_mail='$username')";
  $result=mysqli_query($con,$query) or die(mysqli_error($con));
  if(!$result){

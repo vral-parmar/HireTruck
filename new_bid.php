@@ -48,16 +48,16 @@ body{
                        <label for="source"><b>Confirmation</b></label>
                      </div>
                   <?php
-                    $adi=$_POST['id_ad'];
+                    $adi=$_POST['id_Ad'];
                     //echo $adi;exit;
 
-                    $query="SELECT * from bid_ref where Ad_id=(SELECT Ad_id from ad where AD_id='$adi')";
+                    $query="SELECT * FROM bid_ref where B_id=(SELECT b_id from bid where ad_id='$adi')";
                     $result= mysqli_query($con,$query) or die(mysqli_error($con));
                     if(mysqli_num_rows($result)>0)
                     {
                       while ($row=mysqli_fetch_array($result))
                       {
-                      $b_id=$row['Bid_id'];
+                      $b_id=$row['B_id'];
                       $t_id=$row['T_id'];
                       $t_org_name=$row['T-org_name'];
                       $price=$row['price'];
