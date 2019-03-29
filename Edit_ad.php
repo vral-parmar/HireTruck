@@ -10,15 +10,20 @@ require ('Session.php');
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="icon" href="https://i.ibb.co/tDkQbmq/Logo.png" type="image/x-icon" />
     <meta charset="utf-8">
-    <title></title>
+    <title>Edit Your Ad - HireTruck</title>
   </head>
   <body>
-
-  </body>
-</html>
+    <nav class="navbar navbar-expand-sm bg-secondary sticky-top navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="Ad_view.php">Back</a>
+        </li>
+      </ul>
+    </nav>
 <?php
-
+//echo $_POST['id_ad'];
 $ss=$_SESSION['mail'];
 $ad=$_POST['id_ad'];
 $query="SELECT * FROM `ad` WHERE status='0'AND Ad_id='$ad' AND S_id=(SELECT S_id from user_s  where S_mail='$ss')";
@@ -28,15 +33,8 @@ $sql=mysqli_query($con,$query) or die(mysqli_error($con));
 //print_r( $re=mysqli_fetch_array($sql));
 while($re=mysqli_fetch_array($sql)){
 ?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="container" style="padding-top:5%;"><br>
-      <h1 class="text-center">Recently Posted ad on HireTruck<h1>
+    <div class="container" style="padding-top:1%;"><br>
+      <h1 class="text-center">Edit Your ad Requirements<h1>
     </div><br>
     <!-- modal code start -->
                    <!-- Modal body --><div class="row">
@@ -49,23 +47,19 @@ while($re=mysqli_fetch_array($sql)){
                            <p class="card-text text-center">Fill up your requirement's for vehicle and Luggage and tap submit for open your ad
                                in the HireTruck </p>
                            <div class="container">
-                               <form action="Edit_ad.php" method="post" class="form-group">
-
-                                   <div class="form-group">
-
+                               <form action="Edit_ad_update.php" method="post" class="form-group">
                                        <label> Enter Source of Luggage</label>
+                                       <div class="form-group">
                                        <input type="hidden" name="id_ad" value="<?php echo $re[0]; ?>">
                                        <input type="textbox" name="source" class="form-control" value="<?php print_r ($re[2]);?>" placeholder="Ahmedabad" required/>
                                    </div>
                                    <div class="form-group">
                                    <label>Enter destination of Luggage</label>
-
-                                   <textarea class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" value="<?php print($re[3]); ?>" required>
+                                   <input type="text" class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" value="<?php print($re[3]); ?>" required>
                                    </textarea>
                                    </div>
                                    <div class="form-group">
                                        <label>Type of Luggage</label>
-
                                        <input type="textbox" name="luggage" class="form-control" placeholder="Liquid, hard, soft, gas..." value="<?php print($re[4]); ?>" required/>
                                    </div>
                                    <div class="form-group">
@@ -122,7 +116,6 @@ while($re=mysqli_fetch_array($sql)){
                                            </div>
                                            <div class="col">
                                                <input type="Submit" value="Update" class="form-control btn btn-success"/>
-
                                                <div>
                                </form>
                            </div>
@@ -131,46 +124,10 @@ while($re=mysqli_fetch_array($sql)){
                </div>
            </div>
          </div>
-
-
-
                      </div>
                      <div class="col">
-
                      </div>
                    </div>
-
   </body>
 </html>
-
-<?php
-
-$ad= $_POST['id_ad'];
-
-$username=mysqli_real_escape_string($con, htmlspecialchars($_SESSION['mail']));
- $source=mysqli_real_escape_string($con, htmlspecialchars($_POST['source']));
- $dest=mysqli_real_escape_string($con, htmlspecialchars($_POST['no_dest']));
- $luggage=mysqli_real_escape_string($con, htmlspecialchars($_POST['luggage']));
- $type=mysqli_real_escape_string($con, htmlspecialchars($_POST['type_luggage']));
- $weight=mysqli_real_escape_string($con, htmlspecialchars($_POST['waight']));
- //$budget=mysqli_real_escape_string($con, htmlspecialchars($_POST['budget']));
- $order_date=mysqli_real_escape_string($con, htmlspecialchars($_POST['order_date']));
- $wheel=mysqli_real_escape_string($con, htmlspecialchars($_POST['wheel']));
- $sub=mysqli_real_escape_string($con, htmlspecialchars($_POST['sub_type']));
- $vehicle=$wheel.','.$sub;
- $extra=mysqli_real_escape_string($con, htmlspecialchars($_POST['extra_req']));
-
- $query="UPDATE ad SET source='$source',no_destination='$dest',luggage='$luggage',type_luggage='$type',weight='$weight',price_budget='0',
- order_date='$order_date',vehicle_type='$vehicle',add_requirement='$extra' WHERE Ad_id='$ad' AND S_id=(select S_id from user_s where S_mail='$username')";
- $result=mysqli_query($con,$query) or die(mysqli_error($con));
- if(!$result){
-
-
- echo "Database inserted";
- header('location:index.php');
- //header(home.php);
-}
-}
-
-
- ?>
+<?php } ?>

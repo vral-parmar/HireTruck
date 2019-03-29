@@ -277,7 +277,7 @@
                     </div>
                     <div class="item">
                         <h4>“They are the best”</h4>
-                        <p>Puctuality is a key now a day and HireTruck Try to provide Best Services on air.</p>
+                        <p>Panctuality is a key now a day and HireTruck Try to provide Best Services on air.</p>
                         <div class="media">
                             <img src="img/team/people/people-5.jpg" alt="">
                             <div class="media-body">
@@ -309,9 +309,9 @@
                         </div>
                         <p>Welcome to HireTruck We are in front of you With sollution of transportation Project. Which Help user to get Services on time, date, and your budget. is it quit easy to Post ad Over HireTruck and you also get a bid on little.</p>
                     </div>
-                    <div class="shap_mobile">
+                    <!-- <div class="shap_mobile">
                         <img src="img/iphone4.png" alt="">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

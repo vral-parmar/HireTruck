@@ -38,7 +38,7 @@ require ("Session.php");
         <section class="banner_area">
             <div class="container">
                 <div class="banner_inner_text">
-                  <center><h1> Advertisements At A Glance</h1></center>
+                  <center><h1> Advertisements At a Glance</h1></center>
                 </div>
             </div>
         </section>
@@ -64,18 +64,29 @@ require ("Session.php");
     <div class="col">
 
     </div>
-        <div class="col" style="background-color:#efefef;margin-top:70px; margin-bottom: 50px; margin-left:50px; margin-right:50px ;webkit-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);-moz-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75); box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);">
+        <div class="col-xl-6 container" style="background-color:#efefef;margin-top:70px; margin-bottom: 50px; margin-left:50px; margin-right:50px ;webkit-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);-moz-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75); box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);">
           <!-- <div class="add-sidebar"> -->
-            <div class="add-title">
-              <bold><h2 align="center">Advertisement</h2></bold>
-                <div class="email-of-user">
-                  <h4 align="center">Source:</h4>
-                    <bold><pre><?php echo $source ?></pre></bold>
-                    <bold><h4 align="center">Destination:</h4></bold>
-                      <pre><?php echo $des ?></pre>
-                </div>
+            <div class="add-title bg-info" style="padding-top:3%;padding-bottom:3%;">
+              <bold><h3 align="center" class="text-white">Advertisement</h3></bold>
+            </div><br>
+                <div class="email-of-user" style="padding-top:3%;">
+                  <div class="row">
+                    <div class="col">
+                      <h5 align="center">Source:</h5>
+                      <h4 align="center"><?php echo $source ?></h4>
+                    </div>
+                    <div class="col-2 text-center">
+                      <h5>TO</h5>
+                      <h4>====></h4>
+                    </div>
+                    <div class="col">
+                      <h5 align="center">Destination:</h5>
+                      <h4 align="center"><?php echo $des ?></h4>
+                    </div>
+                  </div><br>
                       <input type="hidden" name="id_ad" value="<?php echo $Ad_id; ?>">
-                        <center><input class="btn btn-block btn-primary" style="margin-top:10px ; margin-bottom:10px" type="submit" name="Bid" value="Show Ad" role="button"/></center>
+                      <center><input class="btn btn-block btn-primary" style="margin-top:10px ; margin-bottom:10px" type="submit" name="Bid" value="Show Ad" role="button"/></center>
+                      <br>
             </div>
           </div>
   <div class="col">

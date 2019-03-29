@@ -4,7 +4,6 @@ require('Session.php');
    $Ad_id=$_POST['ad_id'];
    $username=$_SESSION['mail'];
    $bid=$_POST['bid'];
-
       $qry="SELECT T_org_name,T_id from user_t where t_id=(SELECT t_id from user_t where T_mail='$username')";
       $res=mysqli_query($con,$qry) or die(mysqli_error($con));
       $data=mysqli_fetch_row($res);

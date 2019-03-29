@@ -1,14 +1,15 @@
 <?php
 require ('Session.php');
-require ('Nav.php');
+//require ('Nav.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="icon" href="https://i.ibb.co/tDkQbmq/Logo.png" type="image/x-icon" />
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
 <style media="screen">
 body{
  height: 100%;
@@ -25,6 +26,13 @@ body{
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
+<nav class="navbar navbar-expand-sm bg-secondary sticky-top navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="index.php">Back</a>
+    </li>
+  </ul>
+</nav>
     <?php
     $query1="SELECT s_fname 'user_s', T_org_name 'user_t',  conform_date   'deal' , source 'ad' , no_destination 'ad' , price 'deal' from user_s s, deal b, user_t c, ad a
 where b.s_id = s.s_id and b.t_id = c.t_id and  b.Ad_id=a.AD_id";
