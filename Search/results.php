@@ -2,7 +2,7 @@
 // require ('session.php');
 // require ('Nav.php');
 
-
+require ("../connection.php");
 if(!isset($_POST['search'])){
   header("Location:../index.php");
   header("Location:../connection.php");
@@ -34,9 +34,16 @@ body{
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-  <div class="container-fluid">
-      <div class="row">
-         <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
+    <div class="container" style="padding-top:5%;"><br>
+      <h1 class="text-center">Advertisements of your interest:<h1>
+    </div><br>
+
+     <!-- modal code start -->
+        <div class="modal fade shadow-lg p-3 mb-5 bg-white rounded" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="container-fluid">
+                    <div class="row">
 
            <div class="row container">
                <div class="col">
@@ -63,19 +70,21 @@ body{
                   <?php
 
 
-                  $search_sql="SELECT * FROM ad WHERE source LIKE '%".$_POST['search']."%'";
+                  $search_sql="SELECT * FROM ad WHERE (source LIKE '%".$_POST['search']."%') or (destination LIKE '%".$_POST['search']."%') or (luggage LIKE '%".$_POST['search']."%')";
                   $search_query=mysqli_query($con,$search_sql);
                   if(mysqli_num_rows($search_query)>0){
 
 
                       while ($search_rs=mysqli_fetch_array($search_query))
                       {
-                      $source=$search_rs['B_id'];
+                        //print_r($search_rs);exit;
+                      $source=$search_rs['source'];
                       $lug=$search_rs['luggage'];
                       $type=$search_rs['type_luggage'];
                       $weight=$search_rs['weight'];
                       $date=$search_rs['date'];
                       $v_type=$search_rs['vehicle_type'];
+                      $Destination=$search_rs['destination'];
                     ?>
                     <div class="row container">
                         <div class="col">
