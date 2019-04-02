@@ -29,7 +29,6 @@ body{
   <div class="container-fluid">
       <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
-            <form class="form-container1" action="Lvalidate.php" method="post">
             <form class="form-container1" action="Track_form.php" method="post">
               <h2 align="center">NEW BID</h2><hr><br>
                  <div class="row container">
