@@ -41,9 +41,9 @@ require_once("Session.php");
     <body>
     <?php
     include ('Nav.php');
-
-
-    <!--================Banner Area =================-->
+if($_SESSION['user_type']=="Shipper"){
+?>
+    <!-- ================Banner Area =================-->
         <section class="banner_area">
             <div class="container">
                 <div class="banner_inner_text">
@@ -268,117 +268,101 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
         <section class="banner_area">
             <div class="container">
                 <div class="banner_inner_text">
+                  <div class="container">
+                    <?php
+                    $qry="SELECT * FROM `user_t` WHERE T_mail='$email'";
+                    $res=mysqli_query($con,$qry) or die(mysqli_error($con));
+
+                      if(mysqli_num_rows($res)>0)
+                      {
+                        while(  $retrive=mysqli_fetch_array($res))
+                        {
+                          $row=$retrive;
+                          $Tname=$row['T_org_name'];
+                           $towner=$row['T_owner_name'];
+                           $mno=$row['T_number'];
+                           $tadd=$row['T_address'];
+                           $nov=$row['T_no_vehicle'];
+                           $tano=$row['T_anumber'];
+                    ?>
+                    <div class="container">
+                      <div class="row">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col">
+                                <h4><small><?php echo "<b>".$Tname."</b>"." Owned by: "."<b>".$towner."</b>"; ?>
+                                At: <?php echo "<b>".$tadd."</b>"; ?>&nbsp;Location </small></h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <h3><small>Email: <?php echo $email; ?> </small></h3>
+                          <h3><small>Mobile Number: <?php echo $mno; ?> </small></h3>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <a href="ad.php" class="btn btn-success btn-block"><span class="fa fa-eye"></span> View Ad  </a>
+                          </div>
+                          <div class="col">
+                            <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> Bills </button>
+                        </div>
+                    </div>
+                        </div>
+                      </div>
+                    </div>
+                    <?php } } ?>
+                  </div>
                 </div>
             </div>
         </section>
         <!--================End Blog Main Area =================-->
-        <br>
-        <div class="container ">
-            <div class="row card">
-                <div class="col-md-12 card-body">
-
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-8">
-
-                                  <?php
-                                  $qry="SELECT * FROM `user_t` WHERE T_mail='$email'";
-                                  $res=mysqli_query($con,$qry) or die(mysqli_error($con));
-
-                                    if(mysqli_num_rows($res)>0)
-                                    {
-                                      while(  $retrive=mysqli_fetch_array($res))
-                                      {
-                                        $row=$retrive;
-                                        $Tname=$row['T_org_name'];
-                                         $towner=$row['T_owner_name'];
-                                         $mno=$row['T_number'];
-                                         $tadd=$row['T_address'];
-                                         $nov=$row['T_no_vehicle'];
-                                         $tano=$row['T_anumber'];
-                                  ?><br>
-                                    <h2><?php echo $Tname." owned by ".$towner; ?> </h2>
-                                    <p><strong>Email:</strong> <?php echo $email; ?> </p>
-                                    <p><strong>Mobile Number: </strong> <?php echo $mno; ?> </p>
-                                    <p><strong>At: </strong> <?php echo $tadd; ?>&nbsp;Location </p>
-                                  <?php   }
-                                  }?>
-
-                                    </p><br><br>
-                                </div><!--/col-->
-                                <div class="col-xs-12 col-sm-4 text-center">
-                                    <!-- <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="" class="center-block img-circle img-responsive"> -->
-                                </div><!--/col-->
-
-                                <div class="col-xs-12 col-sm-4">
-                              <a href="ad.php" class="btn btn-success btn-block"><span class="fa fa-eye"></span> View Ad  </a>
-                                </div><!--/col-->
-                                <div class="col-xs-12 col-sm-4">
-                                    <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
-                                </div><!--/col-->
-
-                                <!-- Modal -->
-                                <!---Edit Profile start --->
-                              <div>
-                              <div class="modal fade" id="Edit_prof" role="dialog">
-                                <form class="form-group" action="Profile_up.php" method="post">
-                                  <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                      <div class="modal-header bg-info">
-                                        <h4 class="modal-title">Edit your Profile</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      </div>
-                                      <div class="modal-body">
-                                      <div>
-                                      <label for="fname">Transport Company's Name *</label>
-                                        <input type="name" name="t_name" class="form-control" placeholder="Enter the Company's Name" autofocus required value="<?php echo $Tname ?>"><br>
-                                      </div>
-                                      <div>
-                                      <label for="fname">Owner's Name *</label>
-                                        <input type="name" name="o_name" class="form-control" placeholder="Enter the Owner's Name" autofocus required value="<?php echo $towner; ?>"><br>
-                                      </div>
-                                      <div>
-                                      <label for="fname">Mobile *</label>
-                                        <input type="number" name="m_number" class="form-control" placeholder="Enter the mobile number" autofocus required value="<?php echo $mno; ?>"><br>
-                                      </div>
-                                      <div>
-                                      <label for="fname">Additional No.*</label>
-                                        <input type="name" name="a_number" class="form-control" placeholder="Enter additional number" autofocus required value="<?php echo $tano; ?>"><br>
-                                      </div>
-                                      <div>
-                                      <label for="fname">No.of Vehicles *</label>
-                                        <input type="number" name="nov" class="form-control" placeholder="Enter the No.of vehicles" autofocus required value="<?php echo $nov; ?>"><br>
-                                      </div>
-                                      <div>
-                                      <label for="fname">Company's Address *</label>
-                                        <input type="text" name="t_add" class="form-control" placeholder="Enter the new address" autofocus required value="<?php echo $tadd; ?>"><br>
-                                      </div>
-
-                                      </div>
-
-                                      <div class="modal-footer">
-                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                      <button type="submit" class="btn btn-success">Submit</button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  </form>
-                                </div>
-                                </div>
-                                <!--Edit Profile end -->
-
-
-                                <div class="col-xs-12 col-sm-4">
-                                    <button type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> Bills </button>
-                                </div><!--/col-->
-                            </div><!--/row-->
-                        </div><!--/panel-body-->
-                    </div><!--/panel-->
+        <div class="modal fade" id="Edit_prof" role="dialog">
+          <form class="form-group" action="Profile_up.php" method="post">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header bg-info">
+                  <h4 class="modal-title">Edit your Profile</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+                <div class="modal-body">
+                <div>
+                <label for="fname">Transport Company's Name *</label>
+                  <input type="name" name="t_name" class="form-control" placeholder="Enter the Company's Name" autofocus required value="<?php echo $Tname ?>"><br>
+                </div>
+                <div>
+                <label for="fname">Owner's Name *</label>
+                  <input type="name" name="o_name" class="form-control" placeholder="Enter the Owner's Name" autofocus required value="<?php echo $towner; ?>"><br>
+                </div>
+                <div>
+                <label for="fname">Mobile *</label>
+                  <input type="number" name="m_number" class="form-control" placeholder="Enter the mobile number" autofocus required value="<?php echo $mno; ?>"><br>
+                </div>
+                <div>
+                <label for="fname">Additional No.*</label>
+                  <input type="name" name="a_number" class="form-control" placeholder="Enter additional number" autofocus required value="<?php echo $tano; ?>"><br>
+                </div>
+                <div>
+                <label for="fname">No.of Vehicles *</label>
+                  <input type="number" name="nov" class="form-control" placeholder="Enter the No.of vehicles" autofocus required value="<?php echo $nov; ?>"><br>
+                </div>
+                <div>
+                <label for="fname">Company's Address *</label>
+                  <input type="text" name="t_add" class="form-control" placeholder="Enter the new address" autofocus required value="<?php echo $tadd; ?>"><br>
+                </div>
+
+                </div>
+
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+              </div>
             </div>
-        </div>
-        <br>
+            </form>
+          </div>
 
         <?php } //end of transport condition ?>
 
