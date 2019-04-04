@@ -1,6 +1,5 @@
 <?php
 require ('Session.php');
-require ('Nav.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +25,13 @@ body{
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
+    <nav class="navbar navbar-expand-sm bg-primary sticky-top navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="Ad_view.php">Back</a>
+        </li>
+      </ul>
+    </nav>
   <div class="container-fluid">
       <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">

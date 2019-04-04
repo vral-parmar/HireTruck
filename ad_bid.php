@@ -38,7 +38,7 @@ require ("Session.php");
                       {
                         $row=$retrive;
                         $Ad_id=$row['AD_id'];
-                        $source=$row['source'];
+                        $source=$row['Source_ad'];
                         $des=$row['no_destination'];
                         $kol=$row['luggage'];
                         $tol=$row['type_luggage'];
@@ -95,18 +95,11 @@ require ("Session.php");
                             <input type="textbox" name="bid" class="form-control" required/>
                             <input type="hidden" name="ad_id" value="<?php echo $Ad_id; ?>"/>
                         </div>
-
-
                         <br>
-
-
-
                         <?php
                             }
                           }
-                                ?>
-
-
+                          ?>
                         <div class="container">
                             <div class="row">
                                 <div class="col">

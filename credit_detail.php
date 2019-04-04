@@ -84,7 +84,7 @@ body{
                     </div>
                     <div class="col text-right">
                       <div class="col-6">
-                          <a href="index.php" class="btn btn-primary">Back to Home</a>
+                          <a href="Ad_view.php" class="btn btn-primary">Back to Home</a>
                       </div>
                     </div>
                   </div>
@@ -92,7 +92,7 @@ body{
         </div>
       </div>
     </div>
-    
+
     </script>
   </body>
 </html>
