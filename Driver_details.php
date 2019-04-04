@@ -140,20 +140,24 @@ require ('Nav.php');
                 </section>
 
                 <?php
-                  $email=$_SESSION["mail"];
+                $email=$_SESSION["mail"];
+
+                if($_SESSION['user_type']=="Shipper"){
 
 
-                $dname=$_POST['dname'];
-                $tnumber=$_POST['truck_num'];
-                $dno=$_POST['S_number'];
+                $sql="SELECT * FROM `track` WHERE `D_id`=(SELECT `D_id` FROM `deal` WHERE `S_id`=(SELECT `S_id` FROM `user_s` WHERE `S_mail`='$email'))";
 
-                $sql="INSERT INTO deal_details VALUES('$tid=(SELECT T_id FROM user_t WHERE t_mail='$email')','$dname','$dno','$tnumber')";
-                if (mysqli_query($conn, $sql)) {
-                        echo "New record created successfully";
-                    }
-                else {
-                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                    }
+               $res=mysqli_query($con,$sql) or die(mysqli_error($con));
+                   if(mysqli_num_rows($res)>0)
+                      {
+                        while($row=mysqli_fetch_array($res))
+                        {
+                              $i=$row['In_loc'];
+                              // $d=$row['D_id'];
+                              // $date="SELECT 'conform_date' FROM 'deal' WHERE 'D_id'='$d'";
+                              // $result=mysqli_query($con,$date) or die(mysqli_error($con));
+                              // $odate=mysqli_fetch_array($result);
+
 
                 ?>
 
@@ -163,21 +167,22 @@ require ('Nav.php');
                               <h1 class="text-center"> Track Your Luggage: <h1>
                             </div><br>
 
-                        <form action="" method="POST" class="form-group">
 
                             <div class="container-fluid">
                               <div class="row">
                                     <div class="col-md-6">
-                                          <p><b>T_id : </b></p> <p> <?php  print $re[2];?> </p>
-                                          <p><b>Truck No. :</b> </p>
-                                          <>
-                                              <p><b>Current Location:</b> </p> <p> <?php  print $re[5];?>  </p>
+                                          <p><b>Deal_id : </b></p> <p> <?php  print $row['D_id'];?> </p>
+                                          <p><b>Truck No. :</b> </p><p> <?php  print $row['Truck_no'];?> </p>
+
+                                              <p><b>Date:</b> </p> <p> <?php  print $odate[5];?>  </p>
 
 
                                     </div>
                                     <div class="col-md-6">
-                                           <p><b>Source Of Lugguage : </b></p> <p> <?php  print $re[5];?>  </p>
-                                            <p><b>Destination Of Lugguage :</b> </p> <p> <?php  print $re[5];?>  </p>
+                                           <p><b>Source Of Lugguage : </b></p> <p> <?php  print $row['source'];?>  </p>
+                                            <p><b>Destination Of Lugguage :</b> </p> <p> <?php  print $row['destination'];?>  </p>
+
+                                              <p><b>Current Location:</b> </p> <p> <?php  print $row['In_loc'];?>  </p>
 
 
 
@@ -186,9 +191,12 @@ require ('Nav.php');
                                 <br><br>
 
                           </div>
-                          </form>
 
                   </div>
+
+              <?php }}?>
+
+
                   <div class="container">
                   <?php  if($i==20)
                   {?>
@@ -228,7 +236,7 @@ require ('Nav.php');
                           100% Distance Covered
                         </div>
                     </div>
-                  <?php } ?>
+                  <?php }} ?>
                   </div>
 
 
