@@ -20,27 +20,28 @@ require ('Nav.php');
                     </div>
                 </section>
 
-
-
                 <div class="container" style=" margin-top:10px; webkit-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);-moz-box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);	box-shadow: 1px 0px 17px 7px rgba(0,0,0,0.75);">
 
                             <div class="container" style="padding-top:5%;"><br>
                               <h1 class="text-center"> Enter Details At Every Checkpoint: <h1>
                             </div><br>
 
-                        <form action="" method="POST" class="form-group">
+                        <form action="Track.php" method="POST" class="form-group">
+
+
 
                             <div class="container-fluid">
                               <div class="row">
                                     <div class="col-md-6">
-                                          <p><b>T_id : </b></p> <p> <?php  print $re[2];?> </p>
-                                          <p><b>Truck No. :</b> </p> <p><?php  print $re[4];?>  </p>
+                                          <p><b>D_id : </b></p> <p> <?php  print $re[2];?> </p>
+                                          <!-- <p><b>Truck No. :</b> </p> <p>  </p> -->
 
 
                                     </div>
                                     <div class="col-md-6">
                                            <p><b>Source Of Lugguage : </b></p> <p> <?php  print $re[5];?>  </p>
                                             <p><b>Destination Of Lugguage :</b> </p> <p> <?php  print $re[5];?>  </p>
+                                            <p><b>Truck number :</b> </p> <p> <?php  print $re[5];?>  </p>
 
 
                                     </div>
@@ -66,9 +67,8 @@ require ('Nav.php');
                               </div>
 
                           </div>
-                          </form>
 
                   </div>
-                
+
 </body>
 </html>

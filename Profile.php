@@ -41,8 +41,7 @@ require_once("Session.php");
     <body>
     <?php
     include ('Nav.php');
-    if($_SESSION['user_type']=="Shipper"){
-     ?>
+
 
     <!--================Banner Area =================-->
         <section class="banner_area">
