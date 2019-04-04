@@ -45,7 +45,7 @@ body{
                       <th>Source</th>
                       <td>Destination</td>
                       <td>Date</td>
-                      <th>Order-date</th>
+
                       <th>Passcode</th>
                       <th></th>
                     </tr>
@@ -69,56 +69,28 @@ body{
                      ?>
                       <tr>
                         <form action="tras.php" method="post">
-                        <td>   <?php echo $finaldeal?></td>
-                        <td> <?php echo $source ?>  <input type="hidden" name="id_Ad" value="<?php echo $re[0]; ?>"> </td>
+                        <td>   <?php echo $finaldeal; ?></td>
+                        <td> <?php echo $source; ?></td>
                         <td><?php echo $no_destination; ?></td>
                       <!--  <td> <?php echo $order_date; ?></td>-->
-                        <td>   <?php echo $ad_date; ?></td>
+                        <td>   <?php echo $ad_date;  ?></td>
                         <td> <input type="password"  name="passcode" style="border-radius:15px;" placeholder="Passcode" ></td>
+                        <input type="hidden" name="deal_id" value="<?php echo $row[2]; ?>">
                         <th><input type="submit" class="btn btn-primary" style="float:right;height:28px;width:65px;margin:7px;font-size:15px;margin-bottom:7px;padding-top:2px;padding-left:7px;font-weight:boldborder-radius: 15px 50px 30px 5px;" value="Submit"></th>
                       </form>
+                    <?php } } ?>
                       </tr>
-                     <?php
-
-                     if($_POST):
-                         $passcode=$_POST['passcode'];
-                         //require(fs.php);
-                         $q="SELECT passcode from deal_dtails";
-                         $sql = mysqli_query($con, $q) or die(mysqli_error($con));
-                         $count = mysqli_num_rows($sql);
-                          if($count==0):
-                          //echo "<h1 align='center' padding-down:15%;><b> Error in Login</h1>";
-
-                          else:
-                          echo "Matched"; // header('location:.php');
-
-                      endif;
-                endif;
-
-
-                        }
-                        }
-                        ?>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-        <!--/form-->
-      </div>
-
+          </div>
       <script type="text/javascript">
     document.getElementById("Hide").onclick = function()
     {
     this.disabled = true;
     }
     </script>
-  </body>
+  </body
 </html>
-
-
-
-
-
-//SELECT * FROM `deal` WHERE d_status=0 and S_id=(SELECT S_id from user_s where s_mail='akshatsoni64@gmial.com')
-//select no_destination,order_date,Source_ad from ad where ad_id=(SELECT ad_id from deal  where d_id='6');
