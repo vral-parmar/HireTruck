@@ -52,10 +52,10 @@ require ("Session.php");
           {
             while(  $retrive=mysqli_fetch_array($res))
             {
-              $row=$retrive;
-              $source=$row['source'];
-              $des=$row['no_destination'];
-              $Ad_id=$row['AD_id'];
+
+              $source=$retrive['Source_ad'];
+              $des=$retrive['no_destination'];
+              $Ad_id=$retrive['AD_id'];
 
 ?>
 <form action="ad_bid.php" method="post">
