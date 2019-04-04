@@ -13,8 +13,10 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
+require 'tras.php';
+require 'Transport_registration.php';
 require 'vendor/autoload.php';
-function otp($eemail,$eename,$password){
+function otp($carrier_mail,$ad,$passcode){
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
@@ -29,7 +31,7 @@ try {
 
     //Recipients
     $mail->setFrom('jamesmrt070@gmail.com', 'HireTruck Team');
-    $mail->addAddress($eemail, $eename);     // Add a recipient
+    $mail->addAddress($carrier_mail);     // Add a recipient
     //$mail->addAddress('parmarviral93@gmail.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
@@ -41,7 +43,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Your HireTruck account Password';
+    $mail->Subject = 'Your HireTruck account Passcode';
     $mail->Body    = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
@@ -331,7 +333,7 @@ a[x-apple-data-detectors=true] {
                     <div class="">
 
     <div style="color:#E01C1C;font-family:`Oswald`, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 0px; padding-bottom: 10px;">
-        <div style="line-height:18px;font-size:12px;font-family:Oswald, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;color:#E01C1C;text-align:left;"><p style="margin: 0;line-height: 18px;text-align: right;font-size: 12px"><span style="background-color: rgb(255, 255, 255); font-size: 58px; line-height: 87px;"><strong><span style="line-height: 87px; background-color: rgb(255, 255, 255); font-size: 28px;">&#160;'.$password.'&#160;</span></strong></span><br></p></div>
+        <div style="line-height:18px;font-size:12px;font-family:Oswald, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;color:#E01C1C;text-align:left;"><p style="margin: 0;line-height: 18px;text-align: right;font-size: 12px"><span style="background-color: rgb(255, 255, 255); font-size: 58px; line-height: 87px;"><strong><span style="line-height: 87px; background-color: rgb(255, 255, 255); font-size: 28px;">&#160;'.$passcode.'&#160;</span></strong></span><br></p></div>
     </div>
 
 </div>
