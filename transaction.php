@@ -1,10 +1,6 @@
 <?php
 require ('Session.php');
-<<<<<<< HEAD
 $mail=$_SESSION['mail'];
-=======
-$mail = $_SESSION['mail'];
->>>>>>> b4acca22704e1c257c74525a203ea74be7ea3323
 ?>
 <!DOCTYPE html>
 <html lang="en">
