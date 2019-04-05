@@ -8,7 +8,7 @@ $url="www.way2sms.com/api/v1/sendCampaign";
 $message = urlencode($text);// urlencode your message
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_POST, 1);// set post data to true
-curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=MZHGF9CH38KFVI52TYHZLMFBBWS6QKQ3&secret=WP5A855IQU2I3F0V&usetype=stage&phone=$number&senderid=HRTRK&message=$message");// post data
+curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=QN13TQ658254D8RDIWI4NYGF2E2LC4B2&secret=98EHVMWNBBZ8T6X9&usetype=stage&phone=$number&senderid=HRTRK&message=$message");// post data
 // query parameter values must be given without squarebrackets.
  // Optional Authentication:
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
