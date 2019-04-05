@@ -71,7 +71,7 @@ while ($row1=mysqli_fetch_array($result1))
 
   $query="SELECT T_id from bid_ref where B_id='$b_id'";
   $res1=mysqli_query($con,$query) or die(mysqli_error($con));
-  echo $e=mysqli_num_rows($res1);
+ $e=mysqli_num_rows($res1);
   $Qry="INSERT INTO deal (D_id,Ad_id,S_id,T_id,B_id,conform_date,price,d_status)VALUES(null,'$AD',(SELECT S_id FROM user_s WHERE S_mail='$email'),'$t_id','$b_id','$date','$price','0')";
   //$Qry="INSERT INTO deal (D_id,Ad_id,S_id,T_id,conform_date,d_status)VALUES(null,'$AD',SELECT s_id from user_s WHERE S_mail='$email','$t_id','$b_id','$date','$prise','0')";
   $res=mysqli_query($con,$Qry) or die(mysqli_error($con));

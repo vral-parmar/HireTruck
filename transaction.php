@@ -1,5 +1,6 @@
 <?php
 require ('Session.php');
+$mail=$_SESSION['mail'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,13 +53,16 @@ body{
                   </thead>
                     <tbody>
                       <?php
-                     $query="SELECT source_ad 'ad', no_destination 'ad',  D_id 'deal' ,order_date 'ad' from ad a,deal d where d.Ad_id=a.AD_id and t_id=(SELECT t_id from user_t where t_mail='sp@gmail.com') and d_status='0' order by order_date ASC";
+                     $query="SELECT source_ad 'ad', no_destination 'ad',  D_id 'deal' ,order_date 'ad' from ad a,deal d where d.Ad_id=a.AD_id and t_id=(SELECT t_id from user_t where t_mail='$mail') and d_status='0' order by order_date ASC";
                      $result= mysqli_query($con,$query) or die(mysqli_error($con));
+
                      if(mysqli_num_rows($result)>0)
                      {
                        while ($row=mysqli_fetch_array($result))
                        {
+                         //print_r($row);
                        $source=$row[0];
+
                        $no_destination=$row[1];
                        $deal=$row[2];
                        //$order_date=$row[2];
