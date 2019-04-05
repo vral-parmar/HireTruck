@@ -65,7 +65,7 @@ body{
                             <a href="index.php"> <code><-</code>Back to Home</a>
                         </div>
                           <div class="col-6" style="text-align:right;">
-                            <a href="#" >Forgot Password??</a>
+                            <a href="Forgot_pass.php" >Forgot Password??</a>
                               </div>
                     </div>
                     </div>

@@ -53,7 +53,7 @@ if(isset($_SESSION['mail'])) {
                     </div>
                     <div class="form-group">
                       <label for="textarea">Address *</label>
-                        <input name="SHIPPER_address" pattern="" class="form-control" row="5" placeholder="Enter your Address" title="Max Length is 200 Minimum 50" required>
+                        <input name="SHIPPER_address" maxlength="60" class="form-control" row="5" placeholder="Enter your Address" title="Max Length is 200 Minimum 50" required>
                     </div>
                 <div><label for="secq">Security question *</label></div>
                 <div class="row form-group">

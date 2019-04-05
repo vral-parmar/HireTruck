@@ -61,11 +61,11 @@ body{
                     </div>
                     <div class="form-group">
                       <label for="textarea">Company address *</label>
-                        <textarea  name="CARRIER_address" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
+                        <input type="text" name="CARRIER_address" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
                     </div>
                     <div class="form-group">
                       <label for="textarea">Services *</label>
-                        <textarea  name="CARRIER_service" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
+                        <input type="text"  name="CARRIER_service" class="form-control" row="5" placeholder="Enter your Address" maxlength="200" title="Max Length is 200 Minimum 50" required> </textarea>
                     </div>
                 <div> <label for="secq">Security Question *</label></div>
                 <div class="container row">
