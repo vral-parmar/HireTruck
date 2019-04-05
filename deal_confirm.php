@@ -1,6 +1,20 @@
 <?php
-require('Session.php');
+require ('Session.php');
+require ('Meiler/passcode_mail.php');
+require  ("Sms/way.php");
+//require ("credit_detail.php");
+
 $AD= $_POST['AD_ID'];
+//receiver code
+  $R_name=$_POST['R_name'];
+  $R_number=$_POST['R_number'];
+  $R_mail=$_POST['R_mail'];
+  $num=md5(rand(1,100000));
+  $finalpass=substr($num,-8);
+
+  otp($R_mail,$R_name,$finalpass);
+  //otpmob($,$password,$num);
+
 
 //$AD=$_POST['AD'];
 $card_number=$_POST['card_number'];
