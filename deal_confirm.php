@@ -1,6 +1,7 @@
 <?php
 require ('Session.php');
 require ('Meiler/passcode_mail.php');
+require ('Meiler/Deal_mail.php');
 require  ("Sms/way.php");
 //require ("credit_detail.php");
 
@@ -12,7 +13,8 @@ $AD= $_POST['AD_ID'];
   $num=md5(rand(1,100000));
   $finalpass=substr($num,-8);
 
-  otp($R_mail,$R_name,$finalpass);
+
+  //otp($R_mail,$R_name,$finalpass);
   //otpmob($,$password,$num);
 
 
@@ -39,6 +41,7 @@ $date=$row[4];
 //exit;
 $email=$_SESSION['mail'];
 $date=date("Y-m-d");
+
 //echo $b_id;exit;?>
 
 <?php
@@ -75,6 +78,22 @@ while ($row1=mysqli_fetch_array($result1))
   $Qry="INSERT INTO deal (D_id,Ad_id,S_id,T_id,B_id,conform_date,price,d_status)VALUES(null,'$AD',(SELECT S_id FROM user_s WHERE S_mail='$email'),'$t_id','$b_id','$date','$price','0')";
   //$Qry="INSERT INTO deal (D_id,Ad_id,S_id,T_id,conform_date,d_status)VALUES(null,'$AD',SELECT s_id from user_s WHERE S_mail='$email','$t_id','$b_id','$date','$prise','0')";
   $res=mysqli_query($con,$Qry) or die(mysqli_error($con));
+  // $selQry="SELECT * FROM deal WHERE";
+
+  $mail_dataqry="SELECT source_ad 'ad', no_destination 'ad',  D_id 'deal' ,order_date 'ad' from ad a,deal d where d.Ad_id=a.AD_id
+and d.s_id=(SELECT s_id from user_s where S_mail='$email')";
+  $res_mail=mysqli_query($con,$mail_dataqry)or die(mysqli_query($con));
+  if(mysqli_num_rows($mail_res)>0){
+    while ($ctn_mail=mysqli_fetch_array($res_mail)) {
+      $D_id=$_POST['2'];
+      $Source=$_POST['0'];
+      $Destnation=$_POST['1'];
+      $ord_date=$_POST['3'];
+    }
+    deal_final_mail($email,$D_id,$Source,$Destnation,$ord_date);
+  }else{
+    echo "Mail Not Sent or No data Were found";
+  }
 
   $query1="UPDATE ad SET status='1' WHERE AD_id = '$AD' AND S_id=(SELECT S_id FROM user_s WHERE S_mail='$email')";
   $sql=mysqli_query($con,$query1) or die(mysqli_error($con));

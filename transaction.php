@@ -1,6 +1,10 @@
 <?php
 require ('Session.php');
+<<<<<<< HEAD
 $mail=$_SESSION['mail'];
+=======
+$mail = $_SESSION['mail'];
+>>>>>>> b4acca22704e1c257c74525a203ea74be7ea3323
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +39,7 @@ body{
     </nav>
   <div class="container-fluid">
       <div class="row">
-         <div class="col-md-10 col-sm-8 col-xs-12 center_div" style="margin-top:9%;">
+         <div class="col-md-10 col-sm-8 col-xs-12 center_div" style="margin-top:4%;">
          <!--form class="form-container1" action="E_receipt.php" method="post"-->
               <h2 align="center"><b>Receipts </h2><br>
                 <div class="container-fluid">
@@ -80,9 +84,12 @@ body{
                         <td>   <?php echo $ad_date;  ?></td>
                         <td> <input type="password"  name="passcode" style="border-radius:15px;" placeholder="Passcode" ></td>
                         <input type="hidden" name="deal_id" value="<?php echo $row[2]; ?>">
-                        <th><input type="submit" class="btn btn-primary" style="float:right;height:28px;width:65px;margin:7px;font-size:15px;margin-bottom:7px;padding-top:2px;padding-left:7px;font-weight:boldborder-radius: 15px 50px 30px 5px;" value="Submit"></th>
+                          <th><div class="text-left"><input type="submit" class="btn btn-sm btn-primary" value="Submit"></div></th>
                       </form>
-                    <?php } } ?>
+                    <?php }}else{ ?>
+                        <div class="container text-center">
+                          <h2><?php echo"There Were No transaction";} ?></h2>
+                        </div><br>
                       </tr>
                   </tbody>
                 </table>
