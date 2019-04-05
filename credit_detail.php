@@ -1,5 +1,5 @@
 <?php
-require 'session.php';
+require 'Session.php';
 //require 'nav.php';
  ?>
 <!DOCTYPE html>

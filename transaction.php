@@ -1,5 +1,6 @@
 <?php
 require ('Session.php');
+$mail = $_SESSION['mail'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +35,7 @@ body{
     </nav>
   <div class="container-fluid">
       <div class="row">
-         <div class="col-md-10 col-sm-8 col-xs-12 center_div" style="margin-top:9%;">
+         <div class="col-md-10 col-sm-8 col-xs-12 center_div" style="margin-top:4%;">
          <!--form class="form-container1" action="E_receipt.php" method="post"-->
               <h2 align="center"><b>Receipts </h2><br>
                 <div class="container-fluid">
@@ -52,7 +53,7 @@ body{
                   </thead>
                     <tbody>
                       <?php
-                     $query="SELECT source_ad 'ad', no_destination 'ad',  D_id 'deal' ,order_date 'ad' from ad a,deal d where d.Ad_id=a.AD_id and t_id=(SELECT t_id from user_t where t_mail='sp@gmail.com') and d_status='0' order by order_date ASC";
+                     $query="SELECT source_ad 'ad', no_destination 'ad',  D_id 'deal' ,order_date 'ad' from ad a,deal d where d.Ad_id=a.AD_id and t_id=(SELECT t_id from user_t where t_mail='$mail') and d_status='0' order by order_date ASC";
                      $result= mysqli_query($con,$query) or die(mysqli_error($con));
                      if(mysqli_num_rows($result)>0)
                      {
@@ -76,9 +77,12 @@ body{
                         <td>   <?php echo $ad_date;  ?></td>
                         <td> <input type="password"  name="passcode" style="border-radius:15px;" placeholder="Passcode" ></td>
                         <input type="hidden" name="deal_id" value="<?php echo $row[2]; ?>">
-                        <th><input type="submit" class="btn btn-primary" style="float:right;height:28px;width:65px;margin:7px;font-size:15px;margin-bottom:7px;padding-top:2px;padding-left:7px;font-weight:boldborder-radius: 15px 50px 30px 5px;" value="Submit"></th>
+                          <th><div class="text-left"><input type="submit" class="btn btn-sm btn-primary" value="Submit"></div></th>
                       </form>
-                    <?php } } ?>
+                    <?php }}else{ ?>
+                        <div class="container text-center">
+                          <h2><?php echo"There Were No transaction";} ?></h2>
+                        </div><br>
                       </tr>
                   </tbody>
                 </table>
