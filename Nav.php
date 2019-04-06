@@ -48,7 +48,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about-us.php">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
                 <?php if(@isset($_SESSION['mail'])){
                   if ($_SESSION['user_type']=="Transport") {

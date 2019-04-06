@@ -103,8 +103,7 @@ if($_SESSION['user_type']=="Shipper"){
                                                                 </div>
                                                                 <div class="form-group">
                                                                 <label>Enter destination of Luggage</label>
-                                                                <textarea class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" required>
-                                                                </textarea>
+                                                                <input type="text" class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Type of Luggage</label>
@@ -216,7 +215,7 @@ if($_SESSION['user_type']=="Shipper"){
 <!--Edit Profile end -->
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <a href="E_receipt.php" type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-Reciept </a>
+                                    <a href="new_re.php" type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-Reciept </a>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </div><!--/panel-body-->
@@ -300,13 +299,13 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                           <h3><small>Mobile Number: <?php echo $mno; ?> </small></h3>
                         </div>
                         <div class="row">
-                          <div class="col">
+                          <div class="col"><br><br>
                             <a href="ad.php" class="btn btn-success btn-block"><span class="fa fa-eye"></span> View Ad  </a>
                           </div>
-                          <div class="col">
+                          <div class="col"><br><br>
                             <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
                         </div>
-                        <div class="col">
+                        <div class="col"><br><br>
                             <button type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> Bills </button>
                         </div>
                     </div>

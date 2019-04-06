@@ -1,15 +1,4 @@
 <?php
-<<<<<<< HEAD
-require('Session.php');
-require('Meiler/Payment_confirm.php');
-$AD= $_POST['AD_ID'];
-// $email="kkpg2014.pk@gmail.com";
-// $d_id="1";
-// $p="10000";
-// $d="'5-04-19";
-// otp($email,$d_id,$p,$d);
-exit;
-=======
 require ('Session.php');
 require ('Meiler/passcode_mail.php');
 require  ("Sms/way.php");
@@ -25,9 +14,6 @@ $AD= $_POST['AD_ID'];
 
   otp($R_mail,$R_name,$finalpass);
   //otpmob($,$password,$num);
-
->>>>>>> 77e2376772099ef8e9420e369f658f98eab5f4ca
-
 //$AD=$_POST['AD'];
 $card_number=$_POST['card_number'];
 $expiry=$_POST['expiry'];
@@ -92,16 +78,11 @@ while ($row1=mysqli_fetch_array($result1))
   $sql=mysqli_query($con,$query1) or die(mysqli_error($con));
   $query3="UPDATE `bid` SET `B_status`='1' WHERE Ad_id='$AD' and B_id='$b_id'";
   $sql=mysqli_query($con,$query3) or die(mysqli_error($con));
-
-<<<<<<< HEAD
   $mail_query="SELECT D_id from deal where B_id='$b_id'";
 $sql_mail=mysqli_query($con,$mail_query) or die(mysqli_error($con));
 $row_mail=mysqli_fetch_array($sql_mail);
 $D_id=$row_mail['0'];
 otp($email,$D_id,$price,$date);
-=======
-
->>>>>>> 77e2376772099ef8e9420e369f658f98eab5f4ca
     if($res){
       header('location:E_receipt.php');
     }

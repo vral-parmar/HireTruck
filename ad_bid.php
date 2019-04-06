@@ -21,7 +21,7 @@ require ("Session.php");
     </ul>
   </nav>
   <div class="container"  style="padding-top:3%;">
-<div class="container shadow-lg  bg-white rounded" style="margin-top:1%;">
+<div class="container shadow-lg col-8 bg-white rounded" style="margin-top:1%;">
             <!-- Modal Header -->
             <div class="modal-header bg-primary">
                 <h4 class="modal-title text-light">Advertisement Details for Bid</h4>
@@ -53,45 +53,47 @@ require ("Session.php");
             <!-- Modal body -->
             <form action="submit_bid.php" method="post" class="form-group">
               <tr>
-                <td>Source of Luggage:</td>
+                <td><b>Source of Luggage:</b></td>
                 <td><?php echo $source ?></td>
               </tr>
               <tr>
-                <td>Destination:</td>
+                <td><b>Destination:</b></td>
                 <td><?php echo $des ?></td>
               </tr>
               <tr>
-                <td>Kind of luggage the shipper wants to transfer:</td>
+                <td><b>Kind of luggage the shipper wants to transfer:</b></td>
                 <td><?php echo $kol ?></td>
               </tr>
               <tr>
-                <td>Type of luggage:</td>
+                <td><b>Type of luggage:</b></td>
                 <td><?php echo $tol ?></td>
               </tr>
               <tr>
-                <td>Goods Capacity:</td>
+                <td><b>Goods Capacity:</b></td>
                 <td><?php echo $wol ?><bold>&nbsp;ton</td>
               </tr>
               <tr>
-                <td>Shippers Budget:</td>
+                <td><b>Shippers Budget</b>:</td>
                 <td><?php echo $budget ?></td>
               </tr>
               <tr>
-                <td>Order date:</td>
+                <td><b>Order date:</b></td>
                 <td><?php echo $date ?></td>
               </tr>
               <tr>
-                <td>Vehicle type:</td>
+                <td><b>Vehicle type:</b></td>
                 <td><?php echo $vtype ?></td>
               </tr>
               <tr>
-                <td>Extra Requirements:</td>
+                <td><b>Extra Requirements:</b></td>
                 <td><?php echo $addreq ?></td>
               </tr>
               <tr>
-                <td>Your Bid:</td>
-                <td><input type="textbox" name="bid" class="form-control input-sm" required/>
-                    <input type="hidden" name="ad_id" value="<?php echo $Ad_id; ?>"/></td>
+                <td><b>Your Bid:</td>
+                  <td><div class="container">
+                <input type="textbox" name="bid" class="form-control input-sm" required/>
+                    <input type="hidden" name="ad_id" value="<?php echo $Ad_id; ?>"/>
+                  </td></div>
               </tr>
               <br><br>
                         <?php } } ?>

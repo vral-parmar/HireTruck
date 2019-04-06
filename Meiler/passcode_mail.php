@@ -13,8 +13,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require 'tras.php';
-require 'Transport_registration.php';
+// require 'tras.php';
+// require 'Transport_registration.php';
 require 'vendor/autoload.php';
 function otp($carrier_mail,$ad,$passcode){
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
@@ -606,8 +606,10 @@ a[x-apple-data-detectors=true] {
 
     $mail->send();
     echo " <div class='container'> <div class='alert alert-success' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Well done You are Almost There!</strong> Now Check Your MailBox For the Password!!</h4></div> </div> <?php ";
+    header( "refresh:1;url=index.php?=Ad_Edited_Successfully" );
 } catch (Exception $e) {
     echo " <div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong> Something is wrong with us Plelase Try again After sometime!!</h4></div> </div> <?php ", $mail->ErrorInfo;
+    header( "refresh:3;url=index.php?=Ad_Edited_Successfully" );
 }
 }
 ?>

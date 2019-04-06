@@ -15,9 +15,7 @@ require("Session.php");
   $sub=mysqli_real_escape_string($con, htmlspecialchars($_POST['sub_type']));
   $extra=mysqli_real_escape_string($con, htmlspecialchars($_POST['extra_req']));
   $DATE=mysqli_real_escape_string($con, htmlspecialchars(date("Y-m-d")));
-$query="INSERT INTO `ad`(`AD_id`, `S_id`, `source`, `no_destination`, `luggage`, `type_luggage`, `weight`, `status`, `ad_date`,`order_date`, `vehicle_type`, `add_requirement`) VALUES (Null,(SELECT S_id FROM `user_s` WHERE S_mail='$username'),'$source','$dest','$luggage','$type','$weight','0','$DATE','$order_date','$wheel','$extra')";
-
-
+$query="INSERT INTO `ad`(`AD_id`, `S_id`, `Source_ad`, `no_destination`, `luggage`, `type_luggage`, `weight`, `status_ad`, `ad_date`,`order_date`, `vehicle_type`, `add_requirement`) VALUES (Null,(SELECT S_id FROM `user_s` WHERE S_mail='$username'),'$source','$dest','$luggage','$type','$weight','0','$DATE','$order_date','$wheel','$extra')";
  /*$username= $_SESSION['mail'];
   $source=$_POST['source'];
   $dest=$_POST['no_dest'];
