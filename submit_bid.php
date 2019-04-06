@@ -12,7 +12,7 @@ require('Session.php');
       $data=mysqli_fetch_row($res);
       //print_r($data);exit;
       $dat=date("Y-m-d");
-      $qryins="INSERT INTO bid_ref VALUES(NULL,'$data[1]','$data[0]','$bid','$dat',NULL)";
+      $qryins="INSERT INTO bid_ref VALUES('$b_id[0]','$data[1]','$data[0]','$bid','$dat',NULL)";
       //echo $qryins."<br>";
         //print_r($qry);
 

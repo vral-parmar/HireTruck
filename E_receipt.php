@@ -34,7 +34,11 @@ body{
   </ul>
 </nav>
     <?php
+<<<<<<< HEAD
     $query1="SELECT s_fname 'user_s', T_org_name 'user_t',  conform_date   'deal' , source_ad 'ad' , no_destination 'ad' , price 'deal' from user_s s, deal b, user_t c, ad a
+=======
+    $query1="SELECT s_fname 'user_s', T_org_name 'user_t',  conform_date   'deal' , Source_ad 'ad' , no_destination 'ad' , price 'deal' from user_s s, deal b, user_t c, ad a
+>>>>>>> a6bfec3c29bb2fa1de6aae437aa03ee9fdfd14ef
 where b.s_id = s.s_id and b.t_id = c.t_id and  b.Ad_id=a.AD_id";
     //$query2="select S_fname,S_lname from user_s";
     $result= mysqli_query($con,$query1) or die(mysqli_error($con));
@@ -48,7 +52,6 @@ where b.s_id = s.s_id and b.t_id = c.t_id and  b.Ad_id=a.AD_id";
        $source=$row[3];
        $no_destination=$row[4];
        $price=$row[5];
-
      ?>
   <div class="container-fluid">
       <div class="row">
@@ -57,7 +60,7 @@ where b.s_id = s.s_id and b.t_id = c.t_id and  b.Ad_id=a.AD_id";
               <h2 align="center">e-Reciept</h2><hr><br>
                  <div class="row container">
                     <div class="col">
-                          <label><b>Name : </b><?php echo $fname; ?></label>
+                          <label><b>Name :</b ><?php echo $fname; ?></label>
                     </div>
                  </div>
                  <div class="row container">
@@ -91,10 +94,8 @@ where b.s_id = s.s_id and b.t_id = c.t_id and  b.Ad_id=a.AD_id";
     </div>
   </div>
   <?php
-
       }
     }
-
    ?>
     <script type="text/javascript">
     document.getElementById("Hide").onclick = function()

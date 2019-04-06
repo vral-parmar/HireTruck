@@ -83,13 +83,17 @@ body{
                            <?php echo $date; ?>
                         </div>
                         <input type="hidden" name="AD" value="<?php echo $adi; ?>"/>
+<<<<<<< HEAD
                         <input type="hidden" name="Bid" value="<?php echo $b_id; ?>"/>
                         <input type="hidden" name="T_id" value="<?php echo $t_id; ?>"/>
                         <input type="hidden" name="price" value="<?php echo $price; ?>"/>
                      <input type="submit" class="btn btn-success" value="Confirm Bid">
                      <input type="hidden" name="id_ad" value="<?php echo $adi; ?>">
+=======
+                     <input type="submit" class="btn btn-success btn-sm" value="Confirm Bid">
+                     <input type="hidden" name="id_ad" value="<?php echo $Ad_id; ?>">
+>>>>>>> a6bfec3c29bb2fa1de6aae437aa03ee9fdfd14ef
                      <!--button type="button" onclick="alert('Bid Confirmed !!')">Confirm</button-->
-
                      </div>
                      <?php
                         }

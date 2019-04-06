@@ -1,4 +1,4 @@
-<html>
+﻿<html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"/>
@@ -13,10 +13,11 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-// require 'tras.php';
-// require 'Transport_registration.php';
 require 'vendor/autoload.php';
-function otp($carrier_mail,$ad,$passcode){
+
+
+
+function otp($eemail,$deal,$price,$Date){
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
     //Server settings
@@ -31,7 +32,7 @@ try {
 
     //Recipients
     $mail->setFrom('jamesmrt070@gmail.com', 'HireTruck Team');
-    $mail->addAddress($carrier_mail);     // Add a recipient
+    $mail->addAddress($eemail, $deal);     // Add a recipient
     //$mail->addAddress('parmarviral93@gmail.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
@@ -43,7 +44,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Your HireTruck account Passcode';
+    $mail->Subject = 'Payment Confirmation';
     $mail->Body    = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
@@ -324,7 +325,7 @@ a[x-apple-data-detectors=true] {
                     <div class="">
 
     <div style="color:#555555;font-family:`Catamaran`, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;line-height:120%; padding-right: 10px; padding-left: 10px; padding-top: 0px; padding-bottom: 0px;">
-        <div style="line-height:14px;font-size:12px;color:#555555;font-family:`Catamaran`, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;text-align:left;"><p style="margin: 0;font-size: 12px;line-height: 14px;text-align: right"><span style="font-size: 20px; line-height: 24px;">Your Accout Password is :</span></p><p style="margin: 0;font-size: 12px;line-height: 14px">&#160;<br></p></div>
+        <div style="line-height:14px;font-size:12px;color:#555555;font-family:`Catamaran`, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;text-align:left;"><p style="margin: 0;font-size: 12px;line-height: 14px;text-align: right"><span style="font-size: 20px; line-height: 24px;">The Payments Details:</span></p><p style="margin: 0;font-size: 12px;line-height: 14px">&#160;<br></p></div>
     </div>
 
 </div>
@@ -333,7 +334,8 @@ a[x-apple-data-detectors=true] {
                     <div class="">
 
     <div style="color:#E01C1C;font-family:`Oswald`, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 0px; padding-bottom: 10px;">
-        <div style="line-height:18px;font-size:12px;font-family:Oswald, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;color:#E01C1C;text-align:left;"><p style="margin: 0;line-height: 18px;text-align: right;font-size: 12px"><span style="background-color: rgb(255, 255, 255); font-size: 58px; line-height: 87px;"><strong><span style="line-height: 87px; background-color: rgb(255, 255, 255); font-size: 28px;">&#160;'.$passcode.'&#160;</span></strong></span><br></p></div>
+        <div style="line-height:18px;font-size:12px;font-family:Oswald, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;color:#E01C1C;text-align:left;"><p style="margin: 0;line-height: 18px;text-align: right;font-size: 12px"><span style="background-color: rgb(255, 255, 255); font-size: 58px; line-height: 87px;"><strong><span style="line-height: 87px; background-color: rgb(255, 255, 255); font-size: 28px;">&#160;'.$Date.'&#160;</span></strong></span><br></p></div>
+        <div style="line-height:18px;font-size:12px;font-family:Oswald, `Lucida Sans Unicode`, `Lucida Grande`, sans-serif;color:#E01C1C;text-align:left;"><p style="margin: 0;line-height: 18px;text-align: right;font-size: 12px"><span style="background-color: rgb(255, 255, 255); font-size: 58px; line-height: 87px;"><strong><span style="line-height: 87px; background-color: rgb(255, 255, 255); font-size: 28px;">&#160;'.$price.'&#160;</span></strong></span><br></p></div>
     </div>
 
 </div>
@@ -605,11 +607,9 @@ a[x-apple-data-detectors=true] {
     $mail->AltBody = 'Nothing';
 
     $mail->send();
-    echo " <div class='container'> <div class='alert alert-success' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Well done You are Almost There!</strong> Now Check Your MailBox For the Password!!</h4></div> </div> <?php ";
-    header( "refresh:1;url=index.php?=Ad_Edited_Successfully" );
+    echo " <div class='container'> <div class='alert alert-success' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Well done You are Almost There!</strong> Now Check Your MailBox For the Payment details!!</h4></div> </div> <?php ";
 } catch (Exception $e) {
     echo " <div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong> Something is wrong with us Plelase Try again After sometime!!</h4></div> </div> <?php ", $mail->ErrorInfo;
-    header( "refresh:3;url=index.php?=Ad_Edited_Successfully" );
 }
 }
 ?>

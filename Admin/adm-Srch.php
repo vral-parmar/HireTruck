@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
 <html>
 <head>
@@ -38,17 +37,21 @@ body{
     <!- Including our scripting file. -->
     <!-- <script type="text/javascript" src="script.js"></script> -->
     <!-- Including CSS file. -->
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> --> 
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 </head>
 <body>
 <!-- Search box. -->
+<?php
+if($_SESSION['user_type']=="Police"){ //transport condition started
+?>
 <center><p>Search according to the City you are interested in:</p></center>
-<form name="search_form" method="POST" action="results.php">
+<form name="search_form" method="POST" action="adm-result.php">
 
     <center><input name="search" type="text" placeholder="Search" /></center>
     <center><input class="btn btn-primary" style="margin-top:10px ; margin-bottom:10px" type="submit" name="Search" role="button"></center>
-    <!-- <div id="display"></div> -->
 
+<?php }
+?>
 
 </body>
 </html>

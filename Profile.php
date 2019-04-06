@@ -36,6 +36,39 @@ require_once("Session.php");
         //  session_start();
           $email=$_SESSION["mail"];
         ?>
+        <style>
+        .fa {
+          padding: 20px;
+          font-size: 50px;
+          width: 50px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 5px;
+          border-radius: 30%;
+        }
+        .fa:hover {
+          opacity: 0.7;
+        }
+        .fa-facebook {
+          background: #3B5998;
+          color: white;
+        }
+        .fa-twitter {
+          background: #55ACEE;
+          color: white;
+        }
+        .fa-google {
+          background: #dd4b39;
+          color: white;
+        }
+        .fa-instagram {
+          background: #F624EC;
+          color: white;
+        }
+        img {
+          border-radius: 50%;
+        }
+      </style>
     </head>
 
     <body>
@@ -53,6 +86,8 @@ if($_SESSION['user_type']=="Shipper"){
     <!--================End Blog Main Area =================-->
         <br>
         <div class="container ">
+
+              <h3>Profile :</h3><br>
             <div class="row card">
                 <div class="col-md-12 card-body">
                     <div class="panel panel-default">
@@ -103,8 +138,7 @@ if($_SESSION['user_type']=="Shipper"){
                                                                 </div>
                                                                 <div class="form-group">
                                                                 <label>Enter destination of Luggage</label>
-                                                                <textarea class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" required>
-                                                                </textarea>
+                                                                <input type="text" class="form-control" name="no_dest" placeholder="meghaninagar & maninagar" required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Type of Luggage</label>
@@ -216,7 +250,7 @@ if($_SESSION['user_type']=="Shipper"){
 <!--Edit Profile end -->
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <a href="E_receipt.php" type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-Reciept </a>
+                                    <a href="new_re.php" type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-Reciept </a>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </div><!--/panel-body-->
@@ -300,13 +334,13 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                           <h3><small>Mobile Number: <?php echo $mno; ?> </small></h3>
                         </div>
                         <div class="row">
-                          <div class="col">
+                          <div class="col"><br><br>
                             <a href="ad.php" class="btn btn-success btn-block"><span class="fa fa-eye"></span> View Ad  </a>
                           </div>
-                          <div class="col">
+                          <div class="col"><br><br>
                             <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
                         </div>
-                        <div class="col">
+                        <div class="col"><br><br>
                             <button type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> Bills </button>
                         </div>
                     </div>
@@ -374,8 +408,12 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                         <div class="col-lg-6 col-sm-6">
                             <aside class="f_widget f_about_widget">
                                 <img src="https://i.ibb.co/vwmyN0n/1549187869210.png" width="150px" alt="HireTruck" >
-                                <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum.</p>
                             </aside>
+                            <h5><strong><i>Follow Us :</i></strong></h5><br><br>
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-google"></a>
+                            <a href="#" class="fa fa-instagram"></a>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <aside class="f_widget f_subs_widget">
@@ -399,8 +437,7 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                 <div class="container">
                     <div class="float-sm-left">
                         <h5>
- This site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by HireTruck
-</h5>
+ This site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by HireTruck<br>Copyright © 2019 HireTruck Services Pvt. Ltd.</h5>
                     </div>
                 </div>
             </div>

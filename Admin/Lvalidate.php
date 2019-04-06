@@ -14,7 +14,7 @@
   		$url = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip"); //pass data to goole to verify im not robot!!
       $result = json_decode($url,TRUE); //we get responce from google in jason connvert them in array and gat the result
   		//print_r($result); // print array from responce and convert JASON output to php!!
-      if ($result['success'] == 1) //check if result is sucess or not??
+      if ($result['success'] == TRUE) //check if result is sucess or not??
       {
           require("../connection.php");
           if(isset($_POST['radioF'])) {
@@ -26,7 +26,7 @@
               // logim module for a shipper users data match and transfer futher use.....
               // shipper login error pls check below lines of code...
               if ($user == "Admin") {
-                  $query = "SELECT A_mail,A_password FROM admin WHERE A_mail='$mail' and A_password='$pswd' AND status_p=0";
+                  $query = "SELECT Adm_mail,password FROM admin WHERE Adm_mail='$mail' and password='$pswd' AND P_status='0'";
                   $sql = mysqli_query($con, $query) or die(mysqli_error($query));
                   $count = mysqli_num_rows($sql);
                   if ($count == 0) {
@@ -45,8 +45,8 @@
               // transport company login error pls check below lines of code...
 
 			  elseif ($user == "Police") {
-                  $query1 = "SELECT A_mail,A_password FROM admin WHERE A_mail='$mail' and A_password='$pswd' AND status_p=1";
-                  $sql1 = mysqli_query($con, $query1) or die(mysqli_error($query1));
+                  $query1 = "SELECT Adm_mail,password FROM admin WHERE Adm_mail='$mail' and password='$pswd' AND P_status='1'";
+                  $sql1 = mysqli_query($con, $query1) or die(mysqli_error($con));
                   $count = mysqli_num_rows($sql1);
                   if ($count == 0) {
                       echo "<div class='container'> <div class='alert alert-danger' role='alert' style='text-align:center; margin-top:25%;padding-top:2%;padding-bottom:2%' ></h4> <strong>Ohh Snap!!!</strong>Wrong Credential Please check Email & pasword Which you have been Used!! or contact admin if you have been Blocked!!</h4></div> </div>";

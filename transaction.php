@@ -84,7 +84,7 @@ body{
                       </form>
                     <?php }}else{ ?>
                         <div class="container text-center">
-                          <h2><?php echo"There Were No transaction";} ?></h2>
+                          <h2><?php echo"<p class='text-danger'>Opps... There Were No transaction</p>";} ?></h2>
                         </div><br>
                       </tr>
                   </tbody>

@@ -25,23 +25,23 @@ body{
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-Primary sticky-top navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-primary sticky-top">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="index.php">Back</a>
+          <a class="nav-link text-white" href="index.php">Back</a>
         </li>
       </ul>
     </nav>
   <div class="container-fluid">
       <div class="row">
-         <div class="col-md-10 col-sm-8 col-xs-12 center_div" style="margin-top:9%;">
+         <div class="col-md-10 col-sm-8 col-xs-12 center_div" style="margin-top:4%;">
             <form class="form-container1" action="E_receipt.php" method="post">
               <h2 align="center"><b>Receipts </h2><br>
                 <div class="container-fluid">
                   <table class="table">
                   <thead>
                     <tr>
-                      <th>Sr NO </th>
+                      <th>Deal No </th>
                       <th>Source</th>
                       <td>Destination</td>
                       <td>Date</td>
@@ -90,9 +90,3 @@ body{
     </script>
   </body>
 </html>
-
-
-
-
-
-//SELECT * FROM `deal` WHERE d_status=0 and S_id=(SELECT S_id from user_s where s_mail='akshatsoni64@gmial.com')

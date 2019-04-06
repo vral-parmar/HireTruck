@@ -1,7 +1,6 @@
 
 <?php
 require ("Session.php");
-
 $deal=$_POST['deal_id'];
 $passcode=$_POST['passcode'];
 $mail= $_SESSION['mail'];
