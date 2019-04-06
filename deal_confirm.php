@@ -1,6 +1,13 @@
 <?php
 require('Session.php');
+require('Meiler/Payment_confirm.php');
 $AD= $_POST['AD_ID'];
+// $email="kkpg2014.pk@gmail.com";
+// $d_id="1";
+// $p="10000";
+// $d="'5-04-19";
+// otp($email,$d_id,$p,$d);
+exit;
 
 //$AD=$_POST['AD'];
 $card_number=$_POST['card_number'];
@@ -67,6 +74,11 @@ while ($row1=mysqli_fetch_array($result1))
   $query3="UPDATE `bid` SET `B_status`='1' WHERE Ad_id='$AD' and B_id='$b_id'";
   $sql=mysqli_query($con,$query3) or die(mysqli_error($con));
 
+  $mail_query="SELECT D_id from deal where B_id='$b_id'";
+$sql_mail=mysqli_query($con,$mail_query) or die(mysqli_error($con));
+$row_mail=mysqli_fetch_array($sql_mail);
+$D_id=$row_mail['0'];
+otp($email,$D_id,$price,$date);
     if($res){
       header('location:E_receipt.php');
     }

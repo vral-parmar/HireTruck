@@ -76,14 +76,14 @@ body{
                         <div class="col">
                            <?php echo $date; ?>
                         </div>
-<<<<<<< HEAD
+
                         <input type="hidden" name="AD" value="<?php echo $adi; ?>"/>
                      <input type="submit" class="btn btn-success" value="Confirm Bid">
-=======
-                     <input type="hidden" name="id_ad" value="<?php echo $Ad_id; ?>">
+
+                     <!-- <input type="hidden" name="id_ad" value="">
                      <button type="button" onclick="alert('Bid Confirmed !!')">Confirm</button>
 >>>>>>> 64bc4a192108aa24a3cbdbdbf424fe42ee9fc9d5
-                     </div>
+                     </div> -->
                      <?php
                         }
                         }

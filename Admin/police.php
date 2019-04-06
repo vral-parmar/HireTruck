@@ -49,114 +49,157 @@ body{
   <body>
   <div class="container-fluid">
       <div class="row">
-         <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
+         <div class="col-md-10 col-sm-8 col-xs-12 center_div" style="margin-top:9%;">
             <form class="form-container1" action="Lvalidate.php" method="post">
-              <h2 align="center">Police Verification</h2><hr><br>
-                 <div class="row container">
+              <b><h2 align="center">Deal Details For Police Verification</h2></b><hr><br>
+              <h3 align="center">Deals yet to be completed:</h3><hr><br>
+
+              <div class="row container">
                   <div class="col">
-                        <label><b>Shipper name</b></label>
+                       <p><b>S_id :</b></p>
                   </div>
+                  <div class="col">
+                    <p><b>T_id :</b></p>
+                  </div>
+                  <div class="col">
+                       <p><b>Confirm Date:</b></p>
+                  </div>
+                  <div class="col">
+                      <p><b>Source:</b></p>
+                  </div>
+
                     <div class="col">
-                       <label for="source"><b>Transpost company</b></label>
+                       <p><b>Destination:</b></p>
                     </div>
-                    <div class="col">
-                       <label for="source"><b>Price</b></label>
-                    </div>
-                    <div class="col">
-                       <label for="source"><b>Date</b></label>
-                    </div>
-                    <div class="col">
-                      <label for="source"><b>Luggage</b></label>
-                    </div>
-                    <div class="col">
-                     <label for="source"><b>Type of luggage</b></label>
-                    </div>
-                    <div class="col">
-                       <label><b>Source</b></label>
-                    </div>
-                    <div class="col">
-                          <label><b>Destination</b></label>
-                    </div>
+
+               </div>
+
+
                   <?php
-                    $query="SELECT * from user_s where S_id = ( SELECT s_id from ad where Ad_id=(SELECT Ad_id from deal where D_id='1'))";
-                    $query1="SELECT * from ad where Ad_id=(SELECT Ad_id from deal where D_id='1')";
-                    $query2="SELECT * from user_t where T_id=(SELECT T_id from deal where D_id='1')";
-                    $query3="SELECT price,conform_date from deal where D_id='1'";
-                    //echo $e=array_combine($query, $result);
+
+                    $query="SELECT * from deal where d_status='0'";
 
                     $result= mysqli_query($con,$query) or die(myqli_error($con));
-                    $result1= mysqli_query($con,$query1) or die(myqli_error($con));
-                    $result2= mysqli_query($con,$query2) or die(myqli_error($con));
-                    $result3= mysqli_query($con,$query3) or die(myqli_error($con));
+
                     if(mysqli_num_rows($result)>0)
                       {
+                          while($row=mysqli_fetch_array($result))
+                            {
+                              $ad_id=$row['Ad_id'];
 
-                      while($row1=mysqli_fetch_array($result1))
-                      {
-                    //print_r($row1);
+                                  $query1="SELECT * from ad where Ad_id='$ad_id'";
+                                  $result1= mysqli_query($con,$query1) or die(mysqli_error($con));
 
-                      $lugagge=$row1[4];
-                      $type=$row1[5];
-                      $source=$row1[2];
-                      $Destination=$row1[3];
-                    }
-                    while($row3=mysqli_fetch_array($result3))
-                      {
-                    //print_r($row3);
+                                  if(mysqli_num_rows($result1)>0)
+                                    {   while ($row1=mysqli_fetch_array($result1))
+                                        {
 
-                      $price=$row3[0];
-                      $date=$row3[1];
-                      }
-                    while($row2=mysqli_fetch_array($result2))
-                      {
-                    //print_r($row3);
-                    $t_org_name=$row2[2];
-                      //$price=$row5[39];
-                      //$date=$row7[40];
-                      }
-                    while($row=mysqli_fetch_array($result))
-                      {
-                    //print_r($row);
-                      $S_id=$row['S_fname'];
-                      //$t_org_name=$row2[26];
-                      //$price=$row5[39];
-                      //$date=$row7[40];
-                      }
                     ?>
-                    <div class="row container">
-                        <div class="col">
-                           <?php echo $S_id; ?>
-                        </div>
-                        <div class="col">
-                           <?php echo $t_org_name; ?>
-                        </div>
-                        <div class="col">
-                           <?php echo $price; ?>
-                        </div>
-                        <div class="col">
-                           <?php echo $date; ?>
-                        </div>
-                          <div class="col">
-                           <?php echo $lugagge; ?>
-                        </div>
-                          <div class="col">
-                           <?php echo $type; ?>
-                        </div>
 
-                        <div class="col">
-                           <?php echo $source; ?>
-                        </div>
-                        <div class="col">
-                           <?php echo $Destination; ?>
-                        </div>
-                     </div>
+
+                                    <div class="row container">
+                                        <div class="col">
+                                           <?php print substr(md5($row['S_id']),-8); ?>
+                                        </div>
+                                        <div class="col">
+                                           <?php print substr(md5($row['T_id']),-8); ?>
+                                        </div>
+                                        <div class="col">
+                                           <?php echo $row['conform_date']; ?>
+                                        </div>
+                                        <div class="col">
+                                           <?php echo $row1['source']; ?>
+                                        </div>
+                                          <div class="col">
+                                           <?php echo $row1['destination']; ?>
+                                         </div>
+                                     </div>
+
+                                     <br><br>
                      <?php
-                        //}
+                              }
+                            }
+                          }
                         }
                         ?>
+
+              <h3 align="center">Deals completed with payment:</h3><hr><br>
+
+                        <div class="row container">
+                            <div class="col">
+                                 <p><b>S_id :</b></p>
+                            </div>
+                            <div class="col">
+                              <p><b>T_id :</b></p>
+                            </div>
+                            <div class="col">
+                                 <p><b>Confirm Date:</b></p>
+                            </div>
+                            <div class="col">
+                                <p><b>Source:</b></p>
+                            </div>
+
+                              <div class="col">
+                                 <p><b>Destination:</b></p>
+                              </div>
+
+                         </div>
+
+
+                            <?php
+
+                              $query="SELECT * from deal where d_status='1'";
+
+                              $result= mysqli_query($con,$query) or die(myqli_error($con));
+
+                              if(mysqli_num_rows($result)>0)
+                                {
+                                    while($row=mysqli_fetch_array($result))
+                                      {
+                                        $ad_id=$row['Ad_id'];
+
+                                            $query1="SELECT * from ad where Ad_id='$ad_id'";
+                                            $result1= mysqli_query($con,$query1) or die(myqli_error($con));
+
+                                            if(mysqli_num_rows($result1)>0)
+                                              {   while ($row1=mysqli_fetch_array($result1))
+                                                  {
+
+                              ?>
+
+
+                                              <div class="row container">
+                                                  <div class="col">
+                                                     <?php  print substr(md5($row['S_id']),-8); ?>
+                                                  </div>
+                                                  <div class="col">
+                                                     <?php  print substr(md5($row['T_id']),-8); ?>
+                                                  </div>
+                                                  <div class="col">
+                                                     <?php echo $row['conform_date']; ?>
+                                                  </div>
+                                                  <div class="col">
+                                                     <?php echo $row1['source']; ?>
+                                                  </div>
+                                                    <div class="col">
+                                                     <?php echo $row1['destination']; ?>
+                                                   </div>
+                                             </div>
+
+                                             <br><br>
+                               <?php
+                                        }
+                                      }
+                                    }
+                                  }
+                                  ?>
                       <div class="row container">
                              <div class="col-6" style="text-align:left;">
-                                 <a href="Home.php"> <code><-</code>Back to Home</a>
+                                 <a href="adm_login.php"> <code><-</code>Back to Home</a>
+                             </div>
+
+                             <div class="col-6" style="text-align:right;">
+                                 <a href="adm-Srch.php"> Search a particular location<code>-></code></a>
                              </div>
                       </div>
                </div>
