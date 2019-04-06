@@ -32,8 +32,43 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-    </head>
-    <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        .fa {
+          padding: 20px;
+          font-size: 50px;
+          width: 50px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 5px;
+          border-radius: 30%;
+        }
+        .fa:hover {
+          opacity: 0.7;
+        }
+        .fa-facebook {
+          background: #3B5998;
+          color: white;
+        }
+        .fa-twitter {
+          background: #55ACEE;
+          color: white;
+        }
+        .fa-google {
+          background: #dd4b39;
+          color: white;
+        }
+        .fa-instagram {
+          background: #F624EC;
+          color: white;
+        }
+        img {
+          border-radius: 50%;
+        }
+      </style>
+</head>
+<body>
         <?php
         require_once('Nav.php');
         if(isset($_SESSION['mail'])){
@@ -62,7 +97,7 @@
                             data-type="text"
                             data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-                            data-textAlign="['left','left','left','left','left','center']">Convenience <br /> Just a click away!!</div>
+                            data-textAlign="['left','left','left','left','left','center']">Convenience :<br /> Just a click away!!</div>
 
                             <div class="tp-caption tp-resizeme secand_text"
                                 data-x="['left','left','left','left','15','center']"
@@ -78,7 +113,7 @@
                                 data-responsive_offset="on"
                                 data-transform_idle="o:1;"
                                 data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-                                data-textAlign="['left','left','left','left','left','center']">For Shippers And Carriers As well
+                                data-textAlign="['left','left','left','left','left','center']">For Shippers as well as for Carriers
                             </div>
 
                             <div class="tp-caption tp-resizeme single_img"
@@ -134,7 +169,7 @@
                                 data-responsive_offset="on"
                                 data-transform_idle="o:1;"
                                 data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-                                data-textAlign="['left','left','left','left','left','center']">Find Reliable Transport Companies
+                                data-textAlign="['left','left','left','left','left','center']">Find reliable Transport Companies
                             </div>
 
                             <div class="tp-caption tp-resizeme single_img"
@@ -174,7 +209,7 @@
                             data-type="text"
                             data-responsive_offset="on"
                             data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:0px;s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
-                            data-textAlign="['left','left','left','left','left','center']">Reaching Out <br/> Customers now Easy</div>
+                            data-textAlign="['left','left','left','left','left','center']">Reaching out for<br/> Customers is now Easy</div>
 
                             <div class="tp-caption tp-resizeme secand_text"
                                 data-x="['left','left','left','left','15','center']"
@@ -231,7 +266,7 @@
                                 <img src="img/icon/f-icon-1.png" alt="">
                             </div>
                             <h4>Transfer Your Luggage at Your Price</h4>
-                            <p>We are always looking Forward for Your Requirements and Budget.</p>
+                            <p>We are always looking forward for Your Requirements in your Budget.</p>
                             <!--<a class="more_btn" href="#">Read More</a>-->
                         </div>
                     </div>
@@ -241,7 +276,7 @@
                                 <img src="img/icon/f-icon-2.png" alt="">
                             </div>
                             <h4>Online Confirmation</h4>
-                            <p>Confirm Your Vehicle Onlile for Getting service desired Services on the date</p>
+                            <p>Confirm your vehicle online for getting desired services on any date</p>
                             <!-- <a class="more_btn" href="#">Read More</a>-->
                         </div>
                     </div>
@@ -251,7 +286,7 @@
                                 <img src="img/icon/f-icon-3.png" alt="">
                             </div>
                             <h4>We are also Hear Your Contact us for any help</h4>
-                            <p>We are always here to Hear fro you, and we try to providing our best Services</p>
+                            <p>We are always here to hear from you and try to provide our best services</p>
                             <!-- <a class="more_btn" href="#">Read More</a>-->
                         </div>
                     </div>
@@ -265,10 +300,10 @@
             <div class="left_3d">
                 <div class="shap_slider_inner owl-carousel">
                     <div class="item">
-                        <h4>“We are the best”</h4>
-                        <p>We help people to Resolve the gap between Shipper and Carrier, We always Belive in Win-Win.</p>
+                        <br><h4>“We are the best”</h4>
+                        <p>We help people to Resolve the gap between Shipper and Carrier. We always Believe in Win-Win !</p>
                         <div class="media">
-                            <img src="img/team/people/people-5.jpg" alt="">
+                            <img src="images\ag.jpg" alt="" width="42" height="42">
                             <div class="media-body">
                                 <h5>Archana Gondalia</h5>
                                 <h6>Mentor of HireTruck</h6>
@@ -276,10 +311,10 @@
                         </div>
                     </div>
                     <div class="item">
-                        <h4>“They are the best”</h4>
-                        <p>Panctuality is a key now a day and HireTruck Try to provide Best Services on air.</p>
+                        <br><h4>“Moto of our service”</h4>
+                        <p>Panctuality is a virtue of the bored and so Beginning of a great day begins a night before. HireTruck tries to provide Best Services on air.</p>
                         <div class="media">
-                            <img src="img/team/people/people-5.jpg" alt="">
+                            <img src="images\vp.jpg" alt="" width="42" height="42">
                             <div class="media-body">
                                 <h5>Viral Paramr</h5>
                                 <h6>Team Leader</h6>
@@ -287,10 +322,10 @@
                         </div>
                     </div>
                     <div class="item">
-                        <h4>“Easy, Cheezy and Simple”</h4>
-                        <p>That quit easy to Post on HireTruck and You also Get Quick Responce on Air.</p>
+                        <br><h4>“Easy, Cheezy and Simple”</h4>
+                        <p>Makes it easy to post Ads on HireTruck and get quick Responce with best price.</p>
                         <div class="media">
-                            <img src="img/team/people/people-5.jpg" alt="">
+                            <img src="images\ps.jpg" alt="" width="42" height="42">
                             <div class="media-body">
                                 <h5>Prince Shah</h5>
                                 <h6>Database Administrator</h6>
@@ -304,10 +339,10 @@
                     <div class="text_3d">
                         <div class="l_title">
                             <img src="img/icon/title-icon.png" alt="">
-                            <h6> We are here to Help you to Get Desired Vehicle and Budget. </h6>
-                            <h3>Looking for vehicle to transport your Luggage?</h3>
+                            <h6> We are here to help you to get your desired Vehicle in your Budget. </h6>
+                            <h3>Looking for vehicle to transport your Luggage in your Area ??</h3>
                         </div>
-                        <p>Welcome to HireTruck We are in front of you With sollution of transportation Project. Which Help user to get Services on time, date, and your budget. is it quit easy to Post ad Over HireTruck and you also get a bid on little.</p>
+                        <p>Welcome to HireTruck<br>We are in front of you With solution ofyour transportation project which helps user to get Services on your time, date and budget.<br>Post an Ad -- Bid your requirement -- Your work is done!</p>
                     </div>
                     <!-- <div class="shap_mobile">
                         <img src="img/iphone4.png" alt="">
@@ -325,16 +360,15 @@
                         <div class="team_people_text">
                             <div class="l_title">
                                 <img src="img/icon/title-icon.png" alt="">
-                                <h6>Discover the features</h6>
+                                <h6>Backbone of services</h6>
                                 <h2>We build a strong team of great people</h2>
                             </div>
-                            <p>We are</p>
                             <ul>
                                 <li><a href="#">Viral Parmar </a></li>
                                 <li><a href="#">Prince Shah</a></li>
                                 <li><a href="#">Ridham Joshi</a></li>
                                 <li><a href="#">K K Gayatri </a></li>
-                                <li><a href="#">Kesha Kaneriya</a></li>
+                                <li><a href="#">Kesha Kaneria</a></li>
                             </ul>
                         </div>
                     </div>
@@ -399,7 +433,7 @@
                                 <h6>Say hello</h6>
                                 <h2>Get in touch, send us an e-mail or call us</h2>
                             </div>
-                            <p>Having Trouble to get transportation Why don't you try to contact us? we are always ready to Hear from you.</p>
+                            <p>Having Trouble to get transportation? Why don't you try to contact us? We are always ready to Hear from you !</p>
                             <a href="#"><h5>Call us now</h5></a>
                             <a href="#"><h4>+91-709-694-2284</h4></a>
                         </div>
@@ -434,6 +468,11 @@
                                 <img src="https://i.ibb.co/vwmyN0n/1549187869210.png" width="120px" height="110px" alt="HireTruck">
                                 <!-- <p>Locjhsfkjbfkjfb</p>-->
                             </aside>
+                            <h5><strong><i>Follow Us :</i></strong></h5><br><br>
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-google"></a>
+                            <a href="#" class="fa fa-instagram"></a>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <aside class="f_widget f_subs_widget">
@@ -454,8 +493,7 @@
             <div class="footer_copyright">
                 <div class="container">
                     <div class="float-sm-left">
-                        <h5> This Site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by HireTruck
-</h5>
+                        <h5> This Site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by HireTruck<br>Copyright © 2019 HireTruck Services Pvt. Ltd.</h5>
                     </div>
 
                 </div>
