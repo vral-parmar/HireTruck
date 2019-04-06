@@ -15,7 +15,7 @@ require ('Session.php');
     <title>Edit Your Ad - HireTruck</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-secondary sticky-top navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-primary sticky-top navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="Ad_view.php">Back</a>
@@ -107,9 +107,9 @@ while($re=mysqli_fetch_array($sql)){
                                    <div class="container">
                                        <div class="row">
                                            <div class="col">
-                                               <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">
+                                               <a href="Ad_view.php" type="button" class="btn btn-secondary btn-block" data-dismiss="modal">
                                                    Close
-                                               </button>
+                                               </a>
                                            </div>
                                            <div class="col">
                                                <input type="reset" value="reset" class="form-control btn btn-danger"/>

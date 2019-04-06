@@ -14,7 +14,7 @@ require ('Nav.php');
 </head>
 <body>
   <?php
-                                $sql="SELECT source 'ad', no_destination 'ad',  D_id 'deal' ,order_date 'ad' from ad a,deal d where d.Ad_id=a.AD_id;";
+                                $sql="SELECT source 'ad', no_destination 'ad',  D_id 'deal' ,order_date 'ad' from ad a,deal d where d.Ad_id=a.AD_id";
                                 $result=mysqli_query($con, $sql);
                                 $row=mysqli_fetch_array($result);
                                 //print_r($row);

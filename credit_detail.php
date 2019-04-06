@@ -1,8 +1,7 @@
 <?php
-require ('session.php');
-//require ('Nav.php');
-$hid=$_POST['AD'];
-?>
+require 'Session.php';
+//require 'nav.php';
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,6 +36,8 @@ $hid=$_POST['AD'];
 body{
  height: 100%;
  width:100%;
+ <!--background-image: url("Image/Login.jpg");-->
+ <!--background-image:no-repeat;-->
  }
 </style>
     <!-- Bootstrap -->
@@ -48,15 +49,36 @@ body{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
-  <body>
+
+
+
+    <!--Credit_card_details-->
   <div class="container-fluid">
       <div class="row">
-         <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
+         <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:7%;">
             <form class="form-container1" action="deal_confirm.php" method="post">
-              <h2 align="center"><img src="https://i.ibb.co/GQ6gw34/1544624867669.png" alt="Img" width="8%"> &nbsp;&nbsp;Account Details </h2><hr><br>
+              <h2 align="center"><img src="https://i.ibb.co/GQ6gw34/1544624867669.png" alt="Img" width="8%"> &nbsp;&nbsp;Important Details </h2><hr><br>
+              <div class="row container">
+                 <div class="col">
+                     <label><b>Receiver's Name</b></label>
+                     <input type="name" name="R_name" class="form-control" placeholder="Enter your Name" autofocus required>
+               </div>
+                 <div class="col">
+                    <label for="source"><b>Receiver's Mobile Number</b></label>
+                    <input type="tel" pattern=".{10}" name="R_number" class="form-control" minlength="10" placeholder="777*******" title="Must Be an Indian Number Minimum length 10" required>
+                 </div>
+                 <div class="col">
+                    <label for="source"><b>Receiver's E-mail</b></label>
+                    <input type="email" name="R_mail" class="form-control" placeholder="Enter your Email ID" maxlength="50" required> <br><br>
+                 </div>
+               </div>
+               <div class="container text-center">
+                    <b>---------- Your BANK DETAILS --------</b>
+               </div>
+
                  <div class="row container">
                   <div class="col-md-6">
-                        <label><b>Card Holder Name</b></label>
+                        <label><br><b>Card Holder Name</b></label>
                         <input type="card_name" name="cardholder" class="form-control" placeholder="Enter Card Holder Name" autofocus required>
                   </div>
                  </div>
@@ -78,21 +100,20 @@ body{
                     <input type="hidden" name="AD_ID" value="<?php echo $hid; ?>">
                   </div>
                   <div class="row">
-                    <div class="text-left col">
+                    <div class="text-center col">
                       <input type="submit" class="btn btn-success" id="Hide" value="Submit">&nbsp; &nbsp; &nbsp;
                       <button type="reset" class="btn btn-danger">Reset</button><br><br><br>
                     </div>
                     <div class="col text-right">
                       <div class="col-6">
-                          <a href="index.php" class="btn btn-primary">Back to Home</a>
+                          <a href="Ad_view.php" class="btn btn-primary">Back to Home</a>
                       </div>
                     </div>
                   </div>
               </form>
         </div>
       </div>
-    </div>
-    
+    </div><br><br><br><br>
     </script>
   </body>
 </html>

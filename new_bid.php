@@ -1,6 +1,5 @@
 <?php
 require ('Session.php');
-require ('Nav.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +25,13 @@ body{
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
+    <nav class="navbar navbar-expand-sm bg-primary sticky-top navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="Ad_view.php">Back</a>
+        </li>
+      </ul>
+    </nav>
   <div class="container-fluid">
       <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
@@ -76,6 +82,7 @@ body{
                         <div class="col">
                            <?php echo $date; ?>
                         </div>
+<<<<<<< HEAD
 
                         <input type="hidden" name="AD" value="<?php echo $adi; ?>"/>
                      <input type="submit" class="btn btn-success" value="Confirm Bid">
@@ -84,6 +91,14 @@ body{
                      <button type="button" onclick="alert('Bid Confirmed !!')">Confirm</button>
 >>>>>>> 64bc4a192108aa24a3cbdbdbf424fe42ee9fc9d5
                      </div> -->
+=======
+                        <input type="hidden" name="AD" value="<?php echo $adi; ?>"/>
+                     <input type="submit" class="btn btn-success" value="Confirm Bid">
+                     <input type="hidden" name="id_ad" value="<?php echo $Ad_id; ?>">
+                     <!--button type="button" onclick="alert('Bid Confirmed !!')">Confirm</button-->
+
+                     </div>
+>>>>>>> 77e2376772099ef8e9420e369f658f98eab5f4ca
                      <?php
                         }
                         }

@@ -52,10 +52,10 @@ require ("Session.php");
           {
             while(  $retrive=mysqli_fetch_array($res))
             {
-              $row=$retrive;
-              $source=$row['source'];
-              $des=$row['no_destination'];
-              $Ad_id=$row['AD_id'];
+
+              $source=$retrive['Source_ad'];
+              $des=$retrive['no_destination'];
+              $Ad_id=$retrive['AD_id'];
 
 ?>
 <form action="ad_bid.php" method="post">
@@ -104,13 +104,13 @@ require ("Session.php");
             <div class="footer_widget_area">
                 <div class="container">
                     <div class="row footer_widget_inner">
-                        <div class="col-lg-4 col-sm-6">
+                        <div class="col-lg-6 col-sm-6">
                             <aside class="f_widget f_about_widget">
                                 <img src="https://i.ibb.co/vwmyN0n/1549187869210.png" width="150px" alt="HireTruck" >
                                 <p>Cras ex mauris, ornare eget pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum.</p>
                             </aside>
                         </div>
-                        <div class="col-lg-4 col-sm-6">
+                        <!-- <div class="col-lg-4 col-sm-6">
                             <aside class="f_widget f_insta_widget">
                                 <div class="f_title">
                                     <h3>Instagram</h3>
@@ -126,7 +126,7 @@ require ("Session.php");
                                     <li><a href="#"><img src="img/instagram/ins-8.jpg" alt=""></a></li>
                                 </ul>
                             </aside>
-                        </div>
+                        </div> -->
                         <div class="col-lg-4 col-sm-6">
                             <aside class="f_widget f_subs_widget">
                                 <div class="f_title">

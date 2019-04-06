@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require('Session.php');
 require('Meiler/Payment_confirm.php');
 $AD= $_POST['AD_ID'];
@@ -8,6 +9,24 @@ $AD= $_POST['AD_ID'];
 // $d="'5-04-19";
 // otp($email,$d_id,$p,$d);
 exit;
+=======
+require ('Session.php');
+require ('Meiler/passcode_mail.php');
+require  ("Sms/way.php");
+//require ("credit_detail.php");
+
+$AD= $_POST['AD_ID'];
+//receiver code
+  $R_name=$_POST['R_name'];
+  $R_number=$_POST['R_number'];
+  $R_mail=$_POST['R_mail'];
+  $num=md5(rand(1,100000));
+  $finalpass=substr($num,-8);
+
+  otp($R_mail,$R_name,$finalpass);
+  //otpmob($,$password,$num);
+
+>>>>>>> 77e2376772099ef8e9420e369f658f98eab5f4ca
 
 //$AD=$_POST['AD'];
 $card_number=$_POST['card_number'];
@@ -64,7 +83,7 @@ while ($row1=mysqli_fetch_array($result1))
 
   $query="SELECT T_id from bid_ref where B_id='$b_id'";
   $res1=mysqli_query($con,$query) or die(mysqli_error($con));
-  echo $e=mysqli_num_rows($res1);
+ $e=mysqli_num_rows($res1);
   $Qry="INSERT INTO deal (D_id,Ad_id,S_id,T_id,B_id,conform_date,price,d_status)VALUES(null,'$AD',(SELECT S_id FROM user_s WHERE S_mail='$email'),'$t_id','$b_id','$date','$price','0')";
   //$Qry="INSERT INTO deal (D_id,Ad_id,S_id,T_id,conform_date,d_status)VALUES(null,'$AD',SELECT s_id from user_s WHERE S_mail='$email','$t_id','$b_id','$date','$prise','0')";
   $res=mysqli_query($con,$Qry) or die(mysqli_error($con));
@@ -74,11 +93,15 @@ while ($row1=mysqli_fetch_array($result1))
   $query3="UPDATE `bid` SET `B_status`='1' WHERE Ad_id='$AD' and B_id='$b_id'";
   $sql=mysqli_query($con,$query3) or die(mysqli_error($con));
 
+<<<<<<< HEAD
   $mail_query="SELECT D_id from deal where B_id='$b_id'";
 $sql_mail=mysqli_query($con,$mail_query) or die(mysqli_error($con));
 $row_mail=mysqli_fetch_array($sql_mail);
 $D_id=$row_mail['0'];
 otp($email,$D_id,$price,$date);
+=======
+
+>>>>>>> 77e2376772099ef8e9420e369f658f98eab5f4ca
     if($res){
       header('location:E_receipt.php');
     }
