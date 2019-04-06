@@ -45,6 +45,36 @@ require ("Nav.php");
 
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+     .fa {
+       padding: 15px;
+       font-size: 20px;
+       width: 50px;
+       text-align: center;
+       text-decoration: none;
+       margin: 5px 5px;
+       border-radius: 30%;
+     }
+     .fa:hover {
+       opacity: 0.7;
+     }
+     .fa-facebook {
+       background: #3B5998;
+       color: white;
+     }
+     .fa-twitter {
+       background: #55ACEE;
+       color: white;
+     }
+     .fa-google {
+       background: #dd4b39;
+       color: white;
+     }
+     .fa-instagram {
+       background: #F624EC;
+       color: white;
+     }
+     </style>
    </head>
    <body>
      <section class="get_in_touch_area">
@@ -87,5 +117,48 @@ require ("Nav.php");
          </div>
      </section>
      <br><br><br>
+     <!--================Footer Area =================-->
+     <footer class="footr_area">
+         <div class="footer_widget_area">
+             <div class="container">
+                 <div class="row footer_widget_inner">
+                     <div class="col-lg-6 col-sm-6">
+                         <aside class="f_widget f_about_widget">
+                             <img src="https://i.ibb.co/vwmyN0n/1549187869210.png" width="120px" height="110px" alt="HireTruck">
+                             <!-- <p>Locjhsfkjbfkjfb</p>-->
+                         </aside>
+                         <h5><strong><i>Follow Us :</i></strong></h5><br><br>
+                         <a href="#" class="fa fa-facebook"></a>
+                         <a href="#" class="fa fa-twitter"></a>
+                         <a href="#" class="fa fa-google"></a>
+                         <a href="#" class="fa fa-instagram"></a>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                         <aside class="f_widget f_subs_widget">
+                             <div class="f_title">
+                                 <h3>Subscribe to newsletter</h3>
+                             </div>
+                             <div class="input-group">
+                                 <input type="text" class="form-control" placeholder="Your e-mail address here" aria-label="Your e-mail address here">
+                                 <span class="input-group-btn">
+                                     <button class="btn btn-secondary submit_btn" type="button">Subscribe</button>
+                                 </span>
+                             </div>
+                         </aside>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="footer_copyright">
+             <div class="container">
+                 <div class="float-sm-left">
+                     <h5> This Site is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by HireTruck<br>Copyright © 2019 HireTruck Services Pvt. Ltd.</h5>
+                 </div>
+
+             </div>
+         </div>
+     </footer>
+     <!--================End Footer Area =================-->
+
    </body>
  </html>

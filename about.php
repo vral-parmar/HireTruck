@@ -1,3 +1,9 @@
+<?php
+include("Nav.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <title>Developed By</title>
@@ -5,9 +11,18 @@
 <link rel="stylesheet" href="css/W3.css">
 <link rel="icon" href="https://i.ibb.co/tDkQbmq/Logo.png" type="image/x-icon" />
 <body>
-<div class="w3-bar w3-blue">
+<!-- <div class="w3-bar w3-blue">
   <a href="index.php" class="w3-bar-item w3-button w3-hover-indigo">Back</a>
-</div>
+</div> -->
+
+<!-- ================Banner Area =================-->
+    <section class="banner_area">
+        <div class="container">
+            <div class="banner_inner_text">
+            </div>
+        </div>
+    </section>
+<!--================End Blog Main Area =================-->
 <br>
 <div class="w3-container w3-center" style="padding-top:2%;">
   <h2 style="padding-bottom:3%;">Meet HireTruck Team</h2>
@@ -20,7 +35,7 @@
         <img src="images/vp.JPG" class="w3-circle" alt="Viral Parmar" style="width:300px">
         </div></li>
     <li class="w3-padding-16">
-      <h4 class="w3-wide">Student of BTech - CSE </h4>
+      <h4 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h4>
       <span class="w3-opacity">at Raksha Shakti University</span>
     </li>
   </ul>
@@ -34,7 +49,7 @@
         <img src="images/ps.jpg" class="w3-circle" alt="Er. Prince Shah" style="width:300px">
         </div></li>
     <li class="w3-padding-16">
-      <h4 class="w3-wide">Student of BTech - CSE</h4>
+      <h4 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h4>
       <span class="w3-opacity">at Raksha Shakti University</span>
     </li>
     </ul>
@@ -49,7 +64,7 @@
         </div>
     </li>
     <li class="w3-padding-16">
-      <h4 class="w3-wide">Student of BTech - CSE</h4>
+      <h4 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h4>
       <span class="w3-opacity">at Raksha Shakti University</span>
     </li>
     </ul>
@@ -60,12 +75,12 @@
 <div class="w3-row-padding">
 <div class="w3-half w3-margin-bottom">
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-    <li class="w3-green w3-xlarge w3-padding-32">K K Gayatripriyadatsini</li>
+    <li class="w3-green w3-xlarge w3-padding-32">Er. K K Gayatri Priyadarsini</li>
     <li class="w3-padding-16"><div>
-        <img src="images/gp.jpg" class="w3-circle" alt="K K Gayatripriyadatsini" style="width:300px">
+        <img src="images/gp.jpg" class="w3-circle" alt="K K Gayatri Priyadarsini" style="width:300px">
         </div></li>
     <li class="w3-padding-16">
-      <h2 class="w3-wide">Student of BTech - CSE</h2>
+      <h2 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h2>
       <span class="w3-opacity">at Raksha Shakti University</span>
     </li>
     </ul>
@@ -74,12 +89,12 @@
 <div class="w3-half w3-margin-bottom">
 
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-    <li class="w3-green w3-xlarge w3-padding-32">Kesha Kaneriya</li>
+    <li class="w3-green w3-xlarge w3-padding-32">Er. Kesha Kaneria</li>
     <li class="w3-padding-16"><div>
-        <img src="images/kk.jpg" class="w3-circle" alt="Kesha Kaneriya" style="width:300px">
+        <img src="images/kk.jpg" class="w3-circle" alt="Kesha Kaneria" style="width:300px">
         </div></li>
     <li class="w3-padding-16">
-      <h2 class="w3-wide">Student of BTech - CSE</h2>
+      <h2 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h2>
       <span class="w3-opacity">at Raksha Shakti University</span>
     </li>
   </ul>
@@ -95,7 +110,7 @@
 <div class="w3-col m6 w3-margin-bottom">
 
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
-    <li class="w3-indigo w3-xlarge w3-padding-32">Proff. Archana Gondaliya</li>
+    <li class="w3-indigo w3-xlarge w3-padding-32">Prof. Archana Gondalia</li>
     <li class="w3-padding-16"><div>
         <img src="images/ag.jpg" class="w3-circle" alt="Proff. Archana Gondaliya" style="width:300px">
         </div></li>

@@ -300,7 +300,7 @@
             <div class="left_3d">
                 <div class="shap_slider_inner owl-carousel">
                     <div class="item">
-                        <br><h4>“We are the best”</h4>
+                        <br><br><h4>“We are the best”</h4>
                         <p>We help people to Resolve the gap between Shipper and Carrier. We always Believe in Win-Win !</p>
                         <div class="media">
                             <img src="images\ag.jpg" alt="" width="42" height="42">
@@ -311,7 +311,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <br><h4>“Moto of our service”</h4>
+                        <br><br><h4>“Moto of our service”</h4>
                         <p>Panctuality is a virtue of the bored and so Beginning of a great day begins a night before. HireTruck tries to provide Best Services on air.</p>
                         <div class="media">
                             <img src="images\vp.jpg" alt="" width="42" height="42">
@@ -322,7 +322,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <br><h4>“Easy, Cheezy and Simple”</h4>
+                        <br><br><h4>“Easy, Cheezy and Simple”</h4>
                         <p>Makes it easy to post Ads on HireTruck and get quick Responce with best price.</p>
                         <div class="media">
                             <img src="images\ps.jpg" alt="" width="42" height="42">
@@ -364,11 +364,11 @@
                                 <h2>We build a strong team of great people</h2>
                             </div>
                             <ul>
-                                <li><a href="#">Viral Parmar </a></li>
-                                <li><a href="#">Prince Shah</a></li>
-                                <li><a href="#">Ridham Joshi</a></li>
-                                <li><a href="#">K K Gayatri </a></li>
-                                <li><a href="#">Kesha Kaneria</a></li>
+                                <li><a href="about.php">Prince Shah</a></li>
+                                <li><a href="about.php">Ridham Joshi</a></li>
+                                <li><a href="about.php">K K Gayatri </a></li>
+                                <li><a href="about.php">Viral Parmar </a></li>
+                                <li><a href="about.php">Kesha Kaneria</a></li>
                             </ul>
                         </div>
                     </div>
@@ -434,8 +434,8 @@
                                 <h2>Get in touch, send us an e-mail or call us</h2>
                             </div>
                             <p>Having Trouble to get transportation? Why don't you try to contact us? We are always ready to Hear from you !</p>
-                            <a href="#"><h5>Call us now</h5></a>
-                            <a href="#"><h4>+91-709-694-2284</h4></a>
+                            <a href="Contact.php"><h5>Call us now</h5></a>
+                            <a href="Contact.php"><h4>+91-709-694-2284</h4></a>
                         </div>
                     </div>
                 </div>
@@ -451,7 +451,7 @@
                     <div class="bd-callout">
                         <h3>HireTruck Office</h3>
                         <p>RakshaShakti University, Lavad<br /> India</p>
-                        <h4><a href="#">+91-709-694-2284</a> <a href="#">Jamesmrt@gmail.com</a></h4>
+                        <h4><a href="Contact.pho">+91-709-694-2284</a> <a href="Contact.php">Jamesmrt@gmail.com</a></h4>
                     </div>
                 </div>
             </div>
