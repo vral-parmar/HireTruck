@@ -20,7 +20,7 @@
     <?php
     require ('Session.php');
     $ss=$_SESSION['mail'];
-    $query="SELECT * FROM `ad` WHERE status='0'AND  S_id=(SELECT S_id from user_s  where S_mail='$ss')";
+    $query="SELECT * FROM `ad` WHERE status_ad='0'AND  S_id=(SELECT S_id from user_s  where S_mail='$ss')";
     $sql=mysqli_query($con,$query) or die(mysqli_error($con));
     //print_r($sql);
     //echo mysqli_num_rows($sql);

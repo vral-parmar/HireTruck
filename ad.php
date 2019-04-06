@@ -46,7 +46,7 @@ require ("Session.php");
 
   <?php
     //  while($status==0)
-        $qry="SELECT * FROM `ad` WHERE status='0'";
+        $qry="SELECT * FROM `ad` WHERE status_ad='0'";
         $res=mysqli_query($con,$qry) or die(mysqli_error($con));
           if(mysqli_num_rows($res)>0)
           {

@@ -120,7 +120,7 @@ if($_SESSION['user_type']=="Shipper"){
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Date of Arrival </label>
-                                                                    <input type="date" name="order_date" class="form-control" YYYY-mm-dd required/>
+                                                                    <input type="date" name="order_date" id="date" class="form-control" YYYY-mm-dd required/>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Type of Vehicle</label>
@@ -408,6 +408,7 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
         <!--================End Footer Area =================-->
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
         <script src="js/jquery-3.2.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/popper.min.js"></script>
@@ -436,5 +437,12 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
 
         <script src="js/circle-active.js"></script>
         <script src="js/theme.js"></script>
+        <script >
+        $(function () {
+    $('#date').datetimepicker({
+        minDate:new now()
+     });
+});
+        </script>
     </body>
 </html>

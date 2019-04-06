@@ -1,6 +1,7 @@
 <?php
 require 'Session.php';
 //require 'nav.php';
+$hid= $_POST['id_ad'];
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,35 +73,14 @@ body{
                     <input type="email" name="R_mail" class="form-control" placeholder="Enter your Email ID" maxlength="50" required> <br><br>
                  </div>
                </div>
-               <div class="container text-center">
-                    <b>---------- Your BANK DETAILS --------</b>
-               </div>
 
-                 <div class="row container">
-                  <div class="col-md-6">
-                        <label><br><b>Card Holder Name</b></label>
-                        <input type="card_name" name="cardholder" class="form-control" placeholder="Enter Card Holder Name" autofocus required>
-                  </div>
-                 </div>
-                 <div class="row container">
-                    <div class="col-md-6">
-                       <label for="source"><b>Card Number</b></label>
-                       <input type="card_number" pattern=".{16}" name="card_number" class="form-control"  maxlength="16" placeholder="Enter Card Number" autofocus required>
-                    </div>
-                  </div>
-                  <div class="row container">
-                    <div class="col-md-6">
-                       <label for="source"><b>Expiry Date</b></label>
-                       <input type="date"  pattern="dd-mm-YYYY" name="expiry" class="form-control" placeholder="Enter the Expiry date" autofocus required>
-                    </div>
-                    <div class="col-md-4">
-                       <label for="source"><b>CVV</b></label>
-                       <input type="password"   ng-model="dataItem.password" name="cvv" class="form-control" maxlength="3" placeholder="***" required><br><br>
-                    </div>
-                    <input type="hidden" name="AD_ID" value="<?php echo $hid; ?>">
-                  </div>
+
+
+
+
                   <div class="row">
                     <div class="text-center col">
+                      <input type="hidden" name="ad" value="<?php echo $hid; ?>">
                       <input type="submit" class="btn btn-success" id="Hide" value="Submit">&nbsp; &nbsp; &nbsp;
                       <button type="reset" class="btn btn-danger">Reset</button><br><br><br>
                     </div>
