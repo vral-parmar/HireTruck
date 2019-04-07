@@ -34,7 +34,11 @@ require ('Session.php');
   </ul>
 </nav>
     <?php
+<<<<<<< HEAD
+    $query1="SELECT s_fname 'user_s', T_org_name 'user_t',  conform_date   'deal' , source_ad 'ad' , no_destination 'ad' , price 'deal' from user_s s, deal b, user_t c, ad a
+=======
     $query1="SELECT s_fname 'user_s', T_org_name 'user_t',  conform_date   'deal' , Source_ad 'ad' , no_destination 'ad' , price 'deal' from user_s s, deal b, user_t c, ad a
+>>>>>>> a6bfec3c29bb2fa1de6aae437aa03ee9fdfd14ef
 where b.s_id = s.s_id and b.t_id = c.t_id and  b.Ad_id=a.AD_id";
     //$query2="select S_fname,S_lname from user_s";
     $result= mysqli_query($con,$query1) or die(mysqli_error($con));
