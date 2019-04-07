@@ -13,6 +13,8 @@ $AD= $_POST['ad'];
   $R_mail=$_POST['R_mail'];
   $num=md5(rand(1,100000));
   $finalpass=substr($num,-8);
+  echo $finalpass;
+
   //otp($R_mail,$R_name,$finalpass);
   //otpmob($,$password,$num);
 
@@ -61,6 +63,7 @@ $D_id=$row_mail['0'];
   //$Qry="INSERT INTO deal (D_id,Ad_id,S_id,T_id,conform_date,d_status)VALUES(null,'$AD',SELECT s_id from user_s WHERE S_mail='$email','$t_id','$b_id','$date','$prise','0')";
   $res5=mysqli_query($con,$Qry) or die(mysqli_error($con));
 
+
   $mail_dataqry="SELECT source_ad 'ad', no_destination 'ad',  D_id 'deal' ,order_date 'ad' from ad a,deal d where d.Ad_id=a.AD_id and a.s_id=(SELECT s_id from user_s where S_mail='$email')";
    $res_mail=mysqli_query($con,$mail_dataqry)or die(mysqli_query($con));
 
@@ -78,8 +81,13 @@ $D_id=$row_mail['0'];
 
      $_SESSION['price'] = $price;
      $_SESSION['did']=$D_id;
-       header("location:PaytmKit/TxnTest.php");
+
      deal_final_mail($email,$D_id,$Source,$Destnation,$ord_date);
+     
+     $qry_rec="INSERT INTO `deal_dtails`(`Dd_id`, `Ad_id`, `S_id`, `D_id`, `R_name`, `R_number`, `R_mail`, `T_id`, `PASSCODE`) VALUES (null,'$AD',(SELECT S_id FROM user_s WHERE S_mail='$email'),'$D_id','$R_name','$R_number','$R_mail','$t_id','$finalpass')";
+     $result_rec=mysqli_query($con,$qry_rec) or die(mysqli_error($con));
+       header("location:PaytmKit/TxnTest.php");
+
    }else{
      echo "Mail Not Sent or No data Were found";
    }
