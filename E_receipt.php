@@ -10,12 +10,6 @@ require ('Session.php');
         <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-<style media="screen">
-body{
- height: 100%;
- width:100%;
- }
-</style>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"/>
@@ -24,6 +18,12 @@ body{
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style media="screen">
+    body{
+     height: 100%;
+     width:100%;
+     }
+    </style>
   </head>
   <body>
 <nav class="navbar navbar-expand-sm bg-secondary sticky-top navbar-dark">
@@ -57,36 +57,53 @@ where b.s_id = s.s_id and b.t_id = c.t_id and  b.Ad_id=a.AD_id";
       <div class="row">
          <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
             <form class="form-container1" action="Lvalidate.php" method="post">
-              <h2 align="center">e-Reciept</h2><hr><br>
-                 <div class="row container">
-                    <div class="col">
-                          <label><b>Name :</b ><?php echo $fname; ?></label>
-                    </div>
-                 </div>
-                 <div class="row container">
-                      <div class="col">
-                         <label for="source"><b>Source : </b><?php echo $source; ?></label>
-                      </div>
-                 </div>
-                 <div class="row container">
-                      <div class="col">
-                         <label for="source"><b>Destination :</b><?php echo  $no_destination; ?></label>
-                      </div>
-                 </div>
-                 <div class="row container">
-                      <div class="col">
-                         <label for="source"><b>Price : </b><?php echo $price; ?></label>
-                      </div>
-                 </div>
-                 <div class="row container">
-                      <div class="col">
-                         <label for="source"><b>Company Name : </b><?php echo $lname; ?></label>
-                      </div>
-                 </div>
-                 <div class="row container">
-                      <div class="col">
-                         <label for="source"><b>Date : </b><?php echo $C_date; ?></label>
-                      </div>
+              <div class="row">
+                <div class="col">
+                    <img src="images/HT.png" width="20%" alt="HireTruck Logo">
+                </div>
+                <div class="col">
+                    <h2 align="right">e-Reciept</h2>
+                </div>
+              </div><hr><br>
+              <div class="container text-center">
+                <h4>Thank You for making Deal with HireTruck</h4>
+                <p><small>Here is Your E-Reciept, Please Keep it somewhere safe, just in case if you need to talk about your purchase!</small></p>
+              </div>
+              <div class="row">
+                <div class="col text-left">
+                  <p><b>Transaction Id: </b></p><p>
+                  <?php ?></p>
+                </div>
+                <div class="col text-right">
+                  <p><b>Transaction Date: </b></p><p>
+                  <?php echo $C_date; ?></p>
+                </div>
+              </div><hr>
+              <div class="container">
+                <p><b>Name: </b><?php echo $fname;?></p>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p><b>Source : </b><?php  echo $source; ?>
+                  <br /><b>Price: </b><?php echo $price; ?></p>
+                </div>
+                <div class="col">
+                  <p><b>Destination : </b><?php echo $no_destination; ?></p>
+
+                </div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <p><b>Your Address: </b></p>
+                    <p><?php  ?></p>
+                  </div>
+                  <div class="col">
+                    <p><b>Carrier Address: </b><?php echo $lname; ?></p>
+                  </div>
+                </div>
+              </div>
+
                  </div>
                </div>
             </form>

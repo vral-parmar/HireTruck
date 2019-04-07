@@ -1,5 +1,5 @@
 <?php
-require('Session.php');
+  require('Session.php');
   //  while($status==0)
    $Ad_id=$_POST['ad_id'];
    $username=$_SESSION['mail'];
@@ -12,12 +12,11 @@ require('Session.php');
       $data=mysqli_fetch_row($res);
       //print_r($data);exit;
       $dat=date("Y-m-d");
-      $qryins="INSERT INTO bid_ref VALUES('$b_id[0]','$data[1]','$data[0]','$bid','$dat',NULL)";
+      $qryins="INSERT INTO bid_ref VALUES('$b_id[0]','$data[1]','$data[0]','$price','$dat',NULL)";
       //echo $qryins."<br>";
-        //print_r($qry);
+      //print_r($qry);
+      $res1=mysqli_query($con,$qryins) or die("<h2 style='text-align:center'>Its Seems Like You already Bid on Following Ad</h2>".header("refresh:3;url=Profile.php"));
 
-
-      $res1=mysqli_query($con,$qryins) or die(mysqli_error($con));
       if($res1){
         header("location:Profile.php?=Bid_Success");
       }

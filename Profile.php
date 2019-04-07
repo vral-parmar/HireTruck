@@ -37,7 +37,7 @@ require_once("Session.php");
           $email=$_SESSION["mail"];
         ?>
         <style>
-        .fa {
+        .fabtn {
           padding: 20px;
           font-size: 50px;
           width: 50px;
@@ -86,8 +86,6 @@ if($_SESSION['user_type']=="Shipper"){
     <!--================End Blog Main Area =================-->
         <br>
         <div class="container ">
-
-              <h3>Profile :</h3><br>
             <div class="row card">
                 <div class="col-md-12 card-body">
                     <div class="panel panel-default">
@@ -324,14 +322,13 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                         <div class="container">
                           <div class="row">
                             <div class="col">
-                                <h4><small><?php echo "<b>".$Tname."</b>"." Owned by: "."<b>".$towner."</b>"; ?>
-                                At: <?php echo "<b>".$tadd."</b>"; ?>&nbsp;Location </small></h4>
+                                <h5><small><?php echo "<b>"."Company Name: </b>".$Tname."<b>"."&nbsp;&nbsp;&nbsp; Owner: </b>".$towner; ?>
+                                <br /><!-- &nbsp;&nbsp;&nbsp;--><b>Location: </b><?php echo $tadd; ?>&nbsp;</small></h5>
                             </div>
                           </div>
                         </div>
                         <div class="col">
-                          <h3><small>Email: <?php echo $email; ?> </small></h3>
-                          <h3><small>Mobile Number: <?php echo $mno; ?> </small></h3>
+                          <h5><small><b>Email:</b> <?php echo $email; ?> <b><br />Mobile Number:</b> <?php echo $mno; ?> </small></h5>
                         </div>
                         <div class="row">
                           <div class="col"><br><br>
@@ -410,10 +407,10 @@ if($_SESSION['user_type']=="Transport"){ //transport condition started
                                 <img src="https://i.ibb.co/vwmyN0n/1549187869210.png" width="150px" alt="HireTruck" >
                             </aside>
                             <h5><strong><i>Follow Us :</i></strong></h5><br><br>
-                            <a href="#" class="fa fa-facebook"></a>
-                            <a href="#" class="fa fa-twitter"></a>
-                            <a href="#" class="fa fa-google"></a>
-                            <a href="#" class="fa fa-instagram"></a>
+                            <a href="#" class="fabtn fa fa-facebook"></a>
+                            <a href="#" class="fabtn fa fa-twitter"></a>
+                            <a href="#" class="fabtn fa fa-google"></a>
+                            <a href="#" class="fabtn fa fa-instagram"></a>
                         </div>
                         <div class="col-lg-6 col-sm-6">
                             <aside class="f_widget f_subs_widget">
