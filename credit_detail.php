@@ -1,7 +1,7 @@
 <?php
 require 'Session.php';
 //require 'nav.php';
-$hid= $_POST['id_ad'];
+ echo $hid= $_POST['AD'];
  ?>
 <!DOCTYPE html>
 <html lang="en">

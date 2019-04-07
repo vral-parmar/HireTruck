@@ -1,11 +1,12 @@
 <?php
+require ('../Session.php');
 	header("Pragma: no-cache");
 	header("Cache-Control: no-cache");
 	header("Expires: 0");
 	
-	echo $bid=$_POST['Bid'];
-	echo $tid=$_POST['T_id'];
-	echo $price=$_POST['price'];
+	echo $did=$_SESSION['did'];
+	 $tid=$_SESSION['tid'];
+	 $price=$_SESSION['price'];
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -28,10 +29,12 @@
 				</tr>
 				<tr>
 					<td>1</td>
+					<?php $order=rand(10000,99999999)?>
 					<td><label>ORDER_ID::*</label></td>
 					<td><input id="ORDER_ID" tabindex="1" maxlength="20" size="20"
 						name="ORDER_ID" autocomplete="off"
-						value="<?php echo  "ORDS" . rand(10000,99999999)?>">
+						
+						value="<?php echo  $order ?>">
 					</td>
 				</tr>
 				<tr>
@@ -42,7 +45,7 @@
 				<tr>
 					<td>3</td>
 					<td><label>INDUSTRY_TYPE_ID ::*</label></td>
-					<td><input id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="<?php echo $bid; ?>"></td>
+					<td><input id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="<?php echo $tid; ?>"></td>
 				</tr>
 				<tr>
 					<td>4</td>
@@ -60,6 +63,11 @@
 					</td>
 				</tr>
 				<tr>
+				<?php 
+			$sql="update deal set order_id='$order' where D_id='$did'";
+			$res5=mysqli_query($con,$sql) or die(mysqli_error($con));
+		
+		?>
 					<td></td>
 					<td></td>
 					<td><input value="CheckOut" type="submit"	onclick=""></td>
