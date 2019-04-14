@@ -48,7 +48,7 @@
               <p><b>Sub type of luggage : </b></p> <p> <?php  print $re[5];?>  </p>
               <p><b>Order Date of Luggage : </b></p> <p> <?php  print $re[9];?>  </p>
               <p><b>Extra Requirements for your Luggage : </b></p> <p> <?php  print $re[11];?>  </p></div>
-              <div class="col-sm-6"><p><b></b>Destination : </b></p> <p><?php  print $re[3];?>  </p>
+              <div class="col-sm-6"><p><b>Destination : </b></p> <p><?php  print $re[3];?>  </p>
                 <p><b>Weight of Luggage : </b></p> <p> <?php  print $re[6];?>  </p>
                 <p><b>Vehicle Type :</b> </p> <p> <?php  print $re[10];?></p><br>
                 <p><b>Date :</b> <?php  print $re[12];?></p><br>

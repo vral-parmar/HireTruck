@@ -46,6 +46,7 @@ require ("Session.php");
 
   <?php
     //  while($status==0)
+    $mail=$_SESSION['mail'];
     $qry="SELECT * FROM `ad` WHERE `status_ad`='0'";
         $res=mysqli_query($con,$qry) or die(mysqli_error($con));
           if(mysqli_num_rows($res)>0)
@@ -83,9 +84,23 @@ require ("Session.php");
                       <h5 align="center">Destination:</h5>
                       <h4 align="center"><?php echo $des ?></h4>
                     </div>
-                  </div><br>
+                      </div><br>
                       <input type="hidden" name="id_ad" value="<?php echo $Ad_id; ?>">
-                      <center><input class="btn btn-block btn-primary" style="margin-top:10px ; margin-bottom:10px" type="submit" name="Bid" value="Show Ad" role="button"/></center>
+
+                      <?php
+                      $ml=$_SESSION['mail'];
+                      $Up_qry="SELECT price FROM bid_ref WHERE B_id=(SELECT B_id FROM bid WHERE Ad_id='$Ad_id')and t_id=(SELECT T_id from user_t where T_mail='$mail')";
+                      $results=mysqli_query($con,$Up_qry) or die(mysqli_error($con));
+                      $a=mysqli_fetch_row($results);
+                      if(mysqli_num_rows($results))
+                      {?>
+                      <input type='hidden' name='price' value='<?php echo $a[0]; ?>'/>
+                      <center><input class='btn btn-block btn-primary' style='margin-top:10px ; margin-bottom:10px' type='submit' name='Update' value='Update Bid' role='button'/></center>
+                      <?php }else{
+                        echo "<center><input class='btn btn-block btn-primary' style='margin-top:10px ; margin-bottom:10px' type='submit' name='Bid' value='Show Ad' role='button'/></center>";
+                      }
+                      ?>
+
                       <br>
             </div>
           </div>

@@ -37,7 +37,7 @@ require_once("Session.php");
           $email=$_SESSION["mail"];
         ?>
         <style>
-        .fa {
+        .fa-btn {
           padding: 20px;
           font-size: 50px;
           width: 50px;
@@ -49,19 +49,19 @@ require_once("Session.php");
         .fa:hover {
           opacity: 0.7;
         }
-        .fa-facebook {
+        .fa-btn-facebook {
           background: #3B5998;
           color: white;
         }
-        .fa-twitter {
+        .fa-btn-twitter {
           background: #55ACEE;
           color: white;
         }
-        .fa-google {
+        .fa-btn-google {
           background: #dd4b39;
           color: white;
         }
-        .fa-instagram {
+        .fa-btn-instagram {
           background: #F624EC;
           color: white;
         }
@@ -84,10 +84,9 @@ if($_SESSION['user_type']=="Shipper"){
             </div>
         </section>
     <!--================End Blog Main Area =================-->
-        <br>
-        <div class="container ">
 
-              <h3>Profile :</h3><br>
+        <div class="container ">
+              <h3 style="font:weight:bold;padding-bottom:6px;padding-right:2px;"><b><u><strong>Profile :</strong></u></b></h3><br>
             <div class="row card">
                 <div class="col-md-12 card-body">
                     <div class="panel panel-default">
@@ -108,9 +107,9 @@ if($_SESSION['user_type']=="Shipper"){
                                          $add=$row['S_address'];
                                   ?>
                                     <h2><?php echo $fname." ".$lname; ?> </h2><br>
-                                    <p><strong>Email:</strong> <?php echo $email; ?> </p>
-                                    <p><strong>Mobile Number: </strong>  <?php echo $mno; ?> </p>
-                                    <p><strong>Your Address: </strong>  <?php echo $add; ?> </p>
+                                    <p><strong>Email: &nbsp;</strong> <?php echo $email; ?> </p>
+                                    <p><strong>Mobile Number: &nbsp;</strong>  <?php echo $mno; ?> </p>
+                                    <p><strong>Your Address: &nbsp;</strong>  <?php echo $add; ?> </p>
                                   <br><br>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4 text-center">
@@ -208,10 +207,10 @@ if($_SESSION['user_type']=="Shipper"){
                                         </div>
                                       </div></div></div></div>
                                     <!-- ad modal end -->
-                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span> Post Ad  </button>
+                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus-circle"></span><strong> Post Ad </strong> </button>
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> Edit Your Profile </button>
+                                    <button class="btn btn-info btn-block" data-toggle="modal" data-target="#Edit_prof"><span class="fa fa-user"></span> <strong>Edit Your Profile</strong> </button>
                                     <div class="container border">
   <!-- Modal -->
   <!---Edit Profile start --->
@@ -250,7 +249,7 @@ if($_SESSION['user_type']=="Shipper"){
 <!--Edit Profile end -->
                                 </div><!--/col-->
                                 <div class="col-xs-12 col-sm-4">
-                                    <a href="new_re.php" type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> E-Reciept </a>
+                                    <a href="new_re.php" type="button" class="btn btn-primary btn-block"><span class="fa fa-truck"></span> <strong>E-Reciept</strong> </a>
                                 </div><!--/col-->
                             </div><!--/row-->
                         </div><!--/panel-body-->

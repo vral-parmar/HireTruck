@@ -57,7 +57,7 @@ body{
                     $adi=$_POST['id_Ad'];
                     //echo $adi;exit;
 
-                    $query="SELECT * FROM bid_ref where B_id=(SELECT b_id from bid where ad_id='$adi')";
+                    $query="SELECT * FROM bid_ref where B_id=(SELECT b_id from bid where ad_id='$adi') ORDER by price ASC";
                     $result= mysqli_query($con,$query) or die(mysqli_error($con));
                     if(mysqli_num_rows($result)>0)
                     {

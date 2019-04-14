@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2019 at 04:07 AM
+-- Generation Time: Apr 14, 2019 at 11:03 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -45,9 +45,9 @@ CREATE TABLE `account_info` (
 --
 
 INSERT INTO `account_info` (`Ac_id`, `name`, `balance`, `S_id`, `T_id`, `atm_no`, `expiry`, `cvv`, `extra`) VALUES
-(4, 'mediator', 40000, 2, 16, '5196439812348898', '9', 231, '0'),
-(5, 'akshat', 45000, 2, 0, '5196234467843212', '08/20', 512, '0'),
-(6, 'LogImp', 40000, 0, 16, '5196784434567812', '08/21', 735, '0');
+(4, 'mediator', 107500, 0, 0, '5196439812348898', '9', 231, '0'),
+(5, 'akshat', 1000, 2, 0, '5196234467843212', '08/20', 512, '0'),
+(6, 'LogImp', 44500, 0, 16, '5196784434567812', '08/21', 735, '0');
 
 -- --------------------------------------------------------
 
@@ -58,13 +58,13 @@ INSERT INTO `account_info` (`Ac_id`, `name`, `balance`, `S_id`, `T_id`, `atm_no`
 CREATE TABLE `ad` (
   `AD_id` int(10) NOT NULL,
   `S_id` int(10) NOT NULL,
-  `source` varchar(50) NOT NULL,
+  `Source_ad` varchar(50) NOT NULL,
   `no_destination` varchar(200) NOT NULL,
   `luggage` varchar(50) NOT NULL,
   `type_luggage` varchar(50) NOT NULL,
   `weight` decimal(20,0) NOT NULL,
   `price_budget` int(10) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `status_ad` tinyint(1) NOT NULL DEFAULT '0',
   `order_date` date NOT NULL,
   `vehicle_type` varchar(200) NOT NULL,
   `add_requirement` varchar(200) NOT NULL,
@@ -75,12 +75,51 @@ CREATE TABLE `ad` (
 -- Dumping data for table `ad`
 --
 
-INSERT INTO `ad` (`AD_id`, `S_id`, `source`, `no_destination`, `luggage`, `type_luggage`, `weight`, `price_budget`, `status`, `order_date`, `vehicle_type`, `add_requirement`, `ad_date`) VALUES
-(7, 2, 'ahm', '0', 'wer', '2021-03-19', '12', 123, 1, '2021-03-19', '6-Wheel,Close', 'no', '2018-12-10'),
-(9, 2, 'ffff', '0', 'wer', '2021-03-19', '12', 123, 0, '2021-03-19', '4-Wheel,Close', '2018-12-10', '2018-12-10'),
-(13, 2, '', '', '', '', '0', 0, 0, '0000-00-00', ',', '', '2019-02-21'),
-(14, 2, '', '', '', '', '0', 0, 0, '0000-00-00', ',', '', '0000-00-00'),
-(16, 2, '', '', '', '', '0', 0, 0, '0000-00-00', ',', '', '2019-03-12');
+INSERT INTO `ad` (`AD_id`, `S_id`, `Source_ad`, `no_destination`, `luggage`, `type_luggage`, `weight`, `price_budget`, `status_ad`, `order_date`, `vehicle_type`, `add_requirement`, `ad_date`) VALUES
+(12, 2, 'Ahmedabad', 'Mumbai', 'wood', 'furniture', '500', 0, 1, '2019-04-13', '6-Wheel,Close', 'Ropes', '2019-04-06'),
+(13, 3, 'bhuj', 'ahmedabad', 'oli', 'liquid', '100', 0, 0, '2019-04-06', '8-wheel', 'no', '2019-04-06'),
+(14, 2, 'Rajkot', 'Porbander', 'Hard', 'Wood', '55', 0, 0, '2019-04-19', '8-Wheel', 'Strips, Hooks,Ropes', '2019-04-07'),
+(15, 2, 'Ahmedabad', 'Bharuch', 'Gas', 'Oxygen', '50', 0, 0, '2019-04-19', '8-Wheel', 'Valves', '2019-04-07'),
+(16, 2, 'Jamnagar', 'Udaipur', 'Hard', 'Furniture', '22', 0, 0, '2019-12-05', '8-Wheel', 'rope', '2019-04-07'),
+(17, 2, 'Rajkot', 'Dehgam', 'Hard', 'Furniture', '50', 0, 0, '2019-04-09', '6-Wheel', 'Ropes', '2019-04-07'),
+(18, 2, 'Dehgam', 'mumbai', 'hard', 'Furniture', '20', 0, 1, '2019-04-09', '6-Wheel', 'rope', '2019-04-07'),
+(19, 2, 'Bhuj', 'Ahemedabad', 'Liquid', 'Gaa', '1200', 0, 1, '2019-04-10', '8-Wheel', 'none', '2019-04-07');
+
+--
+-- Triggers `ad`
+--
+DELIMITER $$
+CREATE TRIGGER `after_update_ad` AFTER UPDATE ON `ad` FOR EACH ROW BEGIN
+    
+ INSERT INTO trigger_ad SET AD_id = NEW.AD_id,
+			S_id= NEW.S_id,
+			Source= NEW.source_ad,
+			no_destination= NEW.no_destination,
+			luggage= NEW.luggage,
+			type_luggage= NEW.type_luggage,
+			weight= NEW.weight,
+			
+			STATUS= NEW.status_ad,
+			DATE= NEW.ad_date,
+			order_date= NEW.order_date,
+			vehicle_type= NEW.vehicle_type,
+			add_requirement= NEW.add_requirement,
+			update_date=NOW();
+			
+
+    END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `bid` AFTER INSERT ON `ad` FOR EACH ROW BEGIN
+     INSERT INTO bid (Ad_id)
+    SELECT max(AD_id)
+            FROM ad;
+            
+
+    END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -110,7 +149,14 @@ CREATE TABLE `bid` (
 --
 
 INSERT INTO `bid` (`B_id`, `Ad_id`, `B_status`) VALUES
-(1, 7, 0);
+(39, 12, 1),
+(40, 13, 0),
+(41, 14, 1),
+(42, 15, 1),
+(43, 16, 1),
+(44, 17, 0),
+(45, 18, 1),
+(46, 19, 1);
 
 -- --------------------------------------------------------
 
@@ -126,6 +172,24 @@ CREATE TABLE `bid_ref` (
   `date` date NOT NULL,
   `Bid_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bid_ref`
+--
+
+INSERT INTO `bid_ref` (`B_id`, `T_id`, `T-org_name`, `price`, `date`, `Bid_id`) VALUES
+(39, 16, 'LogImp', 5000, '2019-04-06', 3),
+(39, 17, 'sakti trucks', 4000, '2019-04-06', 4),
+(43, 16, 'LogImp', 50000, '2019-04-07', 6),
+(42, 16, 'LogImp', 20000, '2019-04-07', 7),
+(42, 17, 'sakti trucks', 1000, '2019-04-07', 8),
+(45, 17, 'sakti trucks', 30000, '2019-04-07', 9),
+(40, 16, 'LogImp', 10000, '2019-04-07', 10),
+(40, 16, 'LogImp', 10000, '2019-04-07', 11),
+(40, 16, 'LogImp', 10000, '2019-04-07', 12),
+(40, 16, 'LogImp', 10000, '2019-04-07', 13),
+(41, 16, 'LogImp', 1222, '2019-04-07', 14),
+(46, 16, 'LogImp', 1289, '2019-04-07', 15);
 
 -- --------------------------------------------------------
 
@@ -154,34 +218,41 @@ CREATE TABLE `deal` (
   `B_id` int(11) NOT NULL,
   `conform_date` date NOT NULL,
   `price` int(10) NOT NULL,
-  `d_status` tinyint(1) NOT NULL
+  `d_status` tinyint(1) NOT NULL,
+  `order_id` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `deal`
 --
 
-INSERT INTO `deal` (`D_id`, `Ad_id`, `S_id`, `T_id`, `B_id`, `conform_date`, `price`, `d_status`) VALUES
-(1, 7, 2, 16, 1, '2019-02-22', 50000, 1),
-(2, 9, 2, 16, 1, '2019-02-21', 4500, 0),
-(5, 7, 2, 16, 1, '0000-00-00', 50000, 0),
-(6, 7, 2, 16, 1, '0000-00-00', 6786, 0),
-(7, 7, 2, 16, 1, '0000-00-00', 50000, 0),
-(8, 7, 2, 16, 1, '0000-00-00', 6786, 0),
-(9, 7, 2, 16, 1, '0000-00-00', 50000, 0),
-(10, 7, 2, 16, 1, '0000-00-00', 6786, 0),
-(11, 7, 2, 16, 1, '0000-00-00', 6786, 0),
-(12, 7, 2, 16, 1, '0000-00-00', 6786, 0),
-(13, 7, 2, 16, 1, '0000-00-00', 5000, 0),
-(14, 7, 2, 16, 1, '2019-03-26', 5000, 0),
-(15, 7, 2, 16, 1, '2019-03-26', 6786, 0),
-(16, 7, 2, 16, 1, '2019-03-26', 6786, 0),
-(42, 7, 2, 16, 1, '2019-03-26', 50000, 0),
-(43, 7, 2, 16, 1, '2019-03-26', 6786, 0),
-(44, 7, 2, 16, 1, '2019-03-26', 50000, 0),
-(45, 7, 2, 16, 1, '2019-03-26', 6786, 0),
-(46, 7, 2, 16, 1, '2019-03-26', 50000, 0),
-(47, 7, 2, 16, 1, '2019-03-26', 6786, 0);
+INSERT INTO `deal` (`D_id`, `Ad_id`, `S_id`, `T_id`, `B_id`, `conform_date`, `price`, `d_status`, `order_id`) VALUES
+(25, 15, 2, 16, 39, '2019-02-21', 4000, 0, '10685152'),
+(28, 12, 2, 17, 39, '2019-04-07', 4000, 0, '0'),
+(29, 12, 2, 17, 39, '2019-04-07', 4000, 0, '0'),
+(30, 14, 2, 16, 41, '2019-04-07', 1222, 0, '0'),
+(31, 12, 2, 17, 39, '2019-04-07', 4000, 0, '0'),
+(32, 19, 2, 16, 46, '2019-04-07', 1289, 0, '57629066'),
+(33, 18, 2, 17, 45, '2019-04-09', 30000, 0, '0');
+
+--
+-- Triggers `deal`
+--
+DELIMITER $$
+CREATE TRIGGER `update_deal` AFTER UPDATE ON `deal` FOR EACH ROW BEGIN
+    INSERT INTO trigger_deal SET D_id = NEW.D_id,
+			Ad_id= NEW.Ad_id,
+			S_id= NEW.S_id,
+			T_id= NEW.T_id,
+			B_id= NEW.B_id,
+			conform_date= NEW.conform_date,
+			price= NEW.price,
+			D_status= NEW.d_status,
+			update_date=NOW();
+
+    END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -195,17 +266,31 @@ CREATE TABLE `deal_dtails` (
   `S_id` int(10) NOT NULL,
   `D_id` int(10) NOT NULL,
   `R_name` varchar(200) NOT NULL DEFAULT '',
-  `R_number` tinyint(10) NOT NULL,
+  `R_number` bigint(10) NOT NULL,
   `R_mail` varchar(200) NOT NULL,
-  `T_id` int(10) NOT NULL
+  `T_id` int(10) NOT NULL,
+  `PASSCODE` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `deal_dtails`
 --
 
-INSERT INTO `deal_dtails` (`Dd_id`, `Ad_id`, `S_id`, `D_id`, `R_name`, `R_number`, `R_mail`, `T_id`) VALUES
-(3, 7, 2, 2, 'shah', 127, 'receiver@gmail.com', 16);
+INSERT INTO `deal_dtails` (`Dd_id`, `Ad_id`, `S_id`, `D_id`, `R_name`, `R_number`, `R_mail`, `T_id`, `PASSCODE`) VALUES
+(4, 16, 2, 14, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 16, '4'),
+(5, 16, 2, 15, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 16, '813'),
+(6, 15, 2, 15, 'Archana', 7405722259, 'archana.gondalia@gmail.com', 17, '7'),
+(7, 15, 2, 15, 'Archana', 7405722259, 'archana.gondalia@gmail.com', 17, '0'),
+(8, 15, 2, 15, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 17, '680787c8'),
+(9, 15, 2, 15, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 17, '0dc075e1'),
+(10, 15, 2, 15, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 17, 'b388441e'),
+(11, 12, 2, 15, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 17, 'af5b3fa2'),
+(12, 18, 2, 27, 'Archana', 8160986983, 'archana.gondalia@gmail.com', 17, 'cdde2882'),
+(13, 12, 2, 27, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 17, '74b93a33'),
+(14, 14, 2, 27, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 16, 'fe307860'),
+(15, 12, 2, 25, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 17, 'be61612f'),
+(16, 19, 2, 32, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 16, '31e507b1'),
+(17, 18, 2, 32, 'Ridham Joshi', 8160986983, 'rjsquare561299@gmail.com', 17, 'a5e49efd');
 
 -- --------------------------------------------------------
 
@@ -264,9 +349,9 @@ CREATE TABLE `user_s` (
 --
 
 INSERT INTO `user_s` (`S_id`, `S_fname`, `S_lname`, `S_mail`, `S_mnumber`, `S_address`, `S_password`, `S_security_question`, `S_security_answer`, `S_status`, `S_active`) VALUES
-(1, 'Parmar', 'Viral', 'parmarviral93@gmail.com', 1, 'Talaja, Bhavanagar', 'd163e820', '', '', 0, 0),
-(2, 'Akshat', 'Soni', 'akshatsoni64@gmial.com', 5, 'Ahemedabad', '12345', 'What is your favourite food?', 'Vadapav', 0, 0),
-(3, 'viral', 'Parmar', 'ply4game@gmail.com', 2147483647, 'talaja ', '7eb1b2dc', 'What is your first Mobile modal?', 'J7', 0, 0);
+(1, 'Parmar', 'Viral', 'parmarviral93@gmail.com', 9730948619, 'Talaja, Bhavanagar', 'd163e820', '', '', 0, 0),
+(2, 'Ridham', 'Joshi', 'rjsquare561299@gmail.com', 8160986983, 'Ahmedabad', '12345', 'What is your favourite food?', 'paneer', 0, 0),
+(3, 'viral', 'Parmar', 'ply4game@gmail.com', 9764510233, 'talaja ', '7eb1b2dc', 'What is your first Mobile modal?', 'J7', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -281,8 +366,8 @@ CREATE TABLE `user_t` (
   `T_mail` varchar(100) NOT NULL,
   `T_address` varchar(200) NOT NULL,
   `Type_of_vehicle` varchar(100) NOT NULL,
-  `T_number` int(20) NOT NULL,
-  `T_anumber` int(20) NOT NULL,
+  `T_number` bigint(20) NOT NULL,
+  `T_anumber` bigint(20) NOT NULL,
   `T_no_vehicle` int(10) NOT NULL,
   `T_service` varchar(200) NOT NULL,
   `T_password` varchar(200) NOT NULL,
@@ -297,7 +382,8 @@ CREATE TABLE `user_t` (
 --
 
 INSERT INTO `user_t` (`T_id`, `T_org_name`, `T_owner_name`, `T_mail`, `T_address`, `Type_of_vehicle`, `T_number`, `T_anumber`, `T_no_vehicle`, `T_service`, `T_password`, `T_security_question`, `T_security_answer`, `T_status`, `T_active`) VALUES
-(16, 'LogImp', 'Prince Shah', 'sp@gmail.com', 'Bhuj', 'Open Truck', 2, 40212101, 1201245, 'Bhavanagar', '74a318d5', '', '', 0, 0);
+(16, 'LogImp', 'Prince Shah', 'sp@gmail.com', 'Bhuj', 'Open Truck', 8160986983, 40212101, 1201245, 'Bhavanagar', '74a318d5', '', '', 0, 0),
+(17, 'sakti trucks', 'dinesh makwana', 'Sp26n12@gmail.com', 'dhorka', '6-wheel,8-wheel', 7096942284, 799042, 12, 'mumbai,ahmedabad,surat', '12345678', '', '', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -329,7 +415,7 @@ ALTER TABLE `ad_ref`
 --
 ALTER TABLE `bid`
   ADD PRIMARY KEY (`B_id`),
-  ADD KEY `Ad_id` (`Ad_id`);
+  ADD KEY `bid_ibfk_1` (`Ad_id`);
 
 --
 -- Indexes for table `bid_ref`
@@ -402,19 +488,19 @@ ALTER TABLE `account_info`
 -- AUTO_INCREMENT for table `ad`
 --
 ALTER TABLE `ad`
-  MODIFY `AD_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `AD_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `bid`
 --
 ALTER TABLE `bid`
-  MODIFY `B_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `B_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `bid_ref`
 --
 ALTER TABLE `bid_ref`
-  MODIFY `Bid_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `Bid_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `c_feedback`
@@ -426,13 +512,13 @@ ALTER TABLE `c_feedback`
 -- AUTO_INCREMENT for table `deal`
 --
 ALTER TABLE `deal`
-  MODIFY `D_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `D_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `deal_dtails`
 --
 ALTER TABLE `deal_dtails`
-  MODIFY `Dd_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Dd_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `status_payment`
@@ -450,7 +536,7 @@ ALTER TABLE `user_s`
 -- AUTO_INCREMENT for table `user_t`
 --
 ALTER TABLE `user_t`
-  MODIFY `T_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `T_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
@@ -509,6 +595,20 @@ ALTER TABLE `status_payment`
   ADD CONSTRAINT `status_payment_ibfk_3` FOREIGN KEY (`S_id`) REFERENCES `user_s` (`S_id`),
   ADD CONSTRAINT `status_payment_ibfk_4` FOREIGN KEY (`T_id`) REFERENCES `user_t` (`T_id`),
   ADD CONSTRAINT `status_payment_ibfk_5` FOREIGN KEY (`Ac_id`) REFERENCES `account_info` (`Ac_id`);
+
+DELIMITER $$
+--
+-- Events
+--
+CREATE DEFINER=`root`@`localhost` EVENT `date` ON SCHEDULE EVERY 1 MINUTE STARTS '2019-04-05 22:59:01' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+	    UPDATE ad SET status_Ad='1' WHERE order_date=CURDATE();
+	END$$
+
+CREATE DEFINER=`root`@`localhost` EVENT `date_check` ON SCHEDULE EVERY 1 MINUTE STARTS '2019-04-05 22:05:52' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+	   UPDATE ad SET status_Ad='1' WHERE order_date=CURDATE();
+	END$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
