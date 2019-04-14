@@ -77,10 +77,10 @@ include("Nav.php");
   <ul class="w3-ul w3-border w3-center w3-hover-shadow">
     <li class="w3-green w3-xlarge w3-padding-32">Er. K K Gayatri Priyadarsini</li>
     <li class="w3-padding-16"><div>
-        <img src="images/gp.jpg" class="w3-circle" alt="K K Gayatri Priyadarsini" style="width:300px">
+        <img src="images/gp.png" class="w3-circle" alt="K K Gayatri Priyadarsini" style="width:300px">
         </div></li>
     <li class="w3-padding-16">
-      <h2 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h2>
+      <h4 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h4>
       <span class="w3-opacity">at Raksha Shakti University</span>
     </li>
     </ul>
@@ -94,7 +94,7 @@ include("Nav.php");
         <img src="images/kk.jpg" class="w3-circle" alt="Kesha Kaneria" style="width:300px">
         </div></li>
     <li class="w3-padding-16">
-      <h2 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h2>
+      <h4 class="w3-wide">Student of BTech - CSE with Specialization in Cyber Security</h4>
       <span class="w3-opacity">at Raksha Shakti University</span>
     </li>
   </ul>

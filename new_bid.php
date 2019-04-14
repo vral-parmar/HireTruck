@@ -34,7 +34,7 @@ body{
     </nav>
   <div class="container-fluid">
       <div class="row">
-         <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:9%;">
+         <div class="col-md-8 col-sm-6 col-xs-10 center_div" style="margin-top:5%;">
             <form class="form-container1" action="credit_detail.php" method="post">
               <h2 align="center">NEW BID</h2><hr><br>
                  <div class="row container">
@@ -69,7 +69,7 @@ body{
                       $price=$row['price'];
                       $date=$row['date'];
                     ?>
-                    <div class="row container">
+                    <div class="row container" style="padding-bottom:1%;">
                         <div class="col">
                            <?php echo $t_id; ?>
                         </div>
@@ -86,7 +86,7 @@ body{
                      <input type="submit" class="btn btn-success btn-sm" value="Confirm Bid">
                      <input type="hidden" name="id_ad" value="<?php echo $Ad_id; ?>">
                      <!--button type="button" onclick="alert('Bid Confirmed !!')">Confirm</button-->
-                     </div>
+                   </div>
                      <?php
                         }
                         }
