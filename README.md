@@ -1,4 +1,6 @@
 # HireTruck
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Naereen/badges/)
 HireTruck a simple prototype for demonstrate the Web Application in Gujarat Industrial Hackathon
 
 This is a simple Web application to Represent the Prototype of our system in Gujarat Industruial Hackathon
